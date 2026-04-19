@@ -1,5 +1,5 @@
 
-```markdown
+
 # ShopWave — Autonomous Support Resolution Agent
 
 **Agentic AI Hackathon 2026**  
@@ -16,7 +16,7 @@ An autonomous support agent built with LangGraph that ingests 20 simulated ticke
 git clone https://github.com/your-username/hackathon2026-yourname.git
 cd hackathon2026-yourname
 pip install -r requirements.txt
-```
+
 
 ### 2. Set Up API Key
 ```bash
