@@ -21,6 +21,8 @@ pip install -r requirements.txt
 ### 2. Set Up API Key
 ```bash
 cp .env.example .env
+#note add the Groq API key or any Api Key and make use to set the base url in the llm_client.py file
+#Note: If you switch to a different LLM provider (OpenAI, Together, etc.), remember to update the base_url and model names in llm_client.py accordingly. The code currently uses Groq's OpenAI‑compatible endpoint.
 # Open .env and add your Groq API key
 ```
 
