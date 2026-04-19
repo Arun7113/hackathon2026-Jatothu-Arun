@@ -1,11 +1,9 @@
 
-```markdown
+
 # ShopWave — Autonomous Support Resolution Agent
 
 **Agentic AI Hackathon 2026**  
-*"Don't write code. Engineer Reasoning."*
-
-An autonomous support agent built with LangGraph that ingests 20 simulated tickets, classifies them, retrieves policies, triages confidence, executes actions (refund, cancel, etc.), and escalates when uncertain — all with full auditability.
+An autonomous support agent built with LangGraph that ingests tickets, classifies them, retrieves policies, triages confidence, executes actions (refund, cancel, etc.), and escalates when uncertain — all with full auditability.
 
 ---
 
@@ -21,8 +19,7 @@ pip install -r requirements.txt
 ### 2. Set Up API Key
 ```bash
 cp .env.example .env
-# Open .env and add your Gemini API key
-# Get a free key at: https://aistudio.google.com/apikey
+# Open .env and add your Groq API key
 ```
 
 ### 3. Run the Agent
@@ -163,9 +160,7 @@ All tools are wrapped with `@retry_tool` (exponential backoff, max 3 attempts) t
 
 | Variable | Default | Description |
 |----------|---------|-------------|
-| `GEMINI_API_KEY` | *required* | Your Gemini API key. |
-| `GEMINI_FAST_MODEL` | `gemini-2.0-flash-lite` | For classifier (saves quota). |
-| `GEMINI_SMART_MODEL` | `gemini-2.0-flash` | For triage, act, reply. |
+| `GROQ_API_KEY` | *required* | Your GROQ API key. |
 | `MAX_TICKETS` | `20` | Number of tickets to process. |
 | `BATCH_SIZE` | `3` | Concurrent tickets per batch (keep low on free tier). |
 | `BATCH_DELAY` | `15` | Seconds between batches (increase if hitting 429 errors). |
@@ -192,8 +187,5 @@ All tools are wrapped with `@retry_tool` (exponential backoff, max 3 attempts) t
 ---
 
 ## 👤 Author
-
-**Your Name**  
-Agentic AI Hackathon 2026  
-*"Stop talking to AI. Start building with AI."*
+**Jatothu Arun**  
 ```
