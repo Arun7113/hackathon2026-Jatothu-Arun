@@ -1,0 +1,1362 @@
+[
+  {
+    "ticket_id": "TKT-001",
+    "classification": "refund",
+    "urgency": "urgent",
+    "flow_path": "ingest → lookup → classify → kb_search → triage → triage → escalate → human_agent",
+    "tool_call_count": 7,
+    "tools_called": [
+      {
+        "tool": "get_customer",
+        "type": "READ",
+        "detail": "customer=Alice Turner tier=vip total_orders=47"
+      },
+      {
+        "tool": "get_order",
+        "type": "READ",
+        "detail": "order=ORD-1001 status=delivered amount=$129.99 refund_status=None"
+      },
+      {
+        "tool": "get_product",
+        "type": "READ",
+        "detail": "product=ProSound Wireless Headphones category=electronics warranty=12mo return_window=30d"
+      },
+      {
+        "tool": "search_knowledge_base",
+        "type": "READ",
+        "detail": "[kb_search] queried for 'refund': 1808 chars returned"
+      },
+      {
+        "tool": "check_refund_eligibility",
+        "type": "READ",
+        "detail": "eligibility: eligible=False reason=Return window expired on 2024-03-15"
+      },
+      {
+        "tool": "escalate",
+        "type": "WRITE",
+        "detail": "escalated"
+      },
+      {
+        "tool": "send_reply",
+        "type": "WRITE",
+        "detail": "send_reply → sent=True (310 chars)"
+      }
+    ],
+    "decisions": [
+      {
+        "node": "classifier",
+        "decision": "'refund' (with full context: tier=vip, order_status=delivered, amount=$129.99)"
+      },
+      {
+        "node": "triage",
+        "decision": "Confidence=1.00 from signals: customer_found=✓, order_found=✓, product_found=✓, order_id_in_ticket=✓, return_deadline_known=✓, refund_not_already_done=✓, product_returnable=✓, classification_specific=✓. Urgency=urgent. Resolvable=True"
+      },
+      {
+        "node": "act",
+        "decision": "LLM decision: escalate"
+      },
+      {
+        "node": "act",
+        "decision": "[act/refund] escalated"
+      }
+    ],
+    "confidence": 1.0,
+    "confidence_signals": {
+      "customer_found": true,
+      "order_found": true,
+      "product_found": true,
+      "order_id_in_ticket": true,
+      "return_deadline_known": true,
+      "refund_not_already_done": true,
+      "product_returnable": true,
+      "classification_specific": true
+    },
+    "outcome": "ESCALATED_TO_HUMAN",
+    "outcome_detail": "Priority: urgent — routed to Support Specialist",
+    "escalated": true,
+    "refund_issued": null,
+    "action_taken": "escalated",
+    "reply_sent": true,
+    "customer_reply": "Hi Alice, \nI'm sorry to hear that your ProSound Wireless Headphones stopped working after a week. I understand your frustration and would like to help. However, I noticed that the return window for your order has expired. Since the headphones are outside the return window, I'll need to consider other options."
+  },
+  {
+    "ticket_id": "TKT-002",
+    "classification": "refund",
+    "urgency": "urgent",
+    "flow_path": "ingest → lookup → classify → kb_search → triage → triage → escalate → human_agent",
+    "tool_call_count": 6,
+    "tools_called": [
+      {
+        "tool": "get_customer",
+        "type": "READ",
+        "detail": "customer=Bob Mendes tier=standard total_orders=3"
+      },
+      {
+        "tool": "get_order",
+        "type": "READ",
+        "detail": "order=ORD-1002 status=delivered amount=$249.99 refund_status=None"
+      },
+      {
+        "tool": "get_product",
+        "type": "READ",
+        "detail": "product=PulseX Smart Watch category=electronics warranty=12mo return_window=15d"
+      },
+      {
+        "tool": "search_knowledge_base",
+        "type": "READ",
+        "detail": "[kb_search] queried for 'refund': 2399 chars returned"
+      },
+      {
+        "tool": "escalate",
+        "type": "WRITE",
+        "detail": "[act] escalated (not resolvable): priority=urgent"
+      },
+      {
+        "tool": "send_reply",
+        "type": "WRITE",
+        "detail": "send_reply → sent=True (130 chars)"
+      }
+    ],
+    "decisions": [
+      {
+        "node": "classifier",
+        "decision": "'refund' (with full context: tier=standard, order_status=delivered, amount=$249.99)"
+      },
+      {
+        "node": "triage",
+        "decision": "Confidence=1.00 from signals: customer_found=✓, order_found=✓, product_found=✓, order_id_in_ticket=✓, return_deadline_known=✓, refund_not_already_done=✓, product_returnable=✓, classification_specific=✓. Urgency=urgent. Resolvable=False — CANNOT resolve because: refund amount $249.99 > $200 auto-limit"
+      }
+    ],
+    "confidence": 1.0,
+    "confidence_signals": {
+      "customer_found": true,
+      "order_found": true,
+      "product_found": true,
+      "order_id_in_ticket": true,
+      "return_deadline_known": true,
+      "refund_not_already_done": true,
+      "product_returnable": true,
+      "classification_specific": true
+    },
+    "outcome": "ESCALATED_TO_HUMAN",
+    "outcome_detail": "Priority: urgent — routed to Support Specialist",
+    "escalated": true,
+    "refund_issued": null,
+    "action_taken": "escalated",
+    "reply_sent": true,
+    "customer_reply": "Hi Bob, your case has been escalated with urgent priority to a specialist who will contact you within 2 hours. Reference: TKT-002."
+  },
+  {
+    "ticket_id": "TKT-003",
+    "classification": "warranty",
+    "urgency": "high",
+    "flow_path": "ingest → lookup → classify → kb_search → triage → triage → escalate → human_agent",
+    "tool_call_count": 6,
+    "tools_called": [
+      {
+        "tool": "get_customer",
+        "type": "READ",
+        "detail": "customer=Carol Nguyen tier=premium total_orders=22"
+      },
+      {
+        "tool": "get_order",
+        "type": "READ",
+        "detail": "order=ORD-1003 status=delivered amount=$199.99 refund_status=None"
+      },
+      {
+        "tool": "get_product",
+        "type": "READ",
+        "detail": "product=BrewMaster 3000 Coffee Maker category=home_appliances warranty=24mo return_window=30d"
+      },
+      {
+        "tool": "search_knowledge_base",
+        "type": "READ",
+        "detail": "[kb_search] queried for 'warranty': 1606 chars returned"
+      },
+      {
+        "tool": "escalate",
+        "type": "WRITE",
+        "detail": "[act] escalated (not resolvable): priority=high"
+      },
+      {
+        "tool": "send_reply",
+        "type": "WRITE",
+        "detail": "send_reply → sent=True (131 chars)"
+      }
+    ],
+    "decisions": [
+      {
+        "node": "classifier",
+        "decision": "'warranty' (with full context: tier=premium, order_status=delivered, amount=$199.99)"
+      },
+      {
+        "node": "triage",
+        "decision": "Confidence=1.00 from signals: customer_found=✓, order_found=✓, product_found=✓, order_id_in_ticket=✓, return_deadline_known=✓, refund_not_already_done=✓, product_returnable=✓, classification_specific=✓. Urgency=high. Resolvable=False — CANNOT resolve because: warranty claims always escalate to warranty team"
+      }
+    ],
+    "confidence": 1.0,
+    "confidence_signals": {
+      "customer_found": true,
+      "order_found": true,
+      "product_found": true,
+      "order_id_in_ticket": true,
+      "return_deadline_known": true,
+      "refund_not_already_done": true,
+      "product_returnable": true,
+      "classification_specific": true
+    },
+    "outcome": "ESCALATED_TO_HUMAN",
+    "outcome_detail": "Priority: high — routed to Support Specialist",
+    "escalated": true,
+    "refund_issued": null,
+    "action_taken": "escalated",
+    "reply_sent": true,
+    "customer_reply": "Hi Carol, your case has been escalated with high priority to a specialist who will contact you within 24 hours. Reference: TKT-003."
+  },
+  {
+    "ticket_id": "TKT-004",
+    "classification": "refund",
+    "urgency": "high",
+    "flow_path": "ingest → lookup → classify → kb_search → triage → act → check_eligibility → deny → reply",
+    "tool_call_count": 6,
+    "tools_called": [
+      {
+        "tool": "get_customer",
+        "type": "READ",
+        "detail": "customer=David Park tier=standard total_orders=9"
+      },
+      {
+        "tool": "get_order",
+        "type": "READ",
+        "detail": "order=ORD-1004 status=delivered amount=$89.99 refund_status=None"
+      },
+      {
+        "tool": "get_product",
+        "type": "READ",
+        "detail": "product=SwiftRun Pro Running Shoes category=footwear warranty=0mo return_window=30d"
+      },
+      {
+        "tool": "search_knowledge_base",
+        "type": "READ",
+        "detail": "[kb_search] queried for 'refund': 1771 chars returned"
+      },
+      {
+        "tool": "check_refund_eligibility",
+        "type": "READ",
+        "detail": "eligibility: eligible=False reason=Return window expired on 2024-03-25"
+      },
+      {
+        "tool": "send_reply",
+        "type": "WRITE",
+        "detail": "send_reply → sent=True (347 chars)"
+      }
+    ],
+    "decisions": [
+      {
+        "node": "classifier",
+        "decision": "'refund' (with full context: tier=standard, order_status=delivered, amount=$89.99)"
+      },
+      {
+        "node": "triage",
+        "decision": "Confidence=1.00 from signals: customer_found=✓, order_found=✓, product_found=✓, order_id_in_ticket=✓, return_deadline_known=✓, refund_not_already_done=✓, product_returnable=✓, classification_specific=✓. Urgency=high. Resolvable=True"
+      },
+      {
+        "node": "act",
+        "decision": "LLM decision: deny_refund"
+      }
+    ],
+    "confidence": 1.0,
+    "confidence_signals": {
+      "customer_found": true,
+      "order_found": true,
+      "product_found": true,
+      "order_id_in_ticket": true,
+      "return_deadline_known": true,
+      "refund_not_already_done": true,
+      "product_returnable": true,
+      "classification_specific": true
+    },
+    "outcome": "RESOLVED_REFUND_DENIED",
+    "outcome_detail": "Customer informed of ineligibility with policy explanation",
+    "escalated": false,
+    "refund_issued": null,
+    "action_taken": "refund_denied",
+    "reply_sent": true,
+    "customer_reply": "Dear David,\n\nI apologize for the inconvenience you've experienced with your order, ORD-1004. I understand that receiving the wrong size is frustrating. However, I've checked on the return eligibility, and unfortunately, the return window for your order has expired. According to our return policy, the 30-day return window for footwear has passed."
+  },
+  {
+    "ticket_id": "TKT-005",
+    "classification": "refund",
+    "urgency": "urgent",
+    "flow_path": "ingest → lookup → classify → kb_search → triage → act → check_eligibility → issue_refund → reply",
+    "tool_call_count": 7,
+    "tools_called": [
+      {
+        "tool": "get_customer",
+        "type": "READ",
+        "detail": "customer=Emma Collins tier=vip total_orders=91"
+      },
+      {
+        "tool": "get_order",
+        "type": "READ",
+        "detail": "order=ORD-1005 status=delivered amount=$159.98 refund_status=None"
+      },
+      {
+        "tool": "get_product",
+        "type": "READ",
+        "detail": "product=BoomBox Mini Bluetooth Speaker category=electronics warranty=12mo return_window=30d"
+      },
+      {
+        "tool": "search_knowledge_base",
+        "type": "READ",
+        "detail": "[kb_search] queried for 'refund': 2334 chars returned"
+      },
+      {
+        "tool": "check_refund_eligibility",
+        "type": "READ",
+        "detail": "eligibility: eligible=True reason=VIP pre-approved extended return exception"
+      },
+      {
+        "tool": "issue_refund",
+        "type": "WRITE",
+        "detail": "issued REF-ORD-1005-1776583627 for $159.98"
+      },
+      {
+        "tool": "send_reply",
+        "type": "WRITE",
+        "detail": "send_reply → sent=True (327 chars)"
+      }
+    ],
+    "decisions": [
+      {
+        "node": "classifier",
+        "decision": "'refund' (with full context: tier=vip, order_status=delivered, amount=$159.98)"
+      },
+      {
+        "node": "triage",
+        "decision": "Confidence=1.00 from signals: customer_found=✓, order_found=✓, product_found=✓, order_id_in_ticket=✓, return_deadline_known=✓, refund_not_already_done=✓, product_returnable=✓, classification_specific=✓. Urgency=urgent. Resolvable=True"
+      },
+      {
+        "node": "act",
+        "decision": "LLM decision: approve_refund"
+      }
+    ],
+    "confidence": 1.0,
+    "confidence_signals": {
+      "customer_found": true,
+      "order_found": true,
+      "product_found": true,
+      "order_id_in_ticket": true,
+      "return_deadline_known": true,
+      "refund_not_already_done": true,
+      "product_returnable": true,
+      "classification_specific": true
+    },
+    "outcome": "RESOLVED_REFUND_ISSUED",
+    "outcome_detail": "Refund processed for ticket",
+    "escalated": false,
+    "refund_issued": true,
+    "action_taken": "refund_issued",
+    "reply_sent": true,
+    "customer_reply": "Hi Emma, \n\nI understand you've been traveling and would like to return the BoomBox Mini Bluetooth Speaker from order ORD-1005. As a VIP customer, you have a pre-approved extended return exception, making you eligible for a return. \n\nI've checked on the status of your order, and I'm happy to assist you with the return process."
+  },
+  {
+    "ticket_id": "TKT-006",
+    "classification": "cancellation",
+    "urgency": "medium",
+    "flow_path": "ingest → lookup → classify → kb_search → triage → act → cancel_order → reply",
+    "tool_call_count": 6,
+    "tools_called": [
+      {
+        "tool": "get_customer",
+        "type": "READ",
+        "detail": "customer=Frank Osei tier=standard total_orders=1"
+      },
+      {
+        "tool": "get_orders_by_customer",
+        "type": "READ",
+        "detail": "no order_id in ticket → fetched 1 orders, using latest: ORD-1006 status=delivered"
+      },
+      {
+        "tool": "get_product",
+        "type": "READ",
+        "detail": "product=ZenFlow Yoga Mat category=sports warranty=0mo return_window=30d"
+      },
+      {
+        "tool": "search_knowledge_base",
+        "type": "READ",
+        "detail": "[kb_search] queried for 'cancellation': 1278 chars returned"
+      },
+      {
+        "tool": "cancel_order",
+        "type": "WRITE",
+        "detail": "ORD-1006: Cannot cancel — status is 'delivered'. Only 'processing' orders can be cancelled."
+      },
+      {
+        "tool": "send_reply",
+        "type": "WRITE",
+        "detail": "send_reply → sent=True (154 chars)"
+      }
+    ],
+    "decisions": [
+      {
+        "node": "classifier",
+        "decision": "'cancellation' (with full context: tier=standard, order_status=delivered, amount=$39.99)"
+      },
+      {
+        "node": "triage",
+        "decision": "Confidence=0.88 from signals: customer_found=✓, order_found=✓, product_found=✓, order_id_in_ticket=✗, return_deadline_known=✓, refund_not_already_done=✓, product_returnable=✓, classification_specific=✓. Urgency=medium. Resolvable=True"
+      }
+    ],
+    "confidence": 0.875,
+    "confidence_signals": {
+      "customer_found": true,
+      "order_found": true,
+      "product_found": true,
+      "order_id_in_ticket": false,
+      "return_deadline_known": true,
+      "refund_not_already_done": true,
+      "product_returnable": true,
+      "classification_specific": true
+    },
+    "outcome": "RESOLVED_ORDER_CANCELLED",
+    "outcome_detail": "Cancellation processed",
+    "escalated": false,
+    "refund_issued": null,
+    "action_taken": "cancel_attempted",
+    "reply_sent": true,
+    "customer_reply": "Hi Frank, order ORD-1006 cannot be cancelled as it is already delivered. Please wait for delivery and initiate a return. Our 30-day return policy applies."
+  },
+  {
+    "ticket_id": "TKT-007",
+    "classification": "refund",
+    "urgency": "high",
+    "flow_path": "ingest → lookup → classify → kb_search → triage → act → check_eligibility → deny → reply",
+    "tool_call_count": 6,
+    "tools_called": [
+      {
+        "tool": "get_customer",
+        "type": "READ",
+        "detail": "customer=Grace Patel tier=premium total_orders=35"
+      },
+      {
+        "tool": "get_order",
+        "type": "READ",
+        "detail": "order=ORD-1007 status=delivered amount=$49.99 refund_status=None"
+      },
+      {
+        "tool": "get_product",
+        "type": "READ",
+        "detail": "product=ErgoLift Laptop Stand category=electronics_accessories warranty=6mo return_window=60d"
+      },
+      {
+        "tool": "search_knowledge_base",
+        "type": "READ",
+        "detail": "[kb_search] queried for 'refund': 2334 chars returned"
+      },
+      {
+        "tool": "check_refund_eligibility",
+        "type": "READ",
+        "detail": "eligibility: eligible=False reason=Return window expired on 2024-04-05"
+      },
+      {
+        "tool": "send_reply",
+        "type": "WRITE",
+        "detail": "send_reply → sent=True (494 chars)"
+      }
+    ],
+    "decisions": [
+      {
+        "node": "classifier",
+        "decision": "'refund' (with full context: tier=premium, order_status=delivered, amount=$49.99)"
+      },
+      {
+        "node": "triage",
+        "decision": "Confidence=1.00 from signals: customer_found=✓, order_found=✓, product_found=✓, order_id_in_ticket=✓, return_deadline_known=✓, refund_not_already_done=✓, product_returnable=✓, classification_specific=✓. Urgency=high. Resolvable=True"
+      },
+      {
+        "node": "act",
+        "decision": "LLM decision: deny_refund"
+      }
+    ],
+    "confidence": 1.0,
+    "confidence_signals": {
+      "customer_found": true,
+      "order_found": true,
+      "product_found": true,
+      "order_id_in_ticket": true,
+      "return_deadline_known": true,
+      "refund_not_already_done": true,
+      "product_returnable": true,
+      "classification_specific": true
+    },
+    "outcome": "RESOLVED_REFUND_DENIED",
+    "outcome_detail": "Customer informed of ineligibility with policy explanation",
+    "escalated": false,
+    "refund_issued": null,
+    "action_taken": "refund_denied",
+    "reply_sent": true,
+    "customer_reply": "Dear Grace, \n\nI apologize for the inconvenience you're experiencing with your ErgoLift Laptop Stand. I understand that it's not meeting your expectations due to stability issues. However, I've checked on the return eligibility for your order, and unfortunately, the standard return window has expired. As a premium customer, I appreciate your business and would like to help. Since the product is an electronic accessory, it has a 60-day return window, but it seems this window has also passed."
+  },
+  {
+    "ticket_id": "TKT-008",
+    "classification": "refund",
+    "urgency": "high",
+    "flow_path": "ingest → lookup → classify → kb_search → triage → act → check_eligibility → deny → reply",
+    "tool_call_count": 6,
+    "tools_called": [
+      {
+        "tool": "get_customer",
+        "type": "READ",
+        "detail": "customer=Henry Marsh tier=standard total_orders=14"
+      },
+      {
+        "tool": "get_order",
+        "type": "READ",
+        "detail": "order=ORD-1008 status=delivered amount=$44.99 refund_status=None"
+      },
+      {
+        "tool": "get_product",
+        "type": "READ",
+        "detail": "product=LumiDesk LED Desk Lamp category=home warranty=12mo return_window=30d"
+      },
+      {
+        "tool": "search_knowledge_base",
+        "type": "READ",
+        "detail": "[kb_search] queried for 'refund': 2399 chars returned"
+      },
+      {
+        "tool": "check_refund_eligibility",
+        "type": "READ",
+        "detail": "eligibility: eligible=False reason=Return window expired on 2024-04-07"
+      },
+      {
+        "tool": "send_reply",
+        "type": "WRITE",
+        "detail": "send_reply → sent=True (330 chars)"
+      }
+    ],
+    "decisions": [
+      {
+        "node": "classifier",
+        "decision": "'refund' (with full context: tier=standard, order_status=delivered, amount=$44.99)"
+      },
+      {
+        "node": "triage",
+        "decision": "Confidence=1.00 from signals: customer_found=✓, order_found=✓, product_found=✓, order_id_in_ticket=✓, return_deadline_known=✓, refund_not_already_done=✓, product_returnable=✓, classification_specific=✓. Urgency=high. Resolvable=True"
+      },
+      {
+        "node": "act",
+        "decision": "LLM decision: deny_refund"
+      }
+    ],
+    "confidence": 1.0,
+    "confidence_signals": {
+      "customer_found": true,
+      "order_found": true,
+      "product_found": true,
+      "order_id_in_ticket": true,
+      "return_deadline_known": true,
+      "refund_not_already_done": true,
+      "product_returnable": true,
+      "classification_specific": true
+    },
+    "outcome": "RESOLVED_REFUND_DENIED",
+    "outcome_detail": "Customer informed of ineligibility with policy explanation",
+    "escalated": false,
+    "refund_issued": null,
+    "action_taken": "refund_denied",
+    "reply_sent": true,
+    "customer_reply": "Dear Henry,\n\nI'm so sorry to hear that your LumiDesk LED Desk Lamp arrived damaged. I understand how frustrating that must be. However, I've checked on the return eligibility for your order, and unfortunately, the return window has expired. According to our policy, the standard return window is 30 days from the date of delivery."
+  },
+  {
+    "ticket_id": "TKT-009",
+    "classification": "refund",
+    "urgency": "high",
+    "flow_path": "ingest → lookup → classify → kb_search → triage → act → check_eligibility → deny → reply",
+    "tool_call_count": 6,
+    "tools_called": [
+      {
+        "tool": "get_customer",
+        "type": "READ",
+        "detail": "customer=Irene Castillo tier=premium total_orders=28"
+      },
+      {
+        "tool": "get_order",
+        "type": "READ",
+        "detail": "order=ORD-1009 status=delivered amount=$129.99 refund_status=refunded"
+      },
+      {
+        "tool": "get_product",
+        "type": "READ",
+        "detail": "product=ProSound Wireless Headphones category=electronics warranty=12mo return_window=30d"
+      },
+      {
+        "tool": "search_knowledge_base",
+        "type": "READ",
+        "detail": "[kb_search] queried for 'refund': 1791 chars returned"
+      },
+      {
+        "tool": "check_refund_eligibility",
+        "type": "READ",
+        "detail": "eligibility: eligible=False reason=Order already refunded"
+      },
+      {
+        "tool": "send_reply",
+        "type": "WRITE",
+        "detail": "send_reply → sent=True (331 chars)"
+      }
+    ],
+    "decisions": [
+      {
+        "node": "classifier",
+        "decision": "'refund' (with full context: tier=premium, order_status=delivered, amount=$129.99)"
+      },
+      {
+        "node": "triage",
+        "decision": "Confidence=0.88 from signals: customer_found=✓, order_found=✓, product_found=✓, order_id_in_ticket=✓, return_deadline_known=✓, refund_not_already_done=✗, product_returnable=✓, classification_specific=✓. Urgency=high. Resolvable=True"
+      },
+      {
+        "node": "act",
+        "decision": "LLM decision: deny_refund"
+      }
+    ],
+    "confidence": 0.875,
+    "confidence_signals": {
+      "customer_found": true,
+      "order_found": true,
+      "product_found": true,
+      "order_id_in_ticket": true,
+      "return_deadline_known": true,
+      "refund_not_already_done": false,
+      "product_returnable": true,
+      "classification_specific": true
+    },
+    "outcome": "RESOLVED_REFUND_DENIED",
+    "outcome_detail": "Customer informed of ineligibility with policy explanation",
+    "escalated": false,
+    "refund_issued": null,
+    "action_taken": "refund_denied",
+    "reply_sent": true,
+    "customer_reply": "Hi Irene, \n\nI've checked on the status of your refund for order ORD-1009. According to our records, the refund for this order was already processed. You should have received the refund within 5-7 business days. If you haven't seen the refund in your account yet, I recommend checking with your bank as the processing time may vary."
+  },
+  {
+    "ticket_id": "TKT-010",
+    "classification": "order_status",
+    "urgency": "medium",
+    "flow_path": "ingest → lookup → classify → kb_search → triage → act → status_lookup → reply",
+    "tool_call_count": 5,
+    "tools_called": [
+      {
+        "tool": "get_customer",
+        "type": "READ",
+        "detail": "customer=James Wu tier=standard total_orders=6"
+      },
+      {
+        "tool": "get_order",
+        "type": "READ",
+        "detail": "order=ORD-1010 status=shipped amount=$199.99 refund_status=None"
+      },
+      {
+        "tool": "get_product",
+        "type": "READ",
+        "detail": "product=BrewMaster 3000 Coffee Maker category=home_appliances warranty=24mo return_window=30d"
+      },
+      {
+        "tool": "search_knowledge_base",
+        "type": "READ",
+        "detail": "[kb_search] queried for 'order_status': 1808 chars returned"
+      },
+      {
+        "tool": "send_reply",
+        "type": "WRITE",
+        "detail": "send_reply → sent=True (119 chars)"
+      }
+    ],
+    "decisions": [
+      {
+        "node": "classifier",
+        "decision": "'order_status' (with full context: tier=standard, order_status=shipped, amount=$199.99)"
+      },
+      {
+        "node": "triage",
+        "decision": "Confidence=0.88 from signals: customer_found=✓, order_found=✓, product_found=✓, order_id_in_ticket=✓, return_deadline_known=✗, refund_not_already_done=✓, product_returnable=✓, classification_specific=✓. Urgency=medium. Resolvable=True"
+      }
+    ],
+    "confidence": 0.875,
+    "confidence_signals": {
+      "customer_found": true,
+      "order_found": true,
+      "product_found": true,
+      "order_id_in_ticket": true,
+      "return_deadline_known": false,
+      "refund_not_already_done": true,
+      "product_returnable": true,
+      "classification_specific": true
+    },
+    "outcome": "RESOLVED_STATUS_PROVIDED",
+    "outcome_detail": "Shipping/delivery info sent to customer",
+    "escalated": false,
+    "refund_issued": null,
+    "action_taken": "order_status_provided",
+    "reply_sent": true,
+    "customer_reply": "Hi James, order ORD-1010 has been shipped and is on its way. Tracking: TRK-88291. Expected delivery: 3-5 business days."
+  },
+  {
+    "ticket_id": "TKT-011",
+    "classification": "refund",
+    "urgency": "urgent",
+    "flow_path": "ingest → lookup → classify → kb_search → triage → triage → escalate → human_agent",
+    "tool_call_count": 6,
+    "tools_called": [
+      {
+        "tool": "get_customer",
+        "type": "READ",
+        "detail": "customer=Alice Turner tier=vip total_orders=47"
+      },
+      {
+        "tool": "get_order",
+        "type": "READ",
+        "detail": "order=ORD-1011 status=delivered amount=$249.99 refund_status=None"
+      },
+      {
+        "tool": "get_product",
+        "type": "READ",
+        "detail": "product=PulseX Smart Watch category=electronics warranty=12mo return_window=15d"
+      },
+      {
+        "tool": "search_knowledge_base",
+        "type": "READ",
+        "detail": "[kb_search] queried for 'refund': 2351 chars returned"
+      },
+      {
+        "tool": "escalate",
+        "type": "WRITE",
+        "detail": "[act] escalated (not resolvable): priority=urgent"
+      },
+      {
+        "tool": "send_reply",
+        "type": "WRITE",
+        "detail": "send_reply → sent=True (132 chars)"
+      }
+    ],
+    "decisions": [
+      {
+        "node": "classifier",
+        "decision": "'refund' (with full context: tier=vip, order_status=delivered, amount=$249.99)"
+      },
+      {
+        "node": "triage",
+        "decision": "Confidence=1.00 from signals: customer_found=✓, order_found=✓, product_found=✓, order_id_in_ticket=✓, return_deadline_known=✓, refund_not_already_done=✓, product_returnable=✓, classification_specific=✓. Urgency=urgent. Resolvable=False — CANNOT resolve because: refund amount $249.99 > $200 auto-limit"
+      }
+    ],
+    "confidence": 1.0,
+    "confidence_signals": {
+      "customer_found": true,
+      "order_found": true,
+      "product_found": true,
+      "order_id_in_ticket": true,
+      "return_deadline_known": true,
+      "refund_not_already_done": true,
+      "product_returnable": true,
+      "classification_specific": true
+    },
+    "outcome": "ESCALATED_TO_HUMAN",
+    "outcome_detail": "Priority: urgent — routed to Support Specialist",
+    "escalated": true,
+    "refund_issued": null,
+    "action_taken": "escalated",
+    "reply_sent": true,
+    "customer_reply": "Hi Alice, your case has been escalated with urgent priority to a specialist who will contact you within 2 hours. Reference: TKT-011."
+  },
+  {
+    "ticket_id": "TKT-012",
+    "classification": "cancellation",
+    "urgency": "high",
+    "flow_path": "ingest → lookup → classify → kb_search → triage → act → cancel_order → reply",
+    "tool_call_count": 6,
+    "tools_called": [
+      {
+        "tool": "get_customer",
+        "type": "READ",
+        "detail": "customer=Carol Nguyen tier=premium total_orders=22"
+      },
+      {
+        "tool": "get_order",
+        "type": "READ",
+        "detail": "order=ORD-1012 status=processing amount=$89.99 refund_status=None"
+      },
+      {
+        "tool": "get_product",
+        "type": "READ",
+        "detail": "product=SwiftRun Pro Running Shoes category=footwear warranty=0mo return_window=30d"
+      },
+      {
+        "tool": "search_knowledge_base",
+        "type": "READ",
+        "detail": "[kb_search] queried for 'cancellation': 1278 chars returned"
+      },
+      {
+        "tool": "cancel_order",
+        "type": "WRITE",
+        "detail": "ORD-1012: Order ORD-1012 cancelled successfully"
+      },
+      {
+        "tool": "send_reply",
+        "type": "WRITE",
+        "detail": "send_reply → sent=True (168 chars)"
+      }
+    ],
+    "decisions": [
+      {
+        "node": "classifier",
+        "decision": "'cancellation' (with full context: tier=premium, order_status=processing, amount=$89.99)"
+      },
+      {
+        "node": "triage",
+        "decision": "Confidence=0.88 from signals: customer_found=✓, order_found=✓, product_found=✓, order_id_in_ticket=✓, return_deadline_known=✗, refund_not_already_done=✓, product_returnable=✓, classification_specific=✓. Urgency=high. Resolvable=True"
+      }
+    ],
+    "confidence": 0.875,
+    "confidence_signals": {
+      "customer_found": true,
+      "order_found": true,
+      "product_found": true,
+      "order_id_in_ticket": true,
+      "return_deadline_known": false,
+      "refund_not_already_done": true,
+      "product_returnable": true,
+      "classification_specific": true
+    },
+    "outcome": "RESOLVED_ORDER_CANCELLED",
+    "outcome_detail": "Cancellation processed",
+    "escalated": false,
+    "refund_issued": null,
+    "action_taken": "cancel_attempted",
+    "reply_sent": true,
+    "customer_reply": "Hi Carol, your order ORD-1012 has been successfully cancelled. A confirmation email will follow shortly. If charged, a full refund will appear within 5-7 business days."
+  },
+  {
+    "ticket_id": "TKT-013",
+    "classification": "refund",
+    "urgency": "high",
+    "flow_path": "ingest → lookup → classify → kb_search → triage → act → check_eligibility → deny → reply",
+    "tool_call_count": 6,
+    "tools_called": [
+      {
+        "tool": "get_customer",
+        "type": "READ",
+        "detail": "customer=Grace Patel tier=premium total_orders=35"
+      },
+      {
+        "tool": "get_order",
+        "type": "READ",
+        "detail": "order=ORD-1013 status=delivered amount=$79.99 refund_status=None"
+      },
+      {
+        "tool": "get_product",
+        "type": "READ",
+        "detail": "product=BoomBox Mini Bluetooth Speaker category=electronics warranty=12mo return_window=30d"
+      },
+      {
+        "tool": "search_knowledge_base",
+        "type": "READ",
+        "detail": "[kb_search] queried for 'refund': 2351 chars returned"
+      },
+      {
+        "tool": "check_refund_eligibility",
+        "type": "READ",
+        "detail": "eligibility: eligible=False reason=Return window expired on 2024-02-23"
+      },
+      {
+        "tool": "send_reply",
+        "type": "WRITE",
+        "detail": "send_reply → sent=True (400 chars)"
+      }
+    ],
+    "decisions": [
+      {
+        "node": "classifier",
+        "decision": "'refund' (with full context: tier=premium, order_status=delivered, amount=$79.99)"
+      },
+      {
+        "node": "triage",
+        "decision": "Confidence=1.00 from signals: customer_found=✓, order_found=✓, product_found=✓, order_id_in_ticket=✓, return_deadline_known=✓, refund_not_already_done=✓, product_returnable=✓, classification_specific=✓. Urgency=high. Resolvable=True"
+      },
+      {
+        "node": "act",
+        "decision": "LLM decision: deny_refund"
+      }
+    ],
+    "confidence": 1.0,
+    "confidence_signals": {
+      "customer_found": true,
+      "order_found": true,
+      "product_found": true,
+      "order_id_in_ticket": true,
+      "return_deadline_known": true,
+      "refund_not_already_done": true,
+      "product_returnable": true,
+      "classification_specific": true
+    },
+    "outcome": "RESOLVED_REFUND_DENIED",
+    "outcome_detail": "Customer informed of ineligibility with policy explanation",
+    "escalated": false,
+    "refund_issued": null,
+    "action_taken": "refund_denied",
+    "reply_sent": true,
+    "customer_reply": "Hi Grace, \n\nI'm sorry to hear that the BoomBox Mini Bluetooth Speaker didn't meet your expectations. I've reviewed your order (ORD-1013) and see that it was delivered in January. Unfortunately, our return policy states that most products have a 30-day return window from the date of delivery. Since the return window for your order has expired, I regret to inform you that we cannot process a refund."
+  },
+  {
+    "ticket_id": "TKT-014",
+    "classification": "refund",
+    "urgency": "urgent",
+    "flow_path": "ingest → lookup → classify → kb_search → triage → triage → escalate → human_agent",
+    "tool_call_count": 6,
+    "tools_called": [
+      {
+        "tool": "get_customer",
+        "type": "READ",
+        "detail": "customer=Henry Marsh tier=standard total_orders=14"
+      },
+      {
+        "tool": "get_order",
+        "type": "READ",
+        "detail": "order=ORD-1014 status=delivered amount=$249.99 refund_status=None"
+      },
+      {
+        "tool": "get_product",
+        "type": "READ",
+        "detail": "product=PulseX Smart Watch category=electronics warranty=12mo return_window=15d"
+      },
+      {
+        "tool": "search_knowledge_base",
+        "type": "READ",
+        "detail": "[kb_search] queried for 'refund': 2351 chars returned"
+      },
+      {
+        "tool": "escalate",
+        "type": "WRITE",
+        "detail": "[act] escalated (not resolvable): priority=urgent"
+      },
+      {
+        "tool": "send_reply",
+        "type": "WRITE",
+        "detail": "send_reply → sent=True (132 chars)"
+      }
+    ],
+    "decisions": [
+      {
+        "node": "classifier",
+        "decision": "'refund' (with full context: tier=standard, order_status=delivered, amount=$249.99)"
+      },
+      {
+        "node": "triage",
+        "decision": "Confidence=1.00 from signals: customer_found=✓, order_found=✓, product_found=✓, order_id_in_ticket=✓, return_deadline_known=✓, refund_not_already_done=✓, product_returnable=✓, classification_specific=✓. Urgency=urgent. Resolvable=False — CANNOT resolve because: refund amount $249.99 > $200 auto-limit"
+      }
+    ],
+    "confidence": 1.0,
+    "confidence_signals": {
+      "customer_found": true,
+      "order_found": true,
+      "product_found": true,
+      "order_id_in_ticket": true,
+      "return_deadline_known": true,
+      "refund_not_already_done": true,
+      "product_returnable": true,
+      "classification_specific": true
+    },
+    "outcome": "ESCALATED_TO_HUMAN",
+    "outcome_detail": "Priority: urgent — routed to Support Specialist",
+    "escalated": true,
+    "refund_issued": null,
+    "action_taken": "escalated",
+    "reply_sent": true,
+    "customer_reply": "Hi Henry, your case has been escalated with urgent priority to a specialist who will contact you within 2 hours. Reference: TKT-014."
+  },
+  {
+    "ticket_id": "TKT-015",
+    "classification": "warranty",
+    "urgency": "urgent",
+    "flow_path": "ingest → lookup → classify → kb_search → triage → triage → escalate → human_agent",
+    "tool_call_count": 6,
+    "tools_called": [
+      {
+        "tool": "get_customer",
+        "type": "READ",
+        "detail": "customer=Emma Collins tier=vip total_orders=91"
+      },
+      {
+        "tool": "get_order",
+        "type": "READ",
+        "detail": "order=ORD-1015 status=delivered amount=$199.99 refund_status=None"
+      },
+      {
+        "tool": "get_product",
+        "type": "READ",
+        "detail": "product=BrewMaster 3000 Coffee Maker category=home_appliances warranty=24mo return_window=30d"
+      },
+      {
+        "tool": "search_knowledge_base",
+        "type": "READ",
+        "detail": "[kb_search] queried for 'warranty': 1808 chars returned"
+      },
+      {
+        "tool": "escalate",
+        "type": "WRITE",
+        "detail": "[act] escalated (not resolvable): priority=urgent"
+      },
+      {
+        "tool": "send_reply",
+        "type": "WRITE",
+        "detail": "send_reply → sent=True (131 chars)"
+      }
+    ],
+    "decisions": [
+      {
+        "node": "classifier",
+        "decision": "'warranty' (with full context: tier=vip, order_status=delivered, amount=$199.99)"
+      },
+      {
+        "node": "triage",
+        "decision": "Confidence=1.00 from signals: customer_found=✓, order_found=✓, product_found=✓, order_id_in_ticket=✓, return_deadline_known=✓, refund_not_already_done=✓, product_returnable=✓, classification_specific=✓. Urgency=urgent. Resolvable=False — CANNOT resolve because: warranty claims always escalate to warranty team"
+      }
+    ],
+    "confidence": 1.0,
+    "confidence_signals": {
+      "customer_found": true,
+      "order_found": true,
+      "product_found": true,
+      "order_id_in_ticket": true,
+      "return_deadline_known": true,
+      "refund_not_already_done": true,
+      "product_returnable": true,
+      "classification_specific": true
+    },
+    "outcome": "ESCALATED_TO_HUMAN",
+    "outcome_detail": "Priority: urgent — routed to Support Specialist",
+    "escalated": true,
+    "refund_issued": null,
+    "action_taken": "escalated",
+    "reply_sent": true,
+    "customer_reply": "Hi Emma, your case has been escalated with urgent priority to a specialist who will contact you within 2 hours. Reference: TKT-015."
+  },
+  {
+    "ticket_id": "TKT-016",
+    "classification": "refund",
+    "urgency": "high",
+    "flow_path": "ingest → lookup → classify → kb_search → triage → triage → escalate → human_agent",
+    "tool_call_count": 6,
+    "tools_called": [
+      {
+        "tool": "search_knowledge_base",
+        "type": "READ",
+        "detail": "no product_id — used KB search as 3rd tool call"
+      },
+      {
+        "tool": "escalate",
+        "type": "WRITE",
+        "detail": "[act] escalated (not resolvable): priority=high"
+      },
+      {
+        "tool": "send_reply",
+        "type": "WRITE",
+        "detail": "send_reply → sent=True (131 chars)"
+      }
+    ],
+    "decisions": [
+      {
+        "node": "classifier",
+        "decision": "'refund' (with full context: tier=None, order_status=None, amount=$None)"
+      },
+      {
+        "node": "triage",
+        "decision": "Confidence=0.38 from signals: customer_found=✗, order_found=✗, product_found=✗, order_id_in_ticket=✗, return_deadline_known=✗, refund_not_already_done=✓, product_returnable=✓, classification_specific=✓. Urgency=high. Resolvable=False — CANNOT resolve because: confidence 0.38 below 0.40 threshold"
+      }
+    ],
+    "confidence": 0.375,
+    "confidence_signals": {
+      "customer_found": false,
+      "order_found": false,
+      "product_found": false,
+      "order_id_in_ticket": false,
+      "return_deadline_known": false,
+      "refund_not_already_done": true,
+      "product_returnable": true,
+      "classification_specific": true
+    },
+    "outcome": "ESCALATED_TO_HUMAN",
+    "outcome_detail": "Priority: high — routed to Support Specialist",
+    "escalated": true,
+    "refund_issued": null,
+    "action_taken": "escalated",
+    "reply_sent": true,
+    "customer_reply": "Hi there, your case has been escalated with high priority to a specialist who will contact you within 24 hours. Reference: TKT-016."
+  },
+  {
+    "ticket_id": "TKT-017",
+    "classification": "refund",
+    "urgency": "high",
+    "flow_path": "ingest → lookup → classify → kb_search → triage → act → check_eligibility → deny → reply",
+    "tool_call_count": 6,
+    "tools_called": [
+      {
+        "tool": "get_customer",
+        "type": "READ",
+        "detail": "customer=David Park tier=standard total_orders=9"
+      },
+      {
+        "tool": "search_knowledge_base",
+        "type": "READ",
+        "detail": "no product_id — used KB search as 3rd tool call"
+      },
+      {
+        "tool": "check_refund_eligibility",
+        "type": "READ",
+        "detail": "eligibility: eligible=False reason=No order ID available"
+      },
+      {
+        "tool": "send_reply",
+        "type": "WRITE",
+        "detail": "send_reply → sent=True (337 chars)"
+      }
+    ],
+    "decisions": [
+      {
+        "node": "classifier",
+        "decision": "'refund' (with full context: tier=standard, order_status=None, amount=$None)"
+      },
+      {
+        "node": "triage",
+        "decision": "Confidence=0.62 from signals: customer_found=✓, order_found=✗, product_found=✗, order_id_in_ticket=✓, return_deadline_known=✗, refund_not_already_done=✓, product_returnable=✓, classification_specific=✓. Urgency=high. Resolvable=True"
+      },
+      {
+        "node": "act",
+        "decision": "LLM decision: deny_refund"
+      }
+    ],
+    "confidence": 0.625,
+    "confidence_signals": {
+      "customer_found": true,
+      "order_found": false,
+      "product_found": false,
+      "order_id_in_ticket": true,
+      "return_deadline_known": false,
+      "refund_not_already_done": true,
+      "product_returnable": true,
+      "classification_specific": true
+    },
+    "outcome": "RESOLVED_REFUND_DENIED",
+    "outcome_detail": "Customer informed of ineligibility with policy explanation",
+    "escalated": false,
+    "refund_issued": null,
+    "action_taken": "refund_denied",
+    "reply_sent": true,
+    "customer_reply": "Dear David,\n\nI understand your concern and apologize for any inconvenience. However, I couldn't find any order information associated with the provided order ID, ORD-9999. According to our return policy, proof of purchase (order ID) is required for all returns. Unfortunately, without a valid order ID, we cannot proceed with the refund."
+  },
+  {
+    "ticket_id": "TKT-018",
+    "classification": "refund",
+    "urgency": "urgent",
+    "flow_path": "ingest → lookup → classify → kb_search → triage → triage → escalate → human_agent",
+    "tool_call_count": 6,
+    "tools_called": [
+      {
+        "tool": "get_customer",
+        "type": "READ",
+        "detail": "customer=Bob Mendes tier=standard total_orders=3"
+      },
+      {
+        "tool": "get_order",
+        "type": "READ",
+        "detail": "order=ORD-1002 status=delivered amount=$249.99 refund_status=None"
+      },
+      {
+        "tool": "get_product",
+        "type": "READ",
+        "detail": "product=PulseX Smart Watch category=electronics warranty=12mo return_window=15d"
+      },
+      {
+        "tool": "search_knowledge_base",
+        "type": "READ",
+        "detail": "[kb_search] queried for 'refund': 1589 chars returned"
+      },
+      {
+        "tool": "escalate",
+        "type": "WRITE",
+        "detail": "[act] escalated (not resolvable): priority=urgent"
+      },
+      {
+        "tool": "send_reply",
+        "type": "WRITE",
+        "detail": "send_reply → sent=True (130 chars)"
+      }
+    ],
+    "decisions": [
+      {
+        "node": "classifier",
+        "decision": "'refund' (with full context: tier=standard, order_status=delivered, amount=$249.99)"
+      },
+      {
+        "node": "triage",
+        "decision": "Confidence=1.00 from signals: customer_found=✓, order_found=✓, product_found=✓, order_id_in_ticket=✓, return_deadline_known=✓, refund_not_already_done=✓, product_returnable=✓, classification_specific=✓. Urgency=urgent. Resolvable=False — CANNOT resolve because: refund amount $249.99 > $200 auto-limit"
+      }
+    ],
+    "confidence": 1.0,
+    "confidence_signals": {
+      "customer_found": true,
+      "order_found": true,
+      "product_found": true,
+      "order_id_in_ticket": true,
+      "return_deadline_known": true,
+      "refund_not_already_done": true,
+      "product_returnable": true,
+      "classification_specific": true
+    },
+    "outcome": "ESCALATED_TO_HUMAN",
+    "outcome_detail": "Priority: urgent — routed to Support Specialist",
+    "escalated": true,
+    "refund_issued": null,
+    "action_taken": "escalated",
+    "reply_sent": true,
+    "customer_reply": "Hi Bob, your case has been escalated with urgent priority to a specialist who will contact you within 2 hours. Reference: TKT-018."
+  },
+  {
+    "ticket_id": "TKT-019",
+    "classification": "general",
+    "urgency": "high",
+    "flow_path": "ingest → lookup → classify → kb_search → triage → act → kb_answer → reply",
+    "tool_call_count": 5,
+    "tools_called": [
+      {
+        "tool": "get_customer",
+        "type": "READ",
+        "detail": "customer=Irene Castillo tier=premium total_orders=28"
+      },
+      {
+        "tool": "get_orders_by_customer",
+        "type": "READ",
+        "detail": "no order_id in ticket → fetched 1 orders, using latest: ORD-1009 status=delivered"
+      },
+      {
+        "tool": "get_product",
+        "type": "READ",
+        "detail": "product=ProSound Wireless Headphones category=electronics warranty=12mo return_window=30d"
+      },
+      {
+        "tool": "search_knowledge_base",
+        "type": "READ",
+        "detail": "[kb_search] queried for 'general': 2399 chars returned"
+      },
+      {
+        "tool": "send_reply",
+        "type": "WRITE",
+        "detail": "send_reply → sent=True (405 chars)"
+      }
+    ],
+    "decisions": [
+      {
+        "node": "classifier",
+        "decision": "'general' (with full context: tier=premium, order_status=delivered, amount=$129.99)"
+      },
+      {
+        "node": "triage",
+        "decision": "Confidence=0.62 from signals: customer_found=✓, order_found=✓, product_found=✓, order_id_in_ticket=✗, return_deadline_known=✓, refund_not_already_done=✗, product_returnable=✓, classification_specific=✗. Urgency=high. Resolvable=True"
+      }
+    ],
+    "confidence": 0.625,
+    "confidence_signals": {
+      "customer_found": true,
+      "order_found": true,
+      "product_found": true,
+      "order_id_in_ticket": false,
+      "return_deadline_known": true,
+      "refund_not_already_done": false,
+      "product_returnable": true,
+      "classification_specific": false
+    },
+    "outcome": "RESOLVED_GENERAL",
+    "outcome_detail": "Policy/FAQ answer sent",
+    "escalated": false,
+    "refund_issued": null,
+    "action_taken": "general_inquiry_answered",
+    "reply_sent": true,
+    "customer_reply": "Hello Irene, thank you for reaching out. For electronics, our return policy requires the item to be in its original, unused condition. We do offer exchanges, but please note that the item must be in its original state. If you'd like to initiate a return or exchange, I'd be happy to guide you through the process. Would you like me to look up your order using your registered email address to get started?"
+  },
+  {
+    "ticket_id": "TKT-020",
+    "classification": "refund",
+    "urgency": "high",
+    "flow_path": "ingest → lookup → classify → kb_search → triage → act → check_eligibility → issue_refund → reply",
+    "tool_call_count": 7,
+    "tools_called": [
+      {
+        "tool": "get_customer",
+        "type": "READ",
+        "detail": "customer=James Wu tier=standard total_orders=6"
+      },
+      {
+        "tool": "get_orders_by_customer",
+        "type": "READ",
+        "detail": "no order_id in ticket → fetched 1 orders, using latest: ORD-1010 status=shipped"
+      },
+      {
+        "tool": "get_product",
+        "type": "READ",
+        "detail": "product=BrewMaster 3000 Coffee Maker category=home_appliances warranty=24mo return_window=30d"
+      },
+      {
+        "tool": "search_knowledge_base",
+        "type": "READ",
+        "detail": "[kb_search] queried for 'refund': 1791 chars returned"
+      },
+      {
+        "tool": "check_refund_eligibility",
+        "type": "READ",
+        "detail": "eligibility: eligible=True reason=Within return window, no restrictions"
+      },
+      {
+        "tool": "issue_refund",
+        "type": "WRITE",
+        "detail": "issued REF-ORD-1010-1776583713 for $199.99"
+      },
+      {
+        "tool": "send_reply",
+        "type": "WRITE",
+        "detail": "send_reply → sent=True (361 chars)"
+      }
+    ],
+    "decisions": [
+      {
+        "node": "classifier",
+        "decision": "'refund' (with full context: tier=standard, order_status=shipped, amount=$199.99)"
+      },
+      {
+        "node": "triage",
+        "decision": "Confidence=0.75 from signals: customer_found=✓, order_found=✓, product_found=✓, order_id_in_ticket=✗, return_deadline_known=✗, refund_not_already_done=✓, product_returnable=✓, classification_specific=✓. Urgency=high. Resolvable=True"
+      },
+      {
+        "node": "act",
+        "decision": "LLM decision: approve_refund"
+      }
+    ],
+    "confidence": 0.75,
+    "confidence_signals": {
+      "customer_found": true,
+      "order_found": true,
+      "product_found": true,
+      "order_id_in_ticket": false,
+      "return_deadline_known": false,
+      "refund_not_already_done": true,
+      "product_returnable": true,
+      "classification_specific": true
+    },
+    "outcome": "RESOLVED_REFUND_ISSUED",
+    "outcome_detail": "Refund processed for ticket",
+    "escalated": false,
+    "refund_issued": true,
+    "action_taken": "refund_issued",
+    "reply_sent": true,
+    "customer_reply": "Hi James, I'm sorry to hear that your BrewMaster 3000 Coffee Maker isn't working properly. I've checked on the status of your order, ORD-1010, and I'm happy to inform you that you're eligible for a refund. Since the product is returnable and you're within the return window, I can assist you with the refund process. Please let me know if you'd like to proceed."
+  }
+]

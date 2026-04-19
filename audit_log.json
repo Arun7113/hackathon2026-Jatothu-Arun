@@ -1,0 +1,5368 @@
+[
+  {
+    "ticket_id": "TKT-001",
+    "audit_steps": [
+      {
+        "timestamp": "2026-04-19T12:56:49.143640Z",
+        "step": "ticket_ingested",
+        "input": {
+          "ticket_id": "TKT-001",
+          "source": "email"
+        },
+        "output": {
+          "subject": "Refund request for headphones"
+        },
+        "reasoning": "Ticket TKT-001 ingested: 'Refund request for headphones'",
+        "confidence": 1.0
+      },
+      {
+        "timestamp": "2026-04-19T12:56:49.150700Z",
+        "step": "ingest",
+        "input": {
+          "ticket_id": "TKT-001",
+          "subject": "Refund request for headphones"
+        },
+        "output": {
+          "order_ids": [
+            "ORD-1001"
+          ],
+          "primary_order_id": "ORD-1001"
+        },
+        "reasoning": "Parsed ticket — found 1 order ID(s): ['ORD-1001']",
+        "confidence": 1.0
+      },
+      {
+        "timestamp": "2026-04-19T12:56:50.893658Z",
+        "step": "escalate",
+        "input": {
+          "ticket_id": "TKT-001",
+          "priority": "high"
+        },
+        "output": {
+          "escalated": true,
+          "ticket_id": "TKT-001",
+          "priority": "high",
+          "summary": "Issue: refund request — Refund request for headphones. Customer: Alice Turner (vip tier). Order: ORD-1001, amount=$129.99. Eligibility: Return window expired on 2024-03-15. Decision: escalate.",
+          "assigned_to": "Support Specialist",
+          "timestamp": "2026-04-19T12:56:50.893628Z"
+        },
+        "reasoning": "Escalated (high): Issue: refund request — Refund request for headphones. Customer: Alice Turner (v",
+        "confidence": 1.0
+      },
+      {
+        "timestamp": "2026-04-19T12:56:50.895610Z",
+        "step": "send_reply",
+        "input": {
+          "ticket_id": "TKT-001"
+        },
+        "output": {
+          "sent": true,
+          "ticket_id": "TKT-001",
+          "preview": "Hi Alice, \nI'm sorry to hear that your ProSound Wireless Headphones stopped working after a week. I understand your frus…"
+        },
+        "reasoning": "Reply sent for TKT-001",
+        "confidence": 1.0
+      },
+      {
+        "timestamp": "2026-04-19T12:56:50.895725Z",
+        "step": "reply",
+        "input": {
+          "ticket_id": "TKT-001",
+          "reply_length": 310
+        },
+        "output": {
+          "sent": true
+        },
+        "reasoning": "Final reply sent for TKT-001 — sent=True",
+        "confidence": 1.0
+      },
+      {
+        "timestamp": "2026-04-19T12:56:50.896114Z",
+        "step": "ticket_complete",
+        "input": {
+          "ticket_id": "TKT-001"
+        },
+        "output": {
+          "ticket_id": "TKT-001",
+          "classification": "refund",
+          "escalated": true,
+          "refund_issued": null,
+          "tool_call_count": 7,
+          "confidence": 1.0,
+          "urgency": "urgent",
+          "action_taken": "escalated",
+          "reply_sent": true
+        },
+        "reasoning": "Ticket TKT-001 complete — class=refund action=escalated tool_calls=7 escalated=True conf=1.00",
+        "confidence": 1.0
+      }
+    ]
+  },
+  {
+    "ticket_id": "TKT-002",
+    "audit_steps": [
+      {
+        "timestamp": "2026-04-19T12:56:49.143796Z",
+        "step": "ticket_ingested",
+        "input": {
+          "ticket_id": "TKT-002",
+          "source": "email"
+        },
+        "output": {
+          "subject": "I want to return my watch"
+        },
+        "reasoning": "Ticket TKT-002 ingested: 'I want to return my watch'",
+        "confidence": 1.0
+      },
+      {
+        "timestamp": "2026-04-19T12:56:49.149687Z",
+        "step": "ingest",
+        "input": {
+          "ticket_id": "TKT-002",
+          "subject": "I want to return my watch"
+        },
+        "output": {
+          "order_ids": [
+            "ORD-1002"
+          ],
+          "primary_order_id": "ORD-1002"
+        },
+        "reasoning": "Parsed ticket — found 1 order ID(s): ['ORD-1002']",
+        "confidence": 1.0
+      },
+      {
+        "timestamp": "2026-04-19T12:56:49.932253Z",
+        "step": "escalate",
+        "input": {
+          "ticket_id": "TKT-002",
+          "priority": "urgent"
+        },
+        "output": {
+          "escalated": true,
+          "ticket_id": "TKT-002",
+          "priority": "urgent",
+          "summary": "Issue: I want to return my watch. Customer: Bob Mendes (standard tier). Order: ORD-1002, amount=$249.99. Triage reasoning: Confidence=1.00 from signals: customer_found=✓, order_found=✓, product_found=✓, order_id_in_ticket=✓, return_deadline_known=✓, refund_not_already_done=✓, product_returnable=✓, classification_specific=. Recommended: human specialist review.",
+          "assigned_to": "Support Specialist",
+          "timestamp": "2026-04-19T12:56:49.932248Z"
+        },
+        "reasoning": "Escalated (urgent): Issue: I want to return my watch. Customer: Bob Mendes (standard tier). Order: O",
+        "confidence": 1.0
+      },
+      {
+        "timestamp": "2026-04-19T12:56:49.932721Z",
+        "step": "send_reply",
+        "input": {
+          "ticket_id": "TKT-002"
+        },
+        "output": {
+          "sent": true,
+          "ticket_id": "TKT-002",
+          "preview": "Hi Bob, your case has been escalated with urgent priority to a specialist who will contact you within 2 hours. Reference…"
+        },
+        "reasoning": "Reply sent for TKT-002",
+        "confidence": 1.0
+      },
+      {
+        "timestamp": "2026-04-19T12:56:49.932764Z",
+        "step": "reply",
+        "input": {
+          "ticket_id": "TKT-002",
+          "reply_length": 130
+        },
+        "output": {
+          "sent": true
+        },
+        "reasoning": "Final reply sent for TKT-002 — sent=True",
+        "confidence": 1.0
+      },
+      {
+        "timestamp": "2026-04-19T12:56:49.933073Z",
+        "step": "ticket_complete",
+        "input": {
+          "ticket_id": "TKT-002"
+        },
+        "output": {
+          "ticket_id": "TKT-002",
+          "classification": "refund",
+          "escalated": true,
+          "refund_issued": null,
+          "tool_call_count": 6,
+          "confidence": 1.0,
+          "urgency": "urgent",
+          "action_taken": "escalated",
+          "reply_sent": true
+        },
+        "reasoning": "Ticket TKT-002 complete — class=refund action=escalated tool_calls=6 escalated=True conf=1.00",
+        "confidence": 1.0
+      }
+    ]
+  },
+  {
+    "ticket_id": "TKT-003",
+    "audit_steps": [
+      {
+        "timestamp": "2026-04-19T12:56:49.143924Z",
+        "step": "ticket_ingested",
+        "input": {
+          "ticket_id": "TKT-003",
+          "source": "ticket_queue"
+        },
+        "output": {
+          "subject": "Coffee maker stopped working"
+        },
+        "reasoning": "Ticket TKT-003 ingested: 'Coffee maker stopped working'",
+        "confidence": 1.0
+      },
+      {
+        "timestamp": "2026-04-19T12:56:49.149450Z",
+        "step": "ingest",
+        "input": {
+          "ticket_id": "TKT-003",
+          "subject": "Coffee maker stopped working"
+        },
+        "output": {
+          "order_ids": [
+            "ORD-1003"
+          ],
+          "primary_order_id": "ORD-1003"
+        },
+        "reasoning": "Parsed ticket — found 1 order ID(s): ['ORD-1003']",
+        "confidence": 1.0
+      },
+      {
+        "timestamp": "2026-04-19T12:56:49.956697Z",
+        "step": "escalate",
+        "input": {
+          "ticket_id": "TKT-003",
+          "priority": "high"
+        },
+        "output": {
+          "escalated": true,
+          "ticket_id": "TKT-003",
+          "priority": "high",
+          "summary": "Issue: Coffee maker stopped working. Customer: Carol Nguyen (premium tier). Order: ORD-1003, amount=$199.99. Triage reasoning: Confidence=1.00 from signals: customer_found=✓, order_found=✓, product_found=✓, order_id_in_ticket=✓, return_deadline_known=✓, refund_not_already_done=✓, product_returnable=✓, classification_specific=. Recommended: human specialist review.",
+          "assigned_to": "Support Specialist",
+          "timestamp": "2026-04-19T12:56:49.956693Z"
+        },
+        "reasoning": "Escalated (high): Issue: Coffee maker stopped working. Customer: Carol Nguyen (premium tier). Orde",
+        "confidence": 1.0
+      },
+      {
+        "timestamp": "2026-04-19T12:56:49.957032Z",
+        "step": "send_reply",
+        "input": {
+          "ticket_id": "TKT-003"
+        },
+        "output": {
+          "sent": true,
+          "ticket_id": "TKT-003",
+          "preview": "Hi Carol, your case has been escalated with high priority to a specialist who will contact you within 24 hours. Referenc…"
+        },
+        "reasoning": "Reply sent for TKT-003",
+        "confidence": 1.0
+      },
+      {
+        "timestamp": "2026-04-19T12:56:49.957063Z",
+        "step": "reply",
+        "input": {
+          "ticket_id": "TKT-003",
+          "reply_length": 131
+        },
+        "output": {
+          "sent": true
+        },
+        "reasoning": "Final reply sent for TKT-003 — sent=True",
+        "confidence": 1.0
+      },
+      {
+        "timestamp": "2026-04-19T12:56:49.957274Z",
+        "step": "ticket_complete",
+        "input": {
+          "ticket_id": "TKT-003"
+        },
+        "output": {
+          "ticket_id": "TKT-003",
+          "classification": "warranty",
+          "escalated": true,
+          "refund_issued": null,
+          "tool_call_count": 6,
+          "confidence": 1.0,
+          "urgency": "high",
+          "action_taken": "escalated",
+          "reply_sent": true
+        },
+        "reasoning": "Ticket TKT-003 complete — class=warranty action=escalated tool_calls=6 escalated=True conf=1.00",
+        "confidence": 1.0
+      }
+    ]
+  },
+  {
+    "ticket_id": "TKT-004",
+    "audit_steps": [
+      {
+        "timestamp": "2026-04-19T12:57:05.910306Z",
+        "step": "ticket_ingested",
+        "input": {
+          "ticket_id": "TKT-004",
+          "source": "email"
+        },
+        "output": {
+          "subject": "Wrong size delivered"
+        },
+        "reasoning": "Ticket TKT-004 ingested: 'Wrong size delivered'",
+        "confidence": 1.0
+      },
+      {
+        "timestamp": "2026-04-19T12:57:05.921365Z",
+        "step": "ingest",
+        "input": {
+          "ticket_id": "TKT-004",
+          "subject": "Wrong size delivered"
+        },
+        "output": {
+          "order_ids": [
+            "ORD-1004"
+          ],
+          "primary_order_id": "ORD-1004"
+        },
+        "reasoning": "Parsed ticket — found 1 order ID(s): ['ORD-1004']",
+        "confidence": 1.0
+      },
+      {
+        "timestamp": "2026-04-19T12:57:07.111322Z",
+        "step": "send_reply",
+        "input": {
+          "ticket_id": "TKT-004"
+        },
+        "output": {
+          "sent": true,
+          "ticket_id": "TKT-004",
+          "preview": "Dear David,\n\nI apologize for the inconvenience you've experienced with your order, ORD-1004. I understand that receiving…"
+        },
+        "reasoning": "Reply sent for TKT-004",
+        "confidence": 1.0
+      },
+      {
+        "timestamp": "2026-04-19T12:57:07.111349Z",
+        "step": "reply",
+        "input": {
+          "ticket_id": "TKT-004",
+          "reply_length": 347
+        },
+        "output": {
+          "sent": true
+        },
+        "reasoning": "Final reply sent for TKT-004 — sent=True",
+        "confidence": 1.0
+      },
+      {
+        "timestamp": "2026-04-19T12:57:07.111487Z",
+        "step": "ticket_complete",
+        "input": {
+          "ticket_id": "TKT-004"
+        },
+        "output": {
+          "ticket_id": "TKT-004",
+          "classification": "refund",
+          "escalated": false,
+          "refund_issued": null,
+          "tool_call_count": 6,
+          "confidence": 1.0,
+          "urgency": "high",
+          "action_taken": "refund_denied",
+          "reply_sent": true
+        },
+        "reasoning": "Ticket TKT-004 complete — class=refund action=refund_denied tool_calls=6 escalated=False conf=1.00",
+        "confidence": 1.0
+      }
+    ]
+  },
+  {
+    "ticket_id": "TKT-005",
+    "audit_steps": [
+      {
+        "timestamp": "2026-04-19T12:57:05.916835Z",
+        "step": "ticket_ingested",
+        "input": {
+          "ticket_id": "TKT-005",
+          "source": "ticket_queue"
+        },
+        "output": {
+          "subject": "Return request"
+        },
+        "reasoning": "Ticket TKT-005 ingested: 'Return request'",
+        "confidence": 1.0
+      },
+      {
+        "timestamp": "2026-04-19T12:57:05.918844Z",
+        "step": "ingest",
+        "input": {
+          "ticket_id": "TKT-005",
+          "subject": "Return request"
+        },
+        "output": {
+          "order_ids": [
+            "ORD-1005"
+          ],
+          "primary_order_id": "ORD-1005"
+        },
+        "reasoning": "Parsed ticket — found 1 order ID(s): ['ORD-1005']",
+        "confidence": 1.0
+      },
+      {
+        "timestamp": "2026-04-19T12:57:07.141450Z",
+        "step": "send_reply",
+        "input": {
+          "ticket_id": "TKT-005"
+        },
+        "output": {
+          "sent": true,
+          "ticket_id": "TKT-005",
+          "preview": "Hi Emma, \n\nI understand you've been traveling and would like to return the BoomBox Mini Bluetooth Speaker from order ORD…"
+        },
+        "reasoning": "Reply sent for TKT-005",
+        "confidence": 1.0
+      },
+      {
+        "timestamp": "2026-04-19T12:57:07.141476Z",
+        "step": "reply",
+        "input": {
+          "ticket_id": "TKT-005",
+          "reply_length": 327
+        },
+        "output": {
+          "sent": true
+        },
+        "reasoning": "Final reply sent for TKT-005 — sent=True",
+        "confidence": 1.0
+      },
+      {
+        "timestamp": "2026-04-19T12:57:07.141604Z",
+        "step": "ticket_complete",
+        "input": {
+          "ticket_id": "TKT-005"
+        },
+        "output": {
+          "ticket_id": "TKT-005",
+          "classification": "refund",
+          "escalated": false,
+          "refund_issued": true,
+          "tool_call_count": 7,
+          "confidence": 1.0,
+          "urgency": "urgent",
+          "action_taken": "refund_issued",
+          "reply_sent": true
+        },
+        "reasoning": "Ticket TKT-005 complete — class=refund action=refund_issued tool_calls=7 escalated=False conf=1.00",
+        "confidence": 1.0
+      }
+    ]
+  },
+  {
+    "ticket_id": "TKT-006",
+    "audit_steps": [
+      {
+        "timestamp": "2026-04-19T12:57:05.919491Z",
+        "step": "ticket_ingested",
+        "input": {
+          "ticket_id": "TKT-006",
+          "source": "email"
+        },
+        "output": {
+          "subject": "I want to cancel"
+        },
+        "reasoning": "Ticket TKT-006 ingested: 'I want to cancel'",
+        "confidence": 1.0
+      },
+      {
+        "timestamp": "2026-04-19T12:57:05.923343Z",
+        "step": "ingest",
+        "input": {
+          "ticket_id": "TKT-006",
+          "subject": "I want to cancel"
+        },
+        "output": {
+          "order_ids": [],
+          "primary_order_id": null
+        },
+        "reasoning": "Parsed ticket — found 0 order ID(s): []",
+        "confidence": 1.0
+      },
+      {
+        "timestamp": "2026-04-19T12:57:06.522667Z",
+        "step": "send_reply",
+        "input": {
+          "ticket_id": "TKT-006"
+        },
+        "output": {
+          "sent": true,
+          "ticket_id": "TKT-006",
+          "preview": "Hi Frank, order ORD-1006 cannot be cancelled as it is already delivered. Please wait for delivery and initiate a return.…"
+        },
+        "reasoning": "Reply sent for TKT-006",
+        "confidence": 1.0
+      },
+      {
+        "timestamp": "2026-04-19T12:57:06.522737Z",
+        "step": "reply",
+        "input": {
+          "ticket_id": "TKT-006",
+          "reply_length": 154
+        },
+        "output": {
+          "sent": true
+        },
+        "reasoning": "Final reply sent for TKT-006 — sent=True",
+        "confidence": 1.0
+      },
+      {
+        "timestamp": "2026-04-19T12:57:06.523103Z",
+        "step": "ticket_complete",
+        "input": {
+          "ticket_id": "TKT-006"
+        },
+        "output": {
+          "ticket_id": "TKT-006",
+          "classification": "cancellation",
+          "escalated": false,
+          "refund_issued": null,
+          "tool_call_count": 6,
+          "confidence": 0.875,
+          "urgency": "medium",
+          "action_taken": "cancel_attempted",
+          "reply_sent": true
+        },
+        "reasoning": "Ticket TKT-006 complete — class=cancellation action=cancel_attempted tool_calls=6 escalated=False conf=0.88",
+        "confidence": 0.875
+      }
+    ]
+  },
+  {
+    "ticket_id": "TKT-007",
+    "audit_steps": [
+      {
+        "timestamp": "2026-04-19T12:57:22.152045Z",
+        "step": "ticket_ingested",
+        "input": {
+          "ticket_id": "TKT-007",
+          "source": "ticket_queue"
+        },
+        "output": {
+          "subject": "Laptop stand return"
+        },
+        "reasoning": "Ticket TKT-007 ingested: 'Laptop stand return'",
+        "confidence": 1.0
+      },
+      {
+        "timestamp": "2026-04-19T12:57:22.177410Z",
+        "step": "ingest",
+        "input": {
+          "ticket_id": "TKT-007",
+          "subject": "Laptop stand return"
+        },
+        "output": {
+          "order_ids": [
+            "ORD-1007"
+          ],
+          "primary_order_id": "ORD-1007"
+        },
+        "reasoning": "Parsed ticket — found 1 order ID(s): ['ORD-1007']",
+        "confidence": 1.0
+      },
+      {
+        "timestamp": "2026-04-19T12:57:23.761013Z",
+        "step": "send_reply",
+        "input": {
+          "ticket_id": "TKT-007"
+        },
+        "output": {
+          "sent": true,
+          "ticket_id": "TKT-007",
+          "preview": "Dear Grace, \n\nI apologize for the inconvenience you're experiencing with your ErgoLift Laptop Stand. I understand that i…"
+        },
+        "reasoning": "Reply sent for TKT-007",
+        "confidence": 1.0
+      },
+      {
+        "timestamp": "2026-04-19T12:57:23.761183Z",
+        "step": "reply",
+        "input": {
+          "ticket_id": "TKT-007",
+          "reply_length": 494
+        },
+        "output": {
+          "sent": true
+        },
+        "reasoning": "Final reply sent for TKT-007 — sent=True",
+        "confidence": 1.0
+      },
+      {
+        "timestamp": "2026-04-19T12:57:23.761658Z",
+        "step": "ticket_complete",
+        "input": {
+          "ticket_id": "TKT-007"
+        },
+        "output": {
+          "ticket_id": "TKT-007",
+          "classification": "refund",
+          "escalated": false,
+          "refund_issued": null,
+          "tool_call_count": 6,
+          "confidence": 1.0,
+          "urgency": "high",
+          "action_taken": "refund_denied",
+          "reply_sent": true
+        },
+        "reasoning": "Ticket TKT-007 complete — class=refund action=refund_denied tool_calls=6 escalated=False conf=1.00",
+        "confidence": 1.0
+      }
+    ]
+  },
+  {
+    "ticket_id": "TKT-008",
+    "audit_steps": [
+      {
+        "timestamp": "2026-04-19T12:57:22.159236Z",
+        "step": "ticket_ingested",
+        "input": {
+          "ticket_id": "TKT-008",
+          "source": "email"
+        },
+        "output": {
+          "subject": "Lamp came broken"
+        },
+        "reasoning": "Ticket TKT-008 ingested: 'Lamp came broken'",
+        "confidence": 1.0
+      },
+      {
+        "timestamp": "2026-04-19T12:57:22.163115Z",
+        "step": "ingest",
+        "input": {
+          "ticket_id": "TKT-008",
+          "subject": "Lamp came broken"
+        },
+        "output": {
+          "order_ids": [
+            "ORD-1008"
+          ],
+          "primary_order_id": "ORD-1008"
+        },
+        "reasoning": "Parsed ticket — found 1 order ID(s): ['ORD-1008']",
+        "confidence": 1.0
+      },
+      {
+        "timestamp": "2026-04-19T12:57:23.571450Z",
+        "step": "send_reply",
+        "input": {
+          "ticket_id": "TKT-008"
+        },
+        "output": {
+          "sent": true,
+          "ticket_id": "TKT-008",
+          "preview": "Dear Henry,\n\nI'm so sorry to hear that your LumiDesk LED Desk Lamp arrived damaged. I understand how frustrating that mu…"
+        },
+        "reasoning": "Reply sent for TKT-008",
+        "confidence": 1.0
+      },
+      {
+        "timestamp": "2026-04-19T12:57:23.571582Z",
+        "step": "reply",
+        "input": {
+          "ticket_id": "TKT-008",
+          "reply_length": 330
+        },
+        "output": {
+          "sent": true
+        },
+        "reasoning": "Final reply sent for TKT-008 — sent=True",
+        "confidence": 1.0
+      },
+      {
+        "timestamp": "2026-04-19T12:57:23.572179Z",
+        "step": "ticket_complete",
+        "input": {
+          "ticket_id": "TKT-008"
+        },
+        "output": {
+          "ticket_id": "TKT-008",
+          "classification": "refund",
+          "escalated": false,
+          "refund_issued": null,
+          "tool_call_count": 6,
+          "confidence": 1.0,
+          "urgency": "high",
+          "action_taken": "refund_denied",
+          "reply_sent": true
+        },
+        "reasoning": "Ticket TKT-008 complete — class=refund action=refund_denied tool_calls=6 escalated=False conf=1.00",
+        "confidence": 1.0
+      }
+    ]
+  },
+  {
+    "ticket_id": "TKT-009",
+    "audit_steps": [
+      {
+        "timestamp": "2026-04-19T12:57:22.161564Z",
+        "step": "ticket_ingested",
+        "input": {
+          "ticket_id": "TKT-009",
+          "source": "ticket_queue"
+        },
+        "output": {
+          "subject": "Refund already done?"
+        },
+        "reasoning": "Ticket TKT-009 ingested: 'Refund already done?'",
+        "confidence": 1.0
+      },
+      {
+        "timestamp": "2026-04-19T12:57:22.178558Z",
+        "step": "ingest",
+        "input": {
+          "ticket_id": "TKT-009",
+          "subject": "Refund already done?"
+        },
+        "output": {
+          "order_ids": [
+            "ORD-1009"
+          ],
+          "primary_order_id": "ORD-1009"
+        },
+        "reasoning": "Parsed ticket — found 1 order ID(s): ['ORD-1009']",
+        "confidence": 1.0
+      },
+      {
+        "timestamp": "2026-04-19T12:57:24.551655Z",
+        "step": "send_reply",
+        "input": {
+          "ticket_id": "TKT-009"
+        },
+        "output": {
+          "sent": true,
+          "ticket_id": "TKT-009",
+          "preview": "Hi Irene, \n\nI've checked on the status of your refund for order ORD-1009. According to our records, the refund for this …"
+        },
+        "reasoning": "Reply sent for TKT-009",
+        "confidence": 1.0
+      },
+      {
+        "timestamp": "2026-04-19T12:57:24.551694Z",
+        "step": "reply",
+        "input": {
+          "ticket_id": "TKT-009",
+          "reply_length": 331
+        },
+        "output": {
+          "sent": true
+        },
+        "reasoning": "Final reply sent for TKT-009 — sent=True",
+        "confidence": 1.0
+      },
+      {
+        "timestamp": "2026-04-19T12:57:24.551821Z",
+        "step": "ticket_complete",
+        "input": {
+          "ticket_id": "TKT-009"
+        },
+        "output": {
+          "ticket_id": "TKT-009",
+          "classification": "refund",
+          "escalated": false,
+          "refund_issued": null,
+          "tool_call_count": 6,
+          "confidence": 0.875,
+          "urgency": "high",
+          "action_taken": "refund_denied",
+          "reply_sent": true
+        },
+        "reasoning": "Ticket TKT-009 complete — class=refund action=refund_denied tool_calls=6 escalated=False conf=0.88",
+        "confidence": 0.875
+      }
+    ]
+  },
+  {
+    "ticket_id": "TKT-010",
+    "audit_steps": [
+      {
+        "timestamp": "2026-04-19T12:57:39.560421Z",
+        "step": "ticket_ingested",
+        "input": {
+          "ticket_id": "TKT-010",
+          "source": "email"
+        },
+        "output": {
+          "subject": "Where is my order?"
+        },
+        "reasoning": "Ticket TKT-010 ingested: 'Where is my order?'",
+        "confidence": 1.0
+      },
+      {
+        "timestamp": "2026-04-19T12:57:39.574451Z",
+        "step": "ingest",
+        "input": {
+          "ticket_id": "TKT-010",
+          "subject": "Where is my order?"
+        },
+        "output": {
+          "order_ids": [
+            "ORD-1010"
+          ],
+          "primary_order_id": "ORD-1010"
+        },
+        "reasoning": "Parsed ticket — found 1 order ID(s): ['ORD-1010']",
+        "confidence": 1.0
+      },
+      {
+        "timestamp": "2026-04-19T12:57:40.410275Z",
+        "step": "send_reply",
+        "input": {
+          "ticket_id": "TKT-010"
+        },
+        "output": {
+          "sent": true,
+          "ticket_id": "TKT-010",
+          "preview": "Hi James, order ORD-1010 has been shipped and is on its way. Tracking: TRK-88291. Expected delivery: 3-5 business days."
+        },
+        "reasoning": "Reply sent for TKT-010",
+        "confidence": 1.0
+      },
+      {
+        "timestamp": "2026-04-19T12:57:40.410345Z",
+        "step": "reply",
+        "input": {
+          "ticket_id": "TKT-010",
+          "reply_length": 119
+        },
+        "output": {
+          "sent": true
+        },
+        "reasoning": "Final reply sent for TKT-010 — sent=True",
+        "confidence": 1.0
+      },
+      {
+        "timestamp": "2026-04-19T12:57:40.410612Z",
+        "step": "ticket_complete",
+        "input": {
+          "ticket_id": "TKT-010"
+        },
+        "output": {
+          "ticket_id": "TKT-010",
+          "classification": "order_status",
+          "escalated": false,
+          "refund_issued": null,
+          "tool_call_count": 5,
+          "confidence": 0.875,
+          "urgency": "medium",
+          "action_taken": "order_status_provided",
+          "reply_sent": true
+        },
+        "reasoning": "Ticket TKT-010 complete — class=order_status action=order_status_provided tool_calls=5 escalated=False conf=0.88",
+        "confidence": 0.875
+      }
+    ]
+  },
+  {
+    "ticket_id": "TKT-011",
+    "audit_steps": [
+      {
+        "timestamp": "2026-04-19T12:57:39.560747Z",
+        "step": "ticket_ingested",
+        "input": {
+          "ticket_id": "TKT-011",
+          "source": "ticket_queue"
+        },
+        "output": {
+          "subject": "Wrong colour watch received"
+        },
+        "reasoning": "Ticket TKT-011 ingested: 'Wrong colour watch received'",
+        "confidence": 1.0
+      },
+      {
+        "timestamp": "2026-04-19T12:57:39.575055Z",
+        "step": "ingest",
+        "input": {
+          "ticket_id": "TKT-011",
+          "subject": "Wrong colour watch received"
+        },
+        "output": {
+          "order_ids": [
+            "ORD-1011"
+          ],
+          "primary_order_id": "ORD-1011"
+        },
+        "reasoning": "Parsed ticket — found 1 order ID(s): ['ORD-1011']",
+        "confidence": 1.0
+      },
+      {
+        "timestamp": "2026-04-19T12:57:40.401092Z",
+        "step": "escalate",
+        "input": {
+          "ticket_id": "TKT-011",
+          "priority": "urgent"
+        },
+        "output": {
+          "escalated": true,
+          "ticket_id": "TKT-011",
+          "priority": "urgent",
+          "summary": "Issue: Wrong colour watch received. Customer: Alice Turner (vip tier). Order: ORD-1011, amount=$249.99. Triage reasoning: Confidence=1.00 from signals: customer_found=✓, order_found=✓, product_found=✓, order_id_in_ticket=✓, return_deadline_known=✓, refund_not_already_done=✓, product_returnable=✓, classification_specific=. Recommended: human specialist review.",
+          "assigned_to": "Support Specialist",
+          "timestamp": "2026-04-19T12:57:40.401087Z"
+        },
+        "reasoning": "Escalated (urgent): Issue: Wrong colour watch received. Customer: Alice Turner (vip tier). Order: OR",
+        "confidence": 1.0
+      },
+      {
+        "timestamp": "2026-04-19T12:57:40.401561Z",
+        "step": "send_reply",
+        "input": {
+          "ticket_id": "TKT-011"
+        },
+        "output": {
+          "sent": true,
+          "ticket_id": "TKT-011",
+          "preview": "Hi Alice, your case has been escalated with urgent priority to a specialist who will contact you within 2 hours. Referen…"
+        },
+        "reasoning": "Reply sent for TKT-011",
+        "confidence": 1.0
+      },
+      {
+        "timestamp": "2026-04-19T12:57:40.401609Z",
+        "step": "reply",
+        "input": {
+          "ticket_id": "TKT-011",
+          "reply_length": 132
+        },
+        "output": {
+          "sent": true
+        },
+        "reasoning": "Final reply sent for TKT-011 — sent=True",
+        "confidence": 1.0
+      },
+      {
+        "timestamp": "2026-04-19T12:57:40.401900Z",
+        "step": "ticket_complete",
+        "input": {
+          "ticket_id": "TKT-011"
+        },
+        "output": {
+          "ticket_id": "TKT-011",
+          "classification": "refund",
+          "escalated": true,
+          "refund_issued": null,
+          "tool_call_count": 6,
+          "confidence": 1.0,
+          "urgency": "urgent",
+          "action_taken": "escalated",
+          "reply_sent": true
+        },
+        "reasoning": "Ticket TKT-011 complete — class=refund action=escalated tool_calls=6 escalated=True conf=1.00",
+        "confidence": 1.0
+      }
+    ]
+  },
+  {
+    "ticket_id": "TKT-012",
+    "audit_steps": [
+      {
+        "timestamp": "2026-04-19T12:57:39.567591Z",
+        "step": "ticket_ingested",
+        "input": {
+          "ticket_id": "TKT-012",
+          "source": "email"
+        },
+        "output": {
+          "subject": "Cancel my new order"
+        },
+        "reasoning": "Ticket TKT-012 ingested: 'Cancel my new order'",
+        "confidence": 1.0
+      },
+      {
+        "timestamp": "2026-04-19T12:57:39.578386Z",
+        "step": "ingest",
+        "input": {
+          "ticket_id": "TKT-012",
+          "subject": "Cancel my new order"
+        },
+        "output": {
+          "order_ids": [
+            "ORD-1012"
+          ],
+          "primary_order_id": "ORD-1012"
+        },
+        "reasoning": "Parsed ticket — found 1 order ID(s): ['ORD-1012']",
+        "confidence": 1.0
+      },
+      {
+        "timestamp": "2026-04-19T12:57:41.085184Z",
+        "step": "send_reply",
+        "input": {
+          "ticket_id": "TKT-012"
+        },
+        "output": {
+          "sent": true,
+          "ticket_id": "TKT-012",
+          "preview": "Hi Carol, your order ORD-1012 has been successfully cancelled. A confirmation email will follow shortly. If charged, a f…"
+        },
+        "reasoning": "Reply sent for TKT-012",
+        "confidence": 1.0
+      },
+      {
+        "timestamp": "2026-04-19T12:57:41.085236Z",
+        "step": "reply",
+        "input": {
+          "ticket_id": "TKT-012",
+          "reply_length": 168
+        },
+        "output": {
+          "sent": true
+        },
+        "reasoning": "Final reply sent for TKT-012 — sent=True",
+        "confidence": 1.0
+      },
+      {
+        "timestamp": "2026-04-19T12:57:41.085545Z",
+        "step": "ticket_complete",
+        "input": {
+          "ticket_id": "TKT-012"
+        },
+        "output": {
+          "ticket_id": "TKT-012",
+          "classification": "cancellation",
+          "escalated": false,
+          "refund_issued": null,
+          "tool_call_count": 6,
+          "confidence": 0.875,
+          "urgency": "high",
+          "action_taken": "cancel_attempted",
+          "reply_sent": true
+        },
+        "reasoning": "Ticket TKT-012 complete — class=cancellation action=cancel_attempted tool_calls=6 escalated=False conf=0.88",
+        "confidence": 0.875
+      }
+    ]
+  },
+  {
+    "ticket_id": "TKT-013",
+    "audit_steps": [
+      {
+        "timestamp": "2026-04-19T12:57:56.096306Z",
+        "step": "ticket_ingested",
+        "input": {
+          "ticket_id": "TKT-013",
+          "source": "ticket_queue"
+        },
+        "output": {
+          "subject": "Return for bluetooth speaker"
+        },
+        "reasoning": "Ticket TKT-013 ingested: 'Return for bluetooth speaker'",
+        "confidence": 1.0
+      },
+      {
+        "timestamp": "2026-04-19T12:57:56.099533Z",
+        "step": "ingest",
+        "input": {
+          "ticket_id": "TKT-013",
+          "subject": "Return for bluetooth speaker"
+        },
+        "output": {
+          "order_ids": [
+            "ORD-1013"
+          ],
+          "primary_order_id": "ORD-1013"
+        },
+        "reasoning": "Parsed ticket — found 1 order ID(s): ['ORD-1013']",
+        "confidence": 1.0
+      },
+      {
+        "timestamp": "2026-04-19T12:58:00.052534Z",
+        "step": "send_reply",
+        "input": {
+          "ticket_id": "TKT-013"
+        },
+        "output": {
+          "sent": true,
+          "ticket_id": "TKT-013",
+          "preview": "Hi Grace, \n\nI'm sorry to hear that the BoomBox Mini Bluetooth Speaker didn't meet your expectations. I've reviewed your …"
+        },
+        "reasoning": "Reply sent for TKT-013",
+        "confidence": 1.0
+      },
+      {
+        "timestamp": "2026-04-19T12:58:00.052645Z",
+        "step": "reply",
+        "input": {
+          "ticket_id": "TKT-013",
+          "reply_length": 400
+        },
+        "output": {
+          "sent": true
+        },
+        "reasoning": "Final reply sent for TKT-013 — sent=True",
+        "confidence": 1.0
+      },
+      {
+        "timestamp": "2026-04-19T12:58:00.053035Z",
+        "step": "ticket_complete",
+        "input": {
+          "ticket_id": "TKT-013"
+        },
+        "output": {
+          "ticket_id": "TKT-013",
+          "classification": "refund",
+          "escalated": false,
+          "refund_issued": null,
+          "tool_call_count": 6,
+          "confidence": 1.0,
+          "urgency": "high",
+          "action_taken": "refund_denied",
+          "reply_sent": true
+        },
+        "reasoning": "Ticket TKT-013 complete — class=refund action=refund_denied tool_calls=6 escalated=False conf=1.00",
+        "confidence": 1.0
+      }
+    ]
+  },
+  {
+    "ticket_id": "TKT-014",
+    "audit_steps": [
+      {
+        "timestamp": "2026-04-19T12:57:56.099141Z",
+        "step": "ticket_ingested",
+        "input": {
+          "ticket_id": "TKT-014",
+          "source": "email"
+        },
+        "output": {
+          "subject": "Thinking about returning my watch"
+        },
+        "reasoning": "Ticket TKT-014 ingested: 'Thinking about returning my watch'",
+        "confidence": 1.0
+      },
+      {
+        "timestamp": "2026-04-19T12:57:56.100280Z",
+        "step": "ingest",
+        "input": {
+          "ticket_id": "TKT-014",
+          "subject": "Thinking about returning my watch"
+        },
+        "output": {
+          "order_ids": [
+            "ORD-1014"
+          ],
+          "primary_order_id": "ORD-1014"
+        },
+        "reasoning": "Parsed ticket — found 1 order ID(s): ['ORD-1014']",
+        "confidence": 1.0
+      },
+      {
+        "timestamp": "2026-04-19T12:57:56.800034Z",
+        "step": "escalate",
+        "input": {
+          "ticket_id": "TKT-014",
+          "priority": "urgent"
+        },
+        "output": {
+          "escalated": true,
+          "ticket_id": "TKT-014",
+          "priority": "urgent",
+          "summary": "Issue: Thinking about returning my watch. Customer: Henry Marsh (standard tier). Order: ORD-1014, amount=$249.99. Triage reasoning: Confidence=1.00 from signals: customer_found=✓, order_found=✓, product_found=✓, order_id_in_ticket=✓, return_deadline_known=✓, refund_not_already_done=✓, product_returnable=✓, classification_specific=. Recommended: human specialist review.",
+          "assigned_to": "Support Specialist",
+          "timestamp": "2026-04-19T12:57:56.800028Z"
+        },
+        "reasoning": "Escalated (urgent): Issue: Thinking about returning my watch. Customer: Henry Marsh (standard tier).",
+        "confidence": 1.0
+      },
+      {
+        "timestamp": "2026-04-19T12:57:56.800556Z",
+        "step": "send_reply",
+        "input": {
+          "ticket_id": "TKT-014"
+        },
+        "output": {
+          "sent": true,
+          "ticket_id": "TKT-014",
+          "preview": "Hi Henry, your case has been escalated with urgent priority to a specialist who will contact you within 2 hours. Referen…"
+        },
+        "reasoning": "Reply sent for TKT-014",
+        "confidence": 1.0
+      },
+      {
+        "timestamp": "2026-04-19T12:57:56.800607Z",
+        "step": "reply",
+        "input": {
+          "ticket_id": "TKT-014",
+          "reply_length": 132
+        },
+        "output": {
+          "sent": true
+        },
+        "reasoning": "Final reply sent for TKT-014 — sent=True",
+        "confidence": 1.0
+      },
+      {
+        "timestamp": "2026-04-19T12:57:56.800897Z",
+        "step": "ticket_complete",
+        "input": {
+          "ticket_id": "TKT-014"
+        },
+        "output": {
+          "ticket_id": "TKT-014",
+          "classification": "refund",
+          "escalated": true,
+          "refund_issued": null,
+          "tool_call_count": 6,
+          "confidence": 1.0,
+          "urgency": "urgent",
+          "action_taken": "escalated",
+          "reply_sent": true
+        },
+        "reasoning": "Ticket TKT-014 complete — class=refund action=escalated tool_calls=6 escalated=True conf=1.00",
+        "confidence": 1.0
+      }
+    ]
+  },
+  {
+    "ticket_id": "TKT-015",
+    "audit_steps": [
+      {
+        "timestamp": "2026-04-19T12:57:56.099568Z",
+        "step": "ticket_ingested",
+        "input": {
+          "ticket_id": "TKT-015",
+          "source": "ticket_queue"
+        },
+        "output": {
+          "subject": "Damaged coffee maker"
+        },
+        "reasoning": "Ticket TKT-015 ingested: 'Damaged coffee maker'",
+        "confidence": 1.0
+      },
+      {
+        "timestamp": "2026-04-19T12:57:56.102415Z",
+        "step": "ingest",
+        "input": {
+          "ticket_id": "TKT-015",
+          "subject": "Damaged coffee maker"
+        },
+        "output": {
+          "order_ids": [
+            "ORD-1015"
+          ],
+          "primary_order_id": "ORD-1015"
+        },
+        "reasoning": "Parsed ticket — found 1 order ID(s): ['ORD-1015']",
+        "confidence": 1.0
+      },
+      {
+        "timestamp": "2026-04-19T12:57:56.779037Z",
+        "step": "escalate",
+        "input": {
+          "ticket_id": "TKT-015",
+          "priority": "urgent"
+        },
+        "output": {
+          "escalated": true,
+          "ticket_id": "TKT-015",
+          "priority": "urgent",
+          "summary": "Issue: Damaged coffee maker. Customer: Emma Collins (vip tier). Order: ORD-1015, amount=$199.99. Triage reasoning: Confidence=1.00 from signals: customer_found=✓, order_found=✓, product_found=✓, order_id_in_ticket=✓, return_deadline_known=✓, refund_not_already_done=✓, product_returnable=✓, classification_specific=. Recommended: human specialist review.",
+          "assigned_to": "Support Specialist",
+          "timestamp": "2026-04-19T12:57:56.779029Z"
+        },
+        "reasoning": "Escalated (urgent): Issue: Damaged coffee maker. Customer: Emma Collins (vip tier). Order: ORD-1015,",
+        "confidence": 1.0
+      },
+      {
+        "timestamp": "2026-04-19T12:57:56.780324Z",
+        "step": "send_reply",
+        "input": {
+          "ticket_id": "TKT-015"
+        },
+        "output": {
+          "sent": true,
+          "ticket_id": "TKT-015",
+          "preview": "Hi Emma, your case has been escalated with urgent priority to a specialist who will contact you within 2 hours. Referenc…"
+        },
+        "reasoning": "Reply sent for TKT-015",
+        "confidence": 1.0
+      },
+      {
+        "timestamp": "2026-04-19T12:57:56.780421Z",
+        "step": "reply",
+        "input": {
+          "ticket_id": "TKT-015",
+          "reply_length": 131
+        },
+        "output": {
+          "sent": true
+        },
+        "reasoning": "Final reply sent for TKT-015 — sent=True",
+        "confidence": 1.0
+      },
+      {
+        "timestamp": "2026-04-19T12:57:56.780834Z",
+        "step": "ticket_complete",
+        "input": {
+          "ticket_id": "TKT-015"
+        },
+        "output": {
+          "ticket_id": "TKT-015",
+          "classification": "warranty",
+          "escalated": true,
+          "refund_issued": null,
+          "tool_call_count": 6,
+          "confidence": 1.0,
+          "urgency": "urgent",
+          "action_taken": "escalated",
+          "reply_sent": true
+        },
+        "reasoning": "Ticket TKT-015 complete — class=warranty action=escalated tool_calls=6 escalated=True conf=1.00",
+        "confidence": 1.0
+      }
+    ]
+  },
+  {
+    "ticket_id": "TKT-016",
+    "audit_steps": [
+      {
+        "timestamp": "2026-04-19T12:58:15.069281Z",
+        "step": "ticket_ingested",
+        "input": {
+          "ticket_id": "TKT-016",
+          "source": "email"
+        },
+        "output": {
+          "subject": "Refund request"
+        },
+        "reasoning": "Ticket TKT-016 ingested: 'Refund request'",
+        "confidence": 1.0
+      },
+      {
+        "timestamp": "2026-04-19T12:58:15.078621Z",
+        "step": "ingest",
+        "input": {
+          "ticket_id": "TKT-016",
+          "subject": "Refund request"
+        },
+        "output": {
+          "order_ids": [],
+          "primary_order_id": null
+        },
+        "reasoning": "Parsed ticket — found 0 order ID(s): []",
+        "confidence": 1.0
+      },
+      {
+        "timestamp": "2026-04-19T12:58:15.941816Z",
+        "step": "escalate",
+        "input": {
+          "ticket_id": "TKT-016",
+          "priority": "high"
+        },
+        "output": {
+          "escalated": true,
+          "ticket_id": "TKT-016",
+          "priority": "high",
+          "summary": "Issue: Refund request. Customer: ? (? tier). Order: , amount=$0.00. Triage reasoning: Confidence=0.38 from signals: customer_found=✗, order_found=✗, product_found=✗, order_id_in_ticket=✗, return_deadline_known=✗, refund_not_already_done=✓, product_returnable=✓, classification_specific=. Recommended: human specialist review.",
+          "assigned_to": "Support Specialist",
+          "timestamp": "2026-04-19T12:58:15.941812Z"
+        },
+        "reasoning": "Escalated (high): Issue: Refund request. Customer: ? (? tier). Order: , amount=$0.00. Triage reaso",
+        "confidence": 1.0
+      },
+      {
+        "timestamp": "2026-04-19T12:58:15.942220Z",
+        "step": "send_reply",
+        "input": {
+          "ticket_id": "TKT-016"
+        },
+        "output": {
+          "sent": true,
+          "ticket_id": "TKT-016",
+          "preview": "Hi there, your case has been escalated with high priority to a specialist who will contact you within 24 hours. Referenc…"
+        },
+        "reasoning": "Reply sent for TKT-016",
+        "confidence": 1.0
+      },
+      {
+        "timestamp": "2026-04-19T12:58:15.942262Z",
+        "step": "reply",
+        "input": {
+          "ticket_id": "TKT-016",
+          "reply_length": 131
+        },
+        "output": {
+          "sent": true
+        },
+        "reasoning": "Final reply sent for TKT-016 — sent=True",
+        "confidence": 1.0
+      },
+      {
+        "timestamp": "2026-04-19T12:58:15.942498Z",
+        "step": "ticket_complete",
+        "input": {
+          "ticket_id": "TKT-016"
+        },
+        "output": {
+          "ticket_id": "TKT-016",
+          "classification": "refund",
+          "escalated": true,
+          "refund_issued": null,
+          "tool_call_count": 6,
+          "confidence": 0.375,
+          "urgency": "high",
+          "action_taken": "escalated",
+          "reply_sent": true
+        },
+        "reasoning": "Ticket TKT-016 complete — class=refund action=escalated tool_calls=6 escalated=True conf=0.38",
+        "confidence": 0.375
+      }
+    ]
+  },
+  {
+    "ticket_id": "TKT-017",
+    "audit_steps": [
+      {
+        "timestamp": "2026-04-19T12:58:15.074938Z",
+        "step": "ticket_ingested",
+        "input": {
+          "ticket_id": "TKT-017",
+          "source": "ticket_queue"
+        },
+        "output": {
+          "subject": "Refund for shoes"
+        },
+        "reasoning": "Ticket TKT-017 ingested: 'Refund for shoes'",
+        "confidence": 1.0
+      },
+      {
+        "timestamp": "2026-04-19T12:58:15.079017Z",
+        "step": "ingest",
+        "input": {
+          "ticket_id": "TKT-017",
+          "subject": "Refund for shoes"
+        },
+        "output": {
+          "order_ids": [
+            "ORD-9999"
+          ],
+          "primary_order_id": "ORD-9999"
+        },
+        "reasoning": "Parsed ticket — found 1 order ID(s): ['ORD-9999']",
+        "confidence": 1.0
+      },
+      {
+        "timestamp": "2026-04-19T12:58:16.723171Z",
+        "step": "send_reply",
+        "input": {
+          "ticket_id": "TKT-017"
+        },
+        "output": {
+          "sent": true,
+          "ticket_id": "TKT-017",
+          "preview": "Dear David,\n\nI understand your concern and apologize for any inconvenience. However, I couldn't find any order informati…"
+        },
+        "reasoning": "Reply sent for TKT-017",
+        "confidence": 1.0
+      },
+      {
+        "timestamp": "2026-04-19T12:58:16.723247Z",
+        "step": "reply",
+        "input": {
+          "ticket_id": "TKT-017",
+          "reply_length": 337
+        },
+        "output": {
+          "sent": true
+        },
+        "reasoning": "Final reply sent for TKT-017 — sent=True",
+        "confidence": 1.0
+      },
+      {
+        "timestamp": "2026-04-19T12:58:16.723616Z",
+        "step": "ticket_complete",
+        "input": {
+          "ticket_id": "TKT-017"
+        },
+        "output": {
+          "ticket_id": "TKT-017",
+          "classification": "refund",
+          "escalated": false,
+          "refund_issued": null,
+          "tool_call_count": 6,
+          "confidence": 0.625,
+          "urgency": "high",
+          "action_taken": "refund_denied",
+          "reply_sent": true
+        },
+        "reasoning": "Ticket TKT-017 complete — class=refund action=refund_denied tool_calls=6 escalated=False conf=0.62",
+        "confidence": 0.625
+      }
+    ]
+  },
+  {
+    "ticket_id": "TKT-018",
+    "audit_steps": [
+      {
+        "timestamp": "2026-04-19T12:58:15.077056Z",
+        "step": "ticket_ingested",
+        "input": {
+          "ticket_id": "TKT-018",
+          "source": "email"
+        },
+        "output": {
+          "subject": "Urgent refund needed"
+        },
+        "reasoning": "Ticket TKT-018 ingested: 'Urgent refund needed'",
+        "confidence": 1.0
+      },
+      {
+        "timestamp": "2026-04-19T12:58:15.080830Z",
+        "step": "ingest",
+        "input": {
+          "ticket_id": "TKT-018",
+          "subject": "Urgent refund needed"
+        },
+        "output": {
+          "order_ids": [
+            "ORD-1002"
+          ],
+          "primary_order_id": "ORD-1002"
+        },
+        "reasoning": "Parsed ticket — found 1 order ID(s): ['ORD-1002']",
+        "confidence": 1.0
+      },
+      {
+        "timestamp": "2026-04-19T12:58:15.897540Z",
+        "step": "escalate",
+        "input": {
+          "ticket_id": "TKT-018",
+          "priority": "urgent"
+        },
+        "output": {
+          "escalated": true,
+          "ticket_id": "TKT-018",
+          "priority": "urgent",
+          "summary": "Issue: Urgent refund needed. Customer: Bob Mendes (standard tier). Order: ORD-1002, amount=$249.99. Triage reasoning: Confidence=1.00 from signals: customer_found=✓, order_found=✓, product_found=✓, order_id_in_ticket=✓, return_deadline_known=✓, refund_not_already_done=✓, product_returnable=✓, classification_specific=. Recommended: human specialist review.",
+          "assigned_to": "Support Specialist",
+          "timestamp": "2026-04-19T12:58:15.897532Z"
+        },
+        "reasoning": "Escalated (urgent): Issue: Urgent refund needed. Customer: Bob Mendes (standard tier). Order: ORD-10",
+        "confidence": 1.0
+      },
+      {
+        "timestamp": "2026-04-19T12:58:15.898931Z",
+        "step": "send_reply",
+        "input": {
+          "ticket_id": "TKT-018"
+        },
+        "output": {
+          "sent": true,
+          "ticket_id": "TKT-018",
+          "preview": "Hi Bob, your case has been escalated with urgent priority to a specialist who will contact you within 2 hours. Reference…"
+        },
+        "reasoning": "Reply sent for TKT-018",
+        "confidence": 1.0
+      },
+      {
+        "timestamp": "2026-04-19T12:58:15.899036Z",
+        "step": "reply",
+        "input": {
+          "ticket_id": "TKT-018",
+          "reply_length": 130
+        },
+        "output": {
+          "sent": true
+        },
+        "reasoning": "Final reply sent for TKT-018 — sent=True",
+        "confidence": 1.0
+      },
+      {
+        "timestamp": "2026-04-19T12:58:15.899484Z",
+        "step": "ticket_complete",
+        "input": {
+          "ticket_id": "TKT-018"
+        },
+        "output": {
+          "ticket_id": "TKT-018",
+          "classification": "refund",
+          "escalated": true,
+          "refund_issued": null,
+          "tool_call_count": 6,
+          "confidence": 1.0,
+          "urgency": "urgent",
+          "action_taken": "escalated",
+          "reply_sent": true
+        },
+        "reasoning": "Ticket TKT-018 complete — class=refund action=escalated tool_calls=6 escalated=True conf=1.00",
+        "confidence": 1.0
+      }
+    ]
+  },
+  {
+    "ticket_id": "TKT-019",
+    "audit_steps": [
+      {
+        "timestamp": "2026-04-19T12:58:31.759281Z",
+        "step": "ticket_ingested",
+        "input": {
+          "ticket_id": "TKT-019",
+          "source": "ticket_queue"
+        },
+        "output": {
+          "subject": "General question about returns"
+        },
+        "reasoning": "Ticket TKT-019 ingested: 'General question about returns'",
+        "confidence": 1.0
+      },
+      {
+        "timestamp": "2026-04-19T12:58:31.783107Z",
+        "step": "ingest",
+        "input": {
+          "ticket_id": "TKT-019",
+          "subject": "General question about returns"
+        },
+        "output": {
+          "order_ids": [],
+          "primary_order_id": null
+        },
+        "reasoning": "Parsed ticket — found 0 order ID(s): []",
+        "confidence": 1.0
+      },
+      {
+        "timestamp": "2026-04-19T12:58:33.329777Z",
+        "step": "send_reply",
+        "input": {
+          "ticket_id": "TKT-019"
+        },
+        "output": {
+          "sent": true,
+          "ticket_id": "TKT-019",
+          "preview": "Hello Irene, thank you for reaching out. For electronics, our return policy requires the item to be in its original, unu…"
+        },
+        "reasoning": "Reply sent for TKT-019",
+        "confidence": 1.0
+      },
+      {
+        "timestamp": "2026-04-19T12:58:33.329849Z",
+        "step": "reply",
+        "input": {
+          "ticket_id": "TKT-019",
+          "reply_length": 405
+        },
+        "output": {
+          "sent": true
+        },
+        "reasoning": "Final reply sent for TKT-019 — sent=True",
+        "confidence": 1.0
+      },
+      {
+        "timestamp": "2026-04-19T12:58:33.330225Z",
+        "step": "ticket_complete",
+        "input": {
+          "ticket_id": "TKT-019"
+        },
+        "output": {
+          "ticket_id": "TKT-019",
+          "classification": "general",
+          "escalated": false,
+          "refund_issued": null,
+          "tool_call_count": 5,
+          "confidence": 0.625,
+          "urgency": "high",
+          "action_taken": "general_inquiry_answered",
+          "reply_sent": true
+        },
+        "reasoning": "Ticket TKT-019 complete — class=general action=general_inquiry_answered tool_calls=5 escalated=False conf=0.62",
+        "confidence": 0.625
+      }
+    ]
+  },
+  {
+    "ticket_id": "TKT-020",
+    "audit_steps": [
+      {
+        "timestamp": "2026-04-19T12:58:31.760550Z",
+        "step": "ticket_ingested",
+        "input": {
+          "ticket_id": "TKT-020",
+          "source": "email"
+        },
+        "output": {
+          "subject": "my thing is broken pls help"
+        },
+        "reasoning": "Ticket TKT-020 ingested: 'my thing is broken pls help'",
+        "confidence": 1.0
+      },
+      {
+        "timestamp": "2026-04-19T12:58:31.782133Z",
+        "step": "ingest",
+        "input": {
+          "ticket_id": "TKT-020",
+          "subject": "my thing is broken pls help"
+        },
+        "output": {
+          "order_ids": [],
+          "primary_order_id": null
+        },
+        "reasoning": "Parsed ticket — found 0 order ID(s): []",
+        "confidence": 1.0
+      },
+      {
+        "timestamp": "2026-04-19T12:58:33.368526Z",
+        "step": "send_reply",
+        "input": {
+          "ticket_id": "TKT-020"
+        },
+        "output": {
+          "sent": true,
+          "ticket_id": "TKT-020",
+          "preview": "Hi James, I'm sorry to hear that your BrewMaster 3000 Coffee Maker isn't working properly. I've checked on the status of…"
+        },
+        "reasoning": "Reply sent for TKT-020",
+        "confidence": 1.0
+      },
+      {
+        "timestamp": "2026-04-19T12:58:33.368552Z",
+        "step": "reply",
+        "input": {
+          "ticket_id": "TKT-020",
+          "reply_length": 361
+        },
+        "output": {
+          "sent": true
+        },
+        "reasoning": "Final reply sent for TKT-020 — sent=True",
+        "confidence": 1.0
+      },
+      {
+        "timestamp": "2026-04-19T12:58:33.368678Z",
+        "step": "ticket_complete",
+        "input": {
+          "ticket_id": "TKT-020"
+        },
+        "output": {
+          "ticket_id": "TKT-020",
+          "classification": "refund",
+          "escalated": false,
+          "refund_issued": true,
+          "tool_call_count": 7,
+          "confidence": 0.75,
+          "urgency": "high",
+          "action_taken": "refund_issued",
+          "reply_sent": true
+        },
+        "reasoning": "Ticket TKT-020 complete — class=refund action=refund_issued tool_calls=7 escalated=False conf=0.75",
+        "confidence": 0.75
+      }
+    ]
+  },
+  {
+    "ticket_id": "_system",
+    "audit_steps": [
+      {
+        "timestamp": "2026-04-19T12:56:49.123742Z",
+        "step": "graph_compiled",
+        "input": {
+          "nodes": [
+            "ingest",
+            "lookup",
+            "classifier",
+            "kb_search",
+            "triage",
+            "act",
+            "reply"
+          ]
+        },
+        "output": {},
+        "reasoning": "LangGraph StateGraph compiled successfully",
+        "confidence": 1.0
+      },
+      {
+        "timestamp": "2026-04-19T12:56:49.143275Z",
+        "step": "system_start",
+        "input": {
+          "total_tickets": 20,
+          "batch_size": 3,
+          "batch_delay": 15.0
+        },
+        "output": {},
+        "reasoning": "Starting: 20 tickets, batch_size=3, delay=15.0s",
+        "confidence": 1.0
+      },
+      {
+        "timestamp": "2026-04-19T12:56:49.150394Z",
+        "step": "get_customer",
+        "input": {
+          "email": "carol.nguyen@email.com"
+        },
+        "output": {
+          "customer_id": "C003",
+          "name": "Carol Nguyen",
+          "email": "carol.nguyen@email.com",
+          "phone": "+1-312-555-0143",
+          "tier": "premium",
+          "member_since": "2021-06-18",
+          "total_orders": 22,
+          "total_spent": 3120.75,
+          "address": {
+            "street": "45 Oak Lane",
+            "city": "Chicago",
+            "state": "IL",
+            "zip": "60601"
+          },
+          "notes": "Premium member. Prefers email communication."
+        },
+        "reasoning": "name=Carol Nguyen tier=premium",
+        "confidence": 1.0
+      },
+      {
+        "timestamp": "2026-04-19T12:56:49.151037Z",
+        "step": "get_customer",
+        "input": {
+          "email": "bob.mendes@email.com"
+        },
+        "output": {
+          "customer_id": "C002",
+          "name": "Bob Mendes",
+          "email": "bob.mendes@email.com",
+          "phone": "+1-212-555-0198",
+          "tier": "standard",
+          "member_since": "2023-10-05",
+          "total_orders": 3,
+          "total_spent": 210.0,
+          "address": {
+            "street": "88 Birch Street",
+            "city": "New York",
+            "state": "NY",
+            "zip": "10001"
+          },
+          "notes": "New customer. No prior refund history."
+        },
+        "reasoning": "name=Bob Mendes tier=standard",
+        "confidence": 1.0
+      },
+      {
+        "timestamp": "2026-04-19T12:56:49.151087Z",
+        "step": "get_order",
+        "input": {
+          "order_id": "ORD-1003"
+        },
+        "output": {
+          "order_id": "ORD-1003",
+          "customer_id": "C003",
+          "product_id": "P003",
+          "quantity": 1,
+          "amount": 199.99,
+          "status": "delivered",
+          "order_date": "2024-01-05",
+          "delivery_date": "2024-01-09",
+          "return_deadline": "2024-02-08",
+          "refund_status": null,
+          "notes": "Return window has expired. Warranty still active until 2026-01-09."
+        },
+        "reasoning": "status=delivered",
+        "confidence": 1.0
+      },
+      {
+        "timestamp": "2026-04-19T12:56:49.151304Z",
+        "step": "get_customer",
+        "input": {
+          "email": "alice.turner@email.com"
+        },
+        "output": {
+          "customer_id": "C001",
+          "name": "Alice Turner",
+          "email": "alice.turner@email.com",
+          "phone": "+1-415-555-0101",
+          "tier": "vip",
+          "member_since": "2019-03-12",
+          "total_orders": 47,
+          "total_spent": 6840.5,
+          "address": {
+            "street": "12 Maple Avenue",
+            "city": "San Francisco",
+            "state": "CA",
+            "zip": "94102"
+          },
+          "notes": "Long-standing VIP. Has had 2 refunds in the past year, both approved."
+        },
+        "reasoning": "name=Alice Turner tier=vip",
+        "confidence": 1.0
+      },
+      {
+        "timestamp": "2026-04-19T12:56:49.151332Z",
+        "step": "get_order",
+        "input": {
+          "order_id": "ORD-1002"
+        },
+        "output": {
+          "order_id": "ORD-1002",
+          "customer_id": "C002",
+          "product_id": "P006",
+          "quantity": 1,
+          "amount": 249.99,
+          "status": "delivered",
+          "order_date": "2024-03-01",
+          "delivery_date": "2024-03-04",
+          "return_deadline": "2024-03-19",
+          "refund_status": null,
+          "notes": "High-value item. 15-day return window applies."
+        },
+        "reasoning": "status=delivered",
+        "confidence": 1.0
+      },
+      {
+        "timestamp": "2026-04-19T12:56:49.151367Z",
+        "step": "get_product",
+        "input": {
+          "product_id": "P003"
+        },
+        "output": {
+          "product_id": "P003",
+          "name": "BrewMaster 3000 Coffee Maker",
+          "category": "home_appliances",
+          "price": 199.99,
+          "warranty_months": 24,
+          "return_window_days": 30,
+          "returnable": true,
+          "notes": "Warranty covers manufacturing defects only. Does not cover user damage."
+        },
+        "reasoning": "name=BrewMaster 3000 Coffee Maker",
+        "confidence": 1.0
+      },
+      {
+        "timestamp": "2026-04-19T12:56:49.151424Z",
+        "step": "get_product",
+        "input": {
+          "product_id": "P006"
+        },
+        "output": {
+          "product_id": "P006",
+          "name": "PulseX Smart Watch",
+          "category": "electronics",
+          "price": 249.99,
+          "warranty_months": 12,
+          "return_window_days": 15,
+          "returnable": true,
+          "notes": "Only 15-day return window due to high-value electronics policy. Warranty covers hardware defects."
+        },
+        "reasoning": "name=PulseX Smart Watch",
+        "confidence": 1.0
+      },
+      {
+        "timestamp": "2026-04-19T12:56:49.151444Z",
+        "step": "lookup",
+        "input": {
+          "email": "carol.nguyen@email.com",
+          "order_id": "ORD-1003"
+        },
+        "output": {
+          "customer_found": true,
+          "order_found": true,
+          "product_found": true,
+          "tool_calls": 3
+        },
+        "reasoning": "Lookup complete: 3 tool calls — customer=✓ order=✓ product=✓",
+        "confidence": 0.9
+      },
+      {
+        "timestamp": "2026-04-19T12:56:49.151477Z",
+        "step": "lookup",
+        "input": {
+          "email": "bob.mendes@email.com",
+          "order_id": "ORD-1002"
+        },
+        "output": {
+          "customer_found": true,
+          "order_found": true,
+          "product_found": true,
+          "tool_calls": 3
+        },
+        "reasoning": "Lookup complete: 3 tool calls — customer=✓ order=✓ product=✓",
+        "confidence": 0.9
+      },
+      {
+        "timestamp": "2026-04-19T12:56:49.928687Z",
+        "step": "classifier",
+        "input": {
+          "subject": "I want to return my watch",
+          "tier": "standard",
+          "order_status": "delivered",
+          "amount": 249.99
+        },
+        "output": {
+          "classification": "refund"
+        },
+        "reasoning": "Context-aware classification → 'refund'",
+        "confidence": 0.9
+      },
+      {
+        "timestamp": "2026-04-19T12:56:49.931135Z",
+        "step": "search_knowledge_base",
+        "input": {
+          "query": "refund I want to return my watch Hello, I received my smart watch on March 4th (order ORD-1002) but I don't like it. Can I return it "
+        },
+        "output": {
+          "sections": [
+            "1. Return Policy",
+            "8. Common FAQs"
+          ]
+        },
+        "reasoning": "Matched 2 sections for: 'refund I want to return my watch Hello, I received my smart '",
+        "confidence": 1.0
+      },
+      {
+        "timestamp": "2026-04-19T12:56:49.931244Z",
+        "step": "kb_search",
+        "input": {
+          "query": "refund I want to return my watch Hello, I received my smart watch on March 4th (order ORD-1002) but ",
+          "classification": "refund"
+        },
+        "output": {
+          "result_chars": 2399
+        },
+        "reasoning": "KB policy fetched for classification 'refund'",
+        "confidence": 1.0
+      },
+      {
+        "timestamp": "2026-04-19T12:56:49.931825Z",
+        "step": "triage",
+        "input": {
+          "classification": "refund",
+          "tier": "standard",
+          "amount": 249.99,
+          "signals": {
+            "customer_found": true,
+            "order_found": true,
+            "product_found": true,
+            "order_id_in_ticket": true,
+            "return_deadline_known": true,
+            "refund_not_already_done": true,
+            "product_returnable": true,
+            "classification_specific": true
+          }
+        },
+        "output": {
+          "confidence": 1.0,
+          "urgency": "urgent",
+          "resolvable": false,
+          "reasons": [
+            "refund amount $249.99 > $200 auto-limit"
+          ]
+        },
+        "reasoning": "Confidence=1.00 from signals: customer_found=✓, order_found=✓, product_found=✓, order_id_in_ticket=✓, return_deadline_known=✓, refund_not_already_done=✓, product_returnable=✓, classification_specific=✓. Urgency=urgent. Resolvable=False — CANNOT resolve because: refund amount $249.99 > $200 auto-limit",
+        "confidence": 1.0
+      },
+      {
+        "timestamp": "2026-04-19T12:56:49.932306Z",
+        "step": "act",
+        "input": {
+          "classification": "refund",
+          "resolvable": false,
+          "order_id": "ORD-1002",
+          "amount": 249.99
+        },
+        "output": {
+          "action_taken": "escalated",
+          "escalated": true,
+          "refund_issued": null,
+          "tool_calls": 5
+        },
+        "reasoning": "Action: escalated — Confidence=1.00 from signals: customer_found=✓, order_found=✓, product_found=✓, order_id_in_ticket=✓, return_deadline_kn",
+        "confidence": 1.0
+      },
+      {
+        "timestamp": "2026-04-19T12:56:49.955344Z",
+        "step": "classifier",
+        "input": {
+          "subject": "Coffee maker stopped working",
+          "tier": "premium",
+          "order_status": "delivered",
+          "amount": 199.99
+        },
+        "output": {
+          "classification": "warranty"
+        },
+        "reasoning": "Context-aware classification → 'warranty'",
+        "confidence": 0.9
+      },
+      {
+        "timestamp": "2026-04-19T12:56:49.956072Z",
+        "step": "search_knowledge_base",
+        "input": {
+          "query": "warranty Coffee maker stopped working My BrewMaster coffee maker (ORD-1003) stopped heating water about 2 weeks ago. It's clearly a defect"
+        },
+        "output": {
+          "sections": [
+            "3. Warranty Policy",
+            "7. Escalation Guidelines"
+          ]
+        },
+        "reasoning": "Matched 2 sections for: 'warranty Coffee maker stopped working My BrewMaster coffee m'",
+        "confidence": 1.0
+      },
+      {
+        "timestamp": "2026-04-19T12:56:49.956124Z",
+        "step": "kb_search",
+        "input": {
+          "query": "warranty Coffee maker stopped working My BrewMaster coffee maker (ORD-1003) stopped heating water ab",
+          "classification": "warranty"
+        },
+        "output": {
+          "result_chars": 1606
+        },
+        "reasoning": "KB policy fetched for classification 'warranty'",
+        "confidence": 1.0
+      },
+      {
+        "timestamp": "2026-04-19T12:56:49.956418Z",
+        "step": "triage",
+        "input": {
+          "classification": "warranty",
+          "tier": "premium",
+          "amount": 199.99,
+          "signals": {
+            "customer_found": true,
+            "order_found": true,
+            "product_found": true,
+            "order_id_in_ticket": true,
+            "return_deadline_known": true,
+            "refund_not_already_done": true,
+            "product_returnable": true,
+            "classification_specific": true
+          }
+        },
+        "output": {
+          "confidence": 1.0,
+          "urgency": "high",
+          "resolvable": false,
+          "reasons": [
+            "warranty claims always escalate to warranty team"
+          ]
+        },
+        "reasoning": "Confidence=1.00 from signals: customer_found=✓, order_found=✓, product_found=✓, order_id_in_ticket=✓, return_deadline_known=✓, refund_not_already_done=✓, product_returnable=✓, classification_specific=✓. Urgency=high. Resolvable=False — CANNOT resolve because: warranty claims always escalate to warranty team",
+        "confidence": 1.0
+      },
+      {
+        "timestamp": "2026-04-19T12:56:49.956732Z",
+        "step": "act",
+        "input": {
+          "classification": "warranty",
+          "resolvable": false,
+          "order_id": "ORD-1003",
+          "amount": 199.99
+        },
+        "output": {
+          "action_taken": "escalated",
+          "escalated": true,
+          "refund_issued": null,
+          "tool_calls": 5
+        },
+        "reasoning": "Action: escalated — Confidence=1.00 from signals: customer_found=✓, order_found=✓, product_found=✓, order_id_in_ticket=✓, return_deadline_kn",
+        "confidence": 1.0
+      },
+      {
+        "timestamp": "2026-04-19T12:56:50.156536Z",
+        "step": "get_order",
+        "input": {
+          "order_id": "ORD-1001"
+        },
+        "output": {
+          "order_id": "ORD-1001",
+          "customer_id": "C001",
+          "product_id": "P001",
+          "quantity": 1,
+          "amount": 129.99,
+          "status": "delivered",
+          "order_date": "2024-02-10",
+          "delivery_date": "2024-02-14",
+          "return_deadline": "2024-03-15",
+          "refund_status": null,
+          "notes": "Delivered on time. No issues logged at delivery."
+        },
+        "reasoning": "status=delivered",
+        "confidence": 1.0
+      },
+      {
+        "timestamp": "2026-04-19T12:56:50.156639Z",
+        "step": "get_product",
+        "input": {
+          "product_id": "P001"
+        },
+        "output": {
+          "product_id": "P001",
+          "name": "ProSound Wireless Headphones",
+          "category": "electronics",
+          "price": 129.99,
+          "warranty_months": 12,
+          "return_window_days": 30,
+          "returnable": true,
+          "notes": "Return not accepted if seal is broken unless item is defective."
+        },
+        "reasoning": "name=ProSound Wireless Headphones",
+        "confidence": 1.0
+      },
+      {
+        "timestamp": "2026-04-19T12:56:50.156665Z",
+        "step": "lookup",
+        "input": {
+          "email": "alice.turner@email.com",
+          "order_id": "ORD-1001"
+        },
+        "output": {
+          "customer_found": true,
+          "order_found": true,
+          "product_found": true,
+          "tool_calls": 3
+        },
+        "reasoning": "Lookup complete: 3 tool calls — customer=✓ order=✓ product=✓",
+        "confidence": 0.9
+      },
+      {
+        "timestamp": "2026-04-19T12:56:50.377450Z",
+        "step": "classifier",
+        "input": {
+          "subject": "Refund request for headphones",
+          "tier": "vip",
+          "order_status": "delivered",
+          "amount": 129.99
+        },
+        "output": {
+          "classification": "refund"
+        },
+        "reasoning": "Context-aware classification → 'refund'",
+        "confidence": 0.9
+      },
+      {
+        "timestamp": "2026-04-19T12:56:50.377883Z",
+        "step": "search_knowledge_base",
+        "input": {
+          "query": "refund Refund request for headphones Hi, I bought a pair of headphones last month but they stopped working after a week. Order number is "
+        },
+        "output": {
+          "sections": [
+            "3. Warranty Policy",
+            "8. Common FAQs"
+          ]
+        },
+        "reasoning": "Matched 2 sections for: 'refund Refund request for headphones Hi, I bought a pair of '",
+        "confidence": 1.0
+      },
+      {
+        "timestamp": "2026-04-19T12:56:50.377913Z",
+        "step": "kb_search",
+        "input": {
+          "query": "refund Refund request for headphones Hi, I bought a pair of headphones last month but they stopped w",
+          "classification": "refund"
+        },
+        "output": {
+          "result_chars": 1808
+        },
+        "reasoning": "KB policy fetched for classification 'refund'",
+        "confidence": 1.0
+      },
+      {
+        "timestamp": "2026-04-19T12:56:50.378071Z",
+        "step": "triage",
+        "input": {
+          "classification": "refund",
+          "tier": "vip",
+          "amount": 129.99,
+          "signals": {
+            "customer_found": true,
+            "order_found": true,
+            "product_found": true,
+            "order_id_in_ticket": true,
+            "return_deadline_known": true,
+            "refund_not_already_done": true,
+            "product_returnable": true,
+            "classification_specific": true
+          }
+        },
+        "output": {
+          "confidence": 1.0,
+          "urgency": "urgent",
+          "resolvable": true,
+          "reasons": []
+        },
+        "reasoning": "Confidence=1.00 from signals: customer_found=✓, order_found=✓, product_found=✓, order_id_in_ticket=✓, return_deadline_known=✓, refund_not_already_done=✓, product_returnable=✓, classification_specific=✓. Urgency=urgent. Resolvable=True",
+        "confidence": 1.0
+      },
+      {
+        "timestamp": "2026-04-19T12:56:50.378233Z",
+        "step": "check_refund_eligibility",
+        "input": {
+          "order_id": "ORD-1001"
+        },
+        "output": {
+          "eligible": false,
+          "reason": "Return window expired on 2024-03-15",
+          "order_id": "ORD-1001",
+          "order_amount": 129.99,
+          "order_status": "delivered",
+          "return_deadline": "2024-03-15"
+        },
+        "reasoning": "eligible=False: Return window expired on 2024-03-15",
+        "confidence": 0.9
+      },
+      {
+        "timestamp": "2026-04-19T12:56:50.893835Z",
+        "step": "act",
+        "input": {
+          "classification": "refund",
+          "resolvable": true,
+          "order_id": "ORD-1001",
+          "amount": 129.99
+        },
+        "output": {
+          "action_taken": "escalated",
+          "escalated": true,
+          "refund_issued": null,
+          "tool_calls": 6
+        },
+        "reasoning": "Action: escalated — Issue: refund request — Refund request for headphones. Customer: Alice Turner (vip tier). Order: ORD",
+        "confidence": 1.0
+      },
+      {
+        "timestamp": "2026-04-19T12:57:05.925020Z",
+        "step": "get_customer",
+        "input": {
+          "email": "emma.collins@email.com"
+        },
+        "output": {
+          "customer_id": "C005",
+          "name": "Emma Collins",
+          "email": "emma.collins@email.com",
+          "phone": "+1-512-555-0165",
+          "tier": "vip",
+          "member_since": "2018-11-02",
+          "total_orders": 91,
+          "total_spent": 14220.0,
+          "address": {
+            "street": "7 Sunset Blvd",
+            "city": "Austin",
+            "state": "TX",
+            "zip": "73301"
+          },
+          "notes": "Highest lifetime value customer. Has a standing exception for extended return windows pre-approved by management."
+        },
+        "reasoning": "name=Emma Collins tier=vip",
+        "confidence": 1.0
+      },
+      {
+        "timestamp": "2026-04-19T12:57:05.925584Z",
+        "step": "get_customer",
+        "input": {
+          "email": "david.park@email.com"
+        },
+        "output": {
+          "customer_id": "C004",
+          "name": "David Park",
+          "email": "david.park@email.com",
+          "phone": "+1-206-555-0177",
+          "tier": "standard",
+          "member_since": "2022-01-30",
+          "total_orders": 9,
+          "total_spent": 780.2,
+          "address": {
+            "street": "300 Pine Road",
+            "city": "Seattle",
+            "state": "WA",
+            "zip": "98101"
+          },
+          "notes": "Has raised 1 chargeback dispute in the past — resolved in ShopWave's favour."
+        },
+        "reasoning": "name=David Park tier=standard",
+        "confidence": 1.0
+      },
+      {
+        "timestamp": "2026-04-19T12:57:05.925980Z",
+        "step": "get_customer",
+        "input": {
+          "email": "frank.osei@email.com"
+        },
+        "output": {
+          "customer_id": "C006",
+          "name": "Frank Osei",
+          "email": "frank.osei@email.com",
+          "phone": "+1-404-555-0112",
+          "tier": "standard",
+          "member_since": "2024-01-14",
+          "total_orders": 1,
+          "total_spent": 49.99,
+          "address": {
+            "street": "19 Elm Street",
+            "city": "Atlanta",
+            "state": "GA",
+            "zip": "30301"
+          },
+          "notes": "Brand new customer. First and only order."
+        },
+        "reasoning": "name=Frank Osei tier=standard",
+        "confidence": 1.0
+      },
+      {
+        "timestamp": "2026-04-19T12:57:05.926088Z",
+        "step": "get_order",
+        "input": {
+          "order_id": "ORD-1005"
+        },
+        "output": {
+          "order_id": "ORD-1005",
+          "customer_id": "C005",
+          "product_id": "P008",
+          "quantity": 2,
+          "amount": 159.98,
+          "status": "delivered",
+          "order_date": "2023-12-15",
+          "delivery_date": "2023-12-19",
+          "return_deadline": "2024-01-18",
+          "refund_status": null,
+          "notes": "Return window expired. VIP customer with pre-approved extended return exception on file."
+        },
+        "reasoning": "status=delivered",
+        "confidence": 1.0
+      },
+      {
+        "timestamp": "2026-04-19T12:57:05.926154Z",
+        "step": "get_order",
+        "input": {
+          "order_id": "ORD-1004"
+        },
+        "output": {
+          "order_id": "ORD-1004",
+          "customer_id": "C004",
+          "product_id": "P002",
+          "quantity": 1,
+          "amount": 89.99,
+          "status": "delivered",
+          "order_date": "2024-02-20",
+          "delivery_date": "2024-02-24",
+          "return_deadline": "2024-03-25",
+          "refund_status": null,
+          "notes": "Customer requested size exchange via chat but no formal return initiated."
+        },
+        "reasoning": "status=delivered",
+        "confidence": 1.0
+      },
+      {
+        "timestamp": "2026-04-19T12:57:05.926219Z",
+        "step": "get_orders_by_customer",
+        "input": {
+          "customer_id": "C006"
+        },
+        "output": {
+          "count": 1
+        },
+        "reasoning": "Found 1 orders",
+        "confidence": 1.0
+      },
+      {
+        "timestamp": "2026-04-19T12:57:05.926373Z",
+        "step": "get_product",
+        "input": {
+          "product_id": "P008"
+        },
+        "output": {
+          "product_id": "P008",
+          "name": "BoomBox Mini Bluetooth Speaker",
+          "category": "electronics",
+          "price": 79.99,
+          "warranty_months": 12,
+          "return_window_days": 30,
+          "returnable": true,
+          "notes": "Return not accepted if device has been registered online."
+        },
+        "reasoning": "name=BoomBox Mini Bluetooth Speaker",
+        "confidence": 1.0
+      },
+      {
+        "timestamp": "2026-04-19T12:57:05.926467Z",
+        "step": "get_product",
+        "input": {
+          "product_id": "P002"
+        },
+        "output": {
+          "product_id": "P002",
+          "name": "SwiftRun Pro Running Shoes",
+          "category": "footwear",
+          "price": 89.99,
+          "warranty_months": 0,
+          "return_window_days": 30,
+          "returnable": true,
+          "notes": "Must be unworn and in original packaging. No return if used outdoors."
+        },
+        "reasoning": "name=SwiftRun Pro Running Shoes",
+        "confidence": 1.0
+      },
+      {
+        "timestamp": "2026-04-19T12:57:05.926505Z",
+        "step": "get_product",
+        "input": {
+          "product_id": "P005"
+        },
+        "output": {
+          "product_id": "P005",
+          "name": "ZenFlow Yoga Mat",
+          "category": "sports",
+          "price": 39.99,
+          "warranty_months": 0,
+          "return_window_days": 30,
+          "returnable": true,
+          "notes": "Non-returnable if used. Hygiene policy applies."
+        },
+        "reasoning": "name=ZenFlow Yoga Mat",
+        "confidence": 1.0
+      },
+      {
+        "timestamp": "2026-04-19T12:57:05.926621Z",
+        "step": "lookup",
+        "input": {
+          "email": "emma.collins@email.com",
+          "order_id": "ORD-1005"
+        },
+        "output": {
+          "customer_found": true,
+          "order_found": true,
+          "product_found": true,
+          "tool_calls": 3
+        },
+        "reasoning": "Lookup complete: 3 tool calls — customer=✓ order=✓ product=✓",
+        "confidence": 0.9
+      },
+      {
+        "timestamp": "2026-04-19T12:57:05.926684Z",
+        "step": "lookup",
+        "input": {
+          "email": "david.park@email.com",
+          "order_id": "ORD-1004"
+        },
+        "output": {
+          "customer_found": true,
+          "order_found": true,
+          "product_found": true,
+          "tool_calls": 3
+        },
+        "reasoning": "Lookup complete: 3 tool calls — customer=✓ order=✓ product=✓",
+        "confidence": 0.9
+      },
+      {
+        "timestamp": "2026-04-19T12:57:05.926775Z",
+        "step": "lookup",
+        "input": {
+          "email": "frank.osei@email.com",
+          "order_id": null
+        },
+        "output": {
+          "customer_found": true,
+          "order_found": true,
+          "product_found": true,
+          "tool_calls": 3
+        },
+        "reasoning": "Lookup complete: 3 tool calls — customer=✓ order=✓ product=✓",
+        "confidence": 0.9
+      },
+      {
+        "timestamp": "2026-04-19T12:57:06.517914Z",
+        "step": "classifier",
+        "input": {
+          "subject": "I want to cancel",
+          "tier": "standard",
+          "order_status": "delivered",
+          "amount": 39.99
+        },
+        "output": {
+          "classification": "cancellation"
+        },
+        "reasoning": "Context-aware classification → 'cancellation'",
+        "confidence": 0.9
+      },
+      {
+        "timestamp": "2026-04-19T12:57:06.519373Z",
+        "step": "search_knowledge_base",
+        "input": {
+          "query": "cancellation I want to cancel Hey, I just placed an order and I want to cancel it. Can you do that?"
+        },
+        "output": {
+          "sections": [
+            "4. Order Cancellation Policy",
+            "8. Common FAQs"
+          ]
+        },
+        "reasoning": "Matched 2 sections for: 'cancellation I want to cancel Hey, I just placed an order an'",
+        "confidence": 1.0
+      },
+      {
+        "timestamp": "2026-04-19T12:57:06.519487Z",
+        "step": "kb_search",
+        "input": {
+          "query": "cancellation I want to cancel Hey, I just placed an order and I want to cancel it. Can you do that?",
+          "classification": "cancellation"
+        },
+        "output": {
+          "result_chars": 1278
+        },
+        "reasoning": "KB policy fetched for classification 'cancellation'",
+        "confidence": 1.0
+      },
+      {
+        "timestamp": "2026-04-19T12:57:06.521204Z",
+        "step": "triage",
+        "input": {
+          "classification": "cancellation",
+          "tier": "standard",
+          "amount": 39.99,
+          "signals": {
+            "customer_found": true,
+            "order_found": true,
+            "product_found": true,
+            "order_id_in_ticket": false,
+            "return_deadline_known": true,
+            "refund_not_already_done": true,
+            "product_returnable": true,
+            "classification_specific": true
+          }
+        },
+        "output": {
+          "confidence": 0.875,
+          "urgency": "medium",
+          "resolvable": true,
+          "reasons": []
+        },
+        "reasoning": "Confidence=0.88 from signals: customer_found=✓, order_found=✓, product_found=✓, order_id_in_ticket=✗, return_deadline_known=✓, refund_not_already_done=✓, product_returnable=✓, classification_specific=✓. Urgency=medium. Resolvable=True",
+        "confidence": 0.875
+      },
+      {
+        "timestamp": "2026-04-19T12:57:06.522005Z",
+        "step": "cancel_order",
+        "input": {
+          "order_id": "ORD-1006"
+        },
+        "output": {
+          "success": false,
+          "message": "Cannot cancel — status is 'delivered'. Only 'processing' orders can be cancelled."
+        },
+        "reasoning": "Cannot cancel — status is 'delivered'. Only 'processing' orders can be cancelled.",
+        "confidence": 1.0
+      },
+      {
+        "timestamp": "2026-04-19T12:57:06.522096Z",
+        "step": "act",
+        "input": {
+          "classification": "cancellation",
+          "resolvable": true,
+          "order_id": "ORD-1006",
+          "amount": 39.99
+        },
+        "output": {
+          "action_taken": "cancel_attempted",
+          "escalated": false,
+          "refund_issued": null,
+          "tool_calls": 5
+        },
+        "reasoning": "Action: cancel_attempted — Cannot cancel — status is 'delivered'. Only 'processing' orders can be cancelled.",
+        "confidence": 0.875
+      },
+      {
+        "timestamp": "2026-04-19T12:57:06.568447Z",
+        "step": "classifier",
+        "input": {
+          "subject": "Return request",
+          "tier": "vip",
+          "order_status": "delivered",
+          "amount": 159.98
+        },
+        "output": {
+          "classification": "refund"
+        },
+        "reasoning": "Context-aware classification → 'refund'",
+        "confidence": 0.9
+      },
+      {
+        "timestamp": "2026-04-19T12:57:06.569478Z",
+        "step": "search_knowledge_base",
+        "input": {
+          "query": "refund Return request Hi team, I'd like to return the two bluetooth speakers I ordered back in December (ORD-1005). I know"
+        },
+        "output": {
+          "sections": [
+            "1. Return Policy",
+            "2. Refund Policy"
+          ]
+        },
+        "reasoning": "Matched 2 sections for: 'refund Return request Hi team, I'd like to return the two bl'",
+        "confidence": 1.0
+      },
+      {
+        "timestamp": "2026-04-19T12:57:06.569556Z",
+        "step": "kb_search",
+        "input": {
+          "query": "refund Return request Hi team, I'd like to return the two bluetooth speakers I ordered back in Decem",
+          "classification": "refund"
+        },
+        "output": {
+          "result_chars": 2334
+        },
+        "reasoning": "KB policy fetched for classification 'refund'",
+        "confidence": 1.0
+      },
+      {
+        "timestamp": "2026-04-19T12:57:06.569970Z",
+        "step": "triage",
+        "input": {
+          "classification": "refund",
+          "tier": "vip",
+          "amount": 159.98,
+          "signals": {
+            "customer_found": true,
+            "order_found": true,
+            "product_found": true,
+            "order_id_in_ticket": true,
+            "return_deadline_known": true,
+            "refund_not_already_done": true,
+            "product_returnable": true,
+            "classification_specific": true
+          }
+        },
+        "output": {
+          "confidence": 1.0,
+          "urgency": "urgent",
+          "resolvable": true,
+          "reasons": []
+        },
+        "reasoning": "Confidence=1.00 from signals: customer_found=✓, order_found=✓, product_found=✓, order_id_in_ticket=✓, return_deadline_known=✓, refund_not_already_done=✓, product_returnable=✓, classification_specific=✓. Urgency=urgent. Resolvable=True",
+        "confidence": 1.0
+      },
+      {
+        "timestamp": "2026-04-19T12:57:06.570386Z",
+        "step": "check_refund_eligibility",
+        "input": {
+          "order_id": "ORD-1005"
+        },
+        "output": {
+          "eligible": true,
+          "reason": "VIP pre-approved extended return exception",
+          "order_id": "ORD-1005",
+          "order_amount": 159.98,
+          "order_status": "delivered",
+          "return_deadline": "2024-01-18"
+        },
+        "reasoning": "eligible=True: VIP pre-approved extended return exception",
+        "confidence": 0.9
+      },
+      {
+        "timestamp": "2026-04-19T12:57:06.572641Z",
+        "step": "classifier",
+        "input": {
+          "subject": "Wrong size delivered",
+          "tier": "standard",
+          "order_status": "delivered",
+          "amount": 89.99
+        },
+        "output": {
+          "classification": "refund"
+        },
+        "reasoning": "Context-aware classification → 'refund'",
+        "confidence": 0.9
+      },
+      {
+        "timestamp": "2026-04-19T12:57:06.573710Z",
+        "step": "search_knowledge_base",
+        "input": {
+          "query": "refund Wrong size delivered I ordered size 10 running shoes (ORD-1004) and received size 9. This is unacceptable. I need the cor"
+        },
+        "output": {
+          "sections": [
+            "1. Return Policy",
+            "5. Exchange Policy"
+          ]
+        },
+        "reasoning": "Matched 2 sections for: 'refund Wrong size delivered I ordered size 10 running shoes '",
+        "confidence": 1.0
+      },
+      {
+        "timestamp": "2026-04-19T12:57:06.573786Z",
+        "step": "kb_search",
+        "input": {
+          "query": "refund Wrong size delivered I ordered size 10 running shoes (ORD-1004) and received size 9. This is ",
+          "classification": "refund"
+        },
+        "output": {
+          "result_chars": 1771
+        },
+        "reasoning": "KB policy fetched for classification 'refund'",
+        "confidence": 1.0
+      },
+      {
+        "timestamp": "2026-04-19T12:57:06.574198Z",
+        "step": "triage",
+        "input": {
+          "classification": "refund",
+          "tier": "standard",
+          "amount": 89.99,
+          "signals": {
+            "customer_found": true,
+            "order_found": true,
+            "product_found": true,
+            "order_id_in_ticket": true,
+            "return_deadline_known": true,
+            "refund_not_already_done": true,
+            "product_returnable": true,
+            "classification_specific": true
+          }
+        },
+        "output": {
+          "confidence": 1.0,
+          "urgency": "high",
+          "resolvable": true,
+          "reasons": []
+        },
+        "reasoning": "Confidence=1.00 from signals: customer_found=✓, order_found=✓, product_found=✓, order_id_in_ticket=✓, return_deadline_known=✓, refund_not_already_done=✓, product_returnable=✓, classification_specific=✓. Urgency=high. Resolvable=True",
+        "confidence": 1.0
+      },
+      {
+        "timestamp": "2026-04-19T12:57:06.574545Z",
+        "step": "check_refund_eligibility",
+        "input": {
+          "order_id": "ORD-1004"
+        },
+        "output": {
+          "eligible": false,
+          "reason": "Return window expired on 2024-03-25",
+          "order_id": "ORD-1004",
+          "order_amount": 89.99,
+          "order_status": "delivered",
+          "return_deadline": "2024-03-25"
+        },
+        "reasoning": "eligible=False: Return window expired on 2024-03-25",
+        "confidence": 0.9
+      },
+      {
+        "timestamp": "2026-04-19T12:57:07.111009Z",
+        "step": "act",
+        "input": {
+          "classification": "refund",
+          "resolvable": true,
+          "order_id": "ORD-1004",
+          "amount": 89.99
+        },
+        "output": {
+          "action_taken": "refund_denied",
+          "escalated": false,
+          "refund_issued": null,
+          "tool_calls": 5
+        },
+        "reasoning": "Action: refund_denied — Return window expired on 2024-03-25",
+        "confidence": 1.0
+      },
+      {
+        "timestamp": "2026-04-19T12:57:07.141119Z",
+        "step": "issue_refund",
+        "input": {
+          "order_id": "ORD-1005",
+          "amount": 159.98
+        },
+        "output": {
+          "success": true,
+          "refund_id": "REF-ORD-1005-1776583627",
+          "message": "Refund of $159.98 initiated for ORD-1005",
+          "processing_time": "5-7 business days"
+        },
+        "reasoning": "Refund of $159.98 initiated for ORD-1005",
+        "confidence": 1.0
+      },
+      {
+        "timestamp": "2026-04-19T12:57:07.141156Z",
+        "step": "act",
+        "input": {
+          "classification": "refund",
+          "resolvable": true,
+          "order_id": "ORD-1005",
+          "amount": 159.98
+        },
+        "output": {
+          "action_taken": "refund_issued",
+          "escalated": false,
+          "refund_issued": true,
+          "tool_calls": 6
+        },
+        "reasoning": "Action: refund_issued — VIP pre-approved extended return exception",
+        "confidence": 1.0
+      },
+      {
+        "timestamp": "2026-04-19T12:57:22.170140Z",
+        "step": "get_customer",
+        "input": {
+          "email": "henry.marsh@email.com"
+        },
+        "output": {
+          "customer_id": "C008",
+          "name": "Henry Marsh",
+          "email": "henry.marsh@email.com",
+          "phone": "+1-303-555-0188",
+          "tier": "standard",
+          "member_since": "2022-05-19",
+          "total_orders": 14,
+          "total_spent": 1120.6,
+          "address": {
+            "street": "210 Cedar Drive",
+            "city": "Denver",
+            "state": "CO",
+            "zip": "80201"
+          },
+          "notes": "Regular customer. No flags."
+        },
+        "reasoning": "name=Henry Marsh tier=standard",
+        "confidence": 1.0
+      },
+      {
+        "timestamp": "2026-04-19T12:57:22.170264Z",
+        "step": "get_order",
+        "input": {
+          "order_id": "ORD-1008"
+        },
+        "output": {
+          "order_id": "ORD-1008",
+          "customer_id": "C008",
+          "product_id": "P007",
+          "quantity": 1,
+          "amount": 44.99,
+          "status": "delivered",
+          "order_date": "2024-03-05",
+          "delivery_date": "2024-03-08",
+          "return_deadline": "2024-04-07",
+          "refund_status": null,
+          "notes": "Item reported as damaged on arrival by customer via email. No formal claim opened."
+        },
+        "reasoning": "status=delivered",
+        "confidence": 1.0
+      },
+      {
+        "timestamp": "2026-04-19T12:57:22.170362Z",
+        "step": "get_product",
+        "input": {
+          "product_id": "P007"
+        },
+        "output": {
+          "product_id": "P007",
+          "name": "LumiDesk LED Desk Lamp",
+          "category": "home",
+          "price": 44.99,
+          "warranty_months": 12,
+          "return_window_days": 30,
+          "returnable": true,
+          "notes": "Standard return policy applies."
+        },
+        "reasoning": "name=LumiDesk LED Desk Lamp",
+        "confidence": 1.0
+      },
+      {
+        "timestamp": "2026-04-19T12:57:22.170442Z",
+        "step": "lookup",
+        "input": {
+          "email": "henry.marsh@email.com",
+          "order_id": "ORD-1008"
+        },
+        "output": {
+          "customer_found": true,
+          "order_found": true,
+          "product_found": true,
+          "tool_calls": 3
+        },
+        "reasoning": "Lookup complete: 3 tool calls — customer=✓ order=✓ product=✓",
+        "confidence": 0.9
+      },
+      {
+        "timestamp": "2026-04-19T12:57:22.178787Z",
+        "step": "get_customer",
+        "input": {
+          "email": "grace.patel@email.com"
+        },
+        "output": {
+          "customer_id": "C007",
+          "name": "Grace Patel",
+          "email": "grace.patel@email.com",
+          "phone": "+1-617-555-0134",
+          "tier": "premium",
+          "member_since": "2020-08-22",
+          "total_orders": 35,
+          "total_spent": 4890.0,
+          "address": {
+            "street": "56 Willow Way",
+            "city": "Boston",
+            "state": "MA",
+            "zip": "02101"
+          },
+          "notes": "Premium member. Has submitted 4 refund requests — all legitimate, all approved."
+        },
+        "reasoning": "name=Grace Patel tier=premium",
+        "confidence": 1.0
+      },
+      {
+        "timestamp": "2026-04-19T12:57:22.178970Z",
+        "step": "get_customer",
+        "input": {
+          "email": "irene.castillo@email.com"
+        },
+        "output": {
+          "customer_id": "C009",
+          "name": "Irene Castillo",
+          "email": "irene.castillo@email.com",
+          "phone": "+1-713-555-0156",
+          "tier": "premium",
+          "member_since": "2021-02-10",
+          "total_orders": 28,
+          "total_spent": 3670.9,
+          "address": {
+            "street": "88 Rosewood Court",
+            "city": "Houston",
+            "state": "TX",
+            "zip": "77001"
+          },
+          "notes": "Premium member. Has reported 2 damaged item incidents — both verified."
+        },
+        "reasoning": "name=Irene Castillo tier=premium",
+        "confidence": 1.0
+      },
+      {
+        "timestamp": "2026-04-19T12:57:22.179006Z",
+        "step": "get_order",
+        "input": {
+          "order_id": "ORD-1007"
+        },
+        "output": {
+          "order_id": "ORD-1007",
+          "customer_id": "C007",
+          "product_id": "P004",
+          "quantity": 1,
+          "amount": 49.99,
+          "status": "delivered",
+          "order_date": "2024-02-01",
+          "delivery_date": "2024-02-05",
+          "return_deadline": "2024-04-05",
+          "refund_status": null,
+          "notes": "60-day return window applies for this product category."
+        },
+        "reasoning": "status=delivered",
+        "confidence": 1.0
+      },
+      {
+        "timestamp": "2026-04-19T12:57:22.179035Z",
+        "step": "get_product",
+        "input": {
+          "product_id": "P004"
+        },
+        "output": {
+          "product_id": "P004",
+          "name": "ErgoLift Laptop Stand",
+          "category": "electronics_accessories",
+          "price": 49.99,
+          "warranty_months": 6,
+          "return_window_days": 60,
+          "returnable": true,
+          "notes": "Extended 60-day return window applies to this product category."
+        },
+        "reasoning": "name=ErgoLift Laptop Stand",
+        "confidence": 1.0
+      },
+      {
+        "timestamp": "2026-04-19T12:57:22.179053Z",
+        "step": "lookup",
+        "input": {
+          "email": "grace.patel@email.com",
+          "order_id": "ORD-1007"
+        },
+        "output": {
+          "customer_found": true,
+          "order_found": true,
+          "product_found": true,
+          "tool_calls": 3
+        },
+        "reasoning": "Lookup complete: 3 tool calls — customer=✓ order=✓ product=✓",
+        "confidence": 0.9
+      },
+      {
+        "timestamp": "2026-04-19T12:57:22.179756Z",
+        "step": "get_order",
+        "input": {
+          "order_id": "ORD-1009"
+        },
+        "output": {
+          "order_id": "ORD-1009",
+          "customer_id": "C009",
+          "product_id": "P001",
+          "quantity": 1,
+          "amount": 129.99,
+          "status": "delivered",
+          "order_date": "2024-02-25",
+          "delivery_date": "2024-02-28",
+          "return_deadline": "2024-03-29",
+          "refund_status": "refunded",
+          "notes": "Refund already processed on 2024-03-02 for this order. Full amount returned."
+        },
+        "reasoning": "status=delivered",
+        "confidence": 1.0
+      },
+      {
+        "timestamp": "2026-04-19T12:57:22.179841Z",
+        "step": "get_product",
+        "input": {
+          "product_id": "P001"
+        },
+        "output": {
+          "product_id": "P001",
+          "name": "ProSound Wireless Headphones",
+          "category": "electronics",
+          "price": 129.99,
+          "warranty_months": 12,
+          "return_window_days": 30,
+          "returnable": true,
+          "notes": "Return not accepted if seal is broken unless item is defective."
+        },
+        "reasoning": "name=ProSound Wireless Headphones",
+        "confidence": 1.0
+      },
+      {
+        "timestamp": "2026-04-19T12:57:22.179915Z",
+        "step": "lookup",
+        "input": {
+          "email": "irene.castillo@email.com",
+          "order_id": "ORD-1009"
+        },
+        "output": {
+          "customer_found": true,
+          "order_found": true,
+          "product_found": true,
+          "tool_calls": 3
+        },
+        "reasoning": "Lookup complete: 3 tool calls — customer=✓ order=✓ product=✓",
+        "confidence": 0.9
+      },
+      {
+        "timestamp": "2026-04-19T12:57:22.883762Z",
+        "step": "classifier",
+        "input": {
+          "subject": "Refund already done?",
+          "tier": "premium",
+          "order_status": "delivered",
+          "amount": 129.99
+        },
+        "output": {
+          "classification": "refund"
+        },
+        "reasoning": "Context-aware classification → 'refund'",
+        "confidence": 0.9
+      },
+      {
+        "timestamp": "2026-04-19T12:57:22.885707Z",
+        "step": "search_knowledge_base",
+        "input": {
+          "query": "refund Refund already done? Hi I submitted a refund for my headphones (ORD-1009) a few days ago. Can you confirm it went through"
+        },
+        "output": {
+          "sections": [
+            "8. Common FAQs",
+            "2. Refund Policy"
+          ]
+        },
+        "reasoning": "Matched 2 sections for: 'refund Refund already done? Hi I submitted a refund for my h'",
+        "confidence": 1.0
+      },
+      {
+        "timestamp": "2026-04-19T12:57:22.885851Z",
+        "step": "kb_search",
+        "input": {
+          "query": "refund Refund already done? Hi I submitted a refund for my headphones (ORD-1009) a few days ago. Can",
+          "classification": "refund"
+        },
+        "output": {
+          "result_chars": 1791
+        },
+        "reasoning": "KB policy fetched for classification 'refund'",
+        "confidence": 1.0
+      },
+      {
+        "timestamp": "2026-04-19T12:57:22.886720Z",
+        "step": "triage",
+        "input": {
+          "classification": "refund",
+          "tier": "premium",
+          "amount": 129.99,
+          "signals": {
+            "customer_found": true,
+            "order_found": true,
+            "product_found": true,
+            "order_id_in_ticket": true,
+            "return_deadline_known": true,
+            "refund_not_already_done": false,
+            "product_returnable": true,
+            "classification_specific": true
+          }
+        },
+        "output": {
+          "confidence": 0.875,
+          "urgency": "high",
+          "resolvable": true,
+          "reasons": []
+        },
+        "reasoning": "Confidence=0.88 from signals: customer_found=✓, order_found=✓, product_found=✓, order_id_in_ticket=✓, return_deadline_known=✓, refund_not_already_done=✗, product_returnable=✓, classification_specific=✓. Urgency=high. Resolvable=True",
+        "confidence": 0.875
+      },
+      {
+        "timestamp": "2026-04-19T12:57:22.922248Z",
+        "step": "classifier",
+        "input": {
+          "subject": "Laptop stand return",
+          "tier": "premium",
+          "order_status": "delivered",
+          "amount": 49.99
+        },
+        "output": {
+          "classification": "refund"
+        },
+        "reasoning": "Context-aware classification → 'refund'",
+        "confidence": 0.9
+      },
+      {
+        "timestamp": "2026-04-19T12:57:22.923178Z",
+        "step": "search_knowledge_base",
+        "input": {
+          "query": "refund Laptop stand return I want to return my laptop stand (ORD-1007). It wobbles too much and isn't stable. I ordered it abou"
+        },
+        "output": {
+          "sections": [
+            "1. Return Policy",
+            "2. Refund Policy"
+          ]
+        },
+        "reasoning": "Matched 2 sections for: 'refund Laptop stand return I want to return my laptop stand '",
+        "confidence": 1.0
+      },
+      {
+        "timestamp": "2026-04-19T12:57:22.923245Z",
+        "step": "kb_search",
+        "input": {
+          "query": "refund Laptop stand return I want to return my laptop stand (ORD-1007). It wobbles too much and isn'",
+          "classification": "refund"
+        },
+        "output": {
+          "result_chars": 2334
+        },
+        "reasoning": "KB policy fetched for classification 'refund'",
+        "confidence": 1.0
+      },
+      {
+        "timestamp": "2026-04-19T12:57:22.923607Z",
+        "step": "triage",
+        "input": {
+          "classification": "refund",
+          "tier": "premium",
+          "amount": 49.99,
+          "signals": {
+            "customer_found": true,
+            "order_found": true,
+            "product_found": true,
+            "order_id_in_ticket": true,
+            "return_deadline_known": true,
+            "refund_not_already_done": true,
+            "product_returnable": true,
+            "classification_specific": true
+          }
+        },
+        "output": {
+          "confidence": 1.0,
+          "urgency": "high",
+          "resolvable": true,
+          "reasons": []
+        },
+        "reasoning": "Confidence=1.00 from signals: customer_found=✓, order_found=✓, product_found=✓, order_id_in_ticket=✓, return_deadline_known=✓, refund_not_already_done=✓, product_returnable=✓, classification_specific=✓. Urgency=high. Resolvable=True",
+        "confidence": 1.0
+      },
+      {
+        "timestamp": "2026-04-19T12:57:22.923987Z",
+        "step": "check_refund_eligibility",
+        "input": {
+          "order_id": "ORD-1007"
+        },
+        "output": {
+          "eligible": false,
+          "reason": "Return window expired on 2024-04-05",
+          "order_id": "ORD-1007",
+          "order_amount": 49.99,
+          "order_status": "delivered",
+          "return_deadline": "2024-04-05"
+        },
+        "reasoning": "eligible=False: Return window expired on 2024-04-05",
+        "confidence": 0.9
+      },
+      {
+        "timestamp": "2026-04-19T12:57:22.925574Z",
+        "step": "classifier",
+        "input": {
+          "subject": "Lamp came broken",
+          "tier": "standard",
+          "order_status": "delivered",
+          "amount": 44.99
+        },
+        "output": {
+          "classification": "refund"
+        },
+        "reasoning": "Context-aware classification → 'refund'",
+        "confidence": 0.9
+      },
+      {
+        "timestamp": "2026-04-19T12:57:22.926260Z",
+        "step": "search_knowledge_base",
+        "input": {
+          "query": "refund Lamp came broken The desk lamp I ordered arrived with a cracked base. The box also looked damaged. I have photos if n"
+        },
+        "output": {
+          "sections": [
+            "1. Return Policy",
+            "8. Common FAQs"
+          ]
+        },
+        "reasoning": "Matched 2 sections for: 'refund Lamp came broken The desk lamp I ordered arrived with'",
+        "confidence": 1.0
+      },
+      {
+        "timestamp": "2026-04-19T12:57:22.926307Z",
+        "step": "kb_search",
+        "input": {
+          "query": "refund Lamp came broken The desk lamp I ordered arrived with a cracked base. The box also looked dam",
+          "classification": "refund"
+        },
+        "output": {
+          "result_chars": 2399
+        },
+        "reasoning": "KB policy fetched for classification 'refund'",
+        "confidence": 1.0
+      },
+      {
+        "timestamp": "2026-04-19T12:57:22.926746Z",
+        "step": "triage",
+        "input": {
+          "classification": "refund",
+          "tier": "standard",
+          "amount": 44.99,
+          "signals": {
+            "customer_found": true,
+            "order_found": true,
+            "product_found": true,
+            "order_id_in_ticket": true,
+            "return_deadline_known": true,
+            "refund_not_already_done": true,
+            "product_returnable": true,
+            "classification_specific": true
+          }
+        },
+        "output": {
+          "confidence": 1.0,
+          "urgency": "high",
+          "resolvable": true,
+          "reasons": []
+        },
+        "reasoning": "Confidence=1.00 from signals: customer_found=✓, order_found=✓, product_found=✓, order_id_in_ticket=✓, return_deadline_known=✓, refund_not_already_done=✓, product_returnable=✓, classification_specific=✓. Urgency=high. Resolvable=True",
+        "confidence": 1.0
+      },
+      {
+        "timestamp": "2026-04-19T12:57:22.927246Z",
+        "step": "check_refund_eligibility",
+        "input": {
+          "order_id": "ORD-1008"
+        },
+        "output": {
+          "eligible": false,
+          "reason": "Return window expired on 2024-04-07",
+          "order_id": "ORD-1008",
+          "order_amount": 44.99,
+          "order_status": "delivered",
+          "return_deadline": "2024-04-07"
+        },
+        "reasoning": "eligible=False: Return window expired on 2024-04-07",
+        "confidence": 0.9
+      },
+      {
+        "timestamp": "2026-04-19T12:57:23.570088Z",
+        "step": "act",
+        "input": {
+          "classification": "refund",
+          "resolvable": true,
+          "order_id": "ORD-1008",
+          "amount": 44.99
+        },
+        "output": {
+          "action_taken": "refund_denied",
+          "escalated": false,
+          "refund_issued": null,
+          "tool_calls": 5
+        },
+        "reasoning": "Action: refund_denied — Return window expired on 2024-04-07",
+        "confidence": 1.0
+      },
+      {
+        "timestamp": "2026-04-19T12:57:23.759501Z",
+        "step": "act",
+        "input": {
+          "classification": "refund",
+          "resolvable": true,
+          "order_id": "ORD-1007",
+          "amount": 49.99
+        },
+        "output": {
+          "action_taken": "refund_denied",
+          "escalated": false,
+          "refund_issued": null,
+          "tool_calls": 5
+        },
+        "reasoning": "Action: refund_denied — Return window expired on 2024-04-05",
+        "confidence": 1.0
+      },
+      {
+        "timestamp": "2026-04-19T12:57:23.892115Z",
+        "step": "check_refund_eligibility",
+        "input": {
+          "order_id": "ORD-1009"
+        },
+        "output": {
+          "eligible": false,
+          "reason": "Order already refunded",
+          "order_id": "ORD-1009",
+          "order_amount": 129.99,
+          "order_status": "delivered",
+          "return_deadline": "2024-03-29"
+        },
+        "reasoning": "eligible=False: Order already refunded",
+        "confidence": 0.9
+      },
+      {
+        "timestamp": "2026-04-19T12:57:24.551203Z",
+        "step": "act",
+        "input": {
+          "classification": "refund",
+          "resolvable": true,
+          "order_id": "ORD-1009",
+          "amount": 129.99
+        },
+        "output": {
+          "action_taken": "refund_denied",
+          "escalated": false,
+          "refund_issued": null,
+          "tool_calls": 5
+        },
+        "reasoning": "Action: refund_denied — Order already refunded",
+        "confidence": 0.875
+      },
+      {
+        "timestamp": "2026-04-19T12:57:39.579254Z",
+        "step": "get_customer",
+        "input": {
+          "email": "james.wu@email.com"
+        },
+        "output": {
+          "customer_id": "C010",
+          "name": "James Wu",
+          "email": "james.wu@email.com",
+          "phone": "+1-858-555-0199",
+          "tier": "standard",
+          "member_since": "2023-03-28",
+          "total_orders": 6,
+          "total_spent": 430.15,
+          "address": {
+            "street": "40 Harbor View",
+            "city": "San Diego",
+            "state": "CA",
+            "zip": "92101"
+          },
+          "notes": "No issues on record."
+        },
+        "reasoning": "name=James Wu tier=standard",
+        "confidence": 1.0
+      },
+      {
+        "timestamp": "2026-04-19T12:57:39.579735Z",
+        "step": "get_customer",
+        "input": {
+          "email": "alice.turner@email.com"
+        },
+        "output": {
+          "customer_id": "C001",
+          "name": "Alice Turner",
+          "email": "alice.turner@email.com",
+          "phone": "+1-415-555-0101",
+          "tier": "vip",
+          "member_since": "2019-03-12",
+          "total_orders": 47,
+          "total_spent": 6840.5,
+          "address": {
+            "street": "12 Maple Avenue",
+            "city": "San Francisco",
+            "state": "CA",
+            "zip": "94102"
+          },
+          "notes": "Long-standing VIP. Has had 2 refunds in the past year, both approved."
+        },
+        "reasoning": "name=Alice Turner tier=vip",
+        "confidence": 1.0
+      },
+      {
+        "timestamp": "2026-04-19T12:57:39.580426Z",
+        "step": "get_customer",
+        "input": {
+          "email": "carol.nguyen@email.com"
+        },
+        "output": {
+          "customer_id": "C003",
+          "name": "Carol Nguyen",
+          "email": "carol.nguyen@email.com",
+          "phone": "+1-312-555-0143",
+          "tier": "premium",
+          "member_since": "2021-06-18",
+          "total_orders": 22,
+          "total_spent": 3120.75,
+          "address": {
+            "street": "45 Oak Lane",
+            "city": "Chicago",
+            "state": "IL",
+            "zip": "60601"
+          },
+          "notes": "Premium member. Prefers email communication."
+        },
+        "reasoning": "name=Carol Nguyen tier=premium",
+        "confidence": 1.0
+      },
+      {
+        "timestamp": "2026-04-19T12:57:39.580650Z",
+        "step": "get_order",
+        "input": {
+          "order_id": "ORD-1010"
+        },
+        "output": {
+          "order_id": "ORD-1010",
+          "customer_id": "C010",
+          "product_id": "P003",
+          "quantity": 1,
+          "amount": 199.99,
+          "status": "shipped",
+          "order_date": "2024-03-12",
+          "delivery_date": null,
+          "return_deadline": null,
+          "refund_status": null,
+          "notes": "In transit. Expected delivery 2024-03-16. Tracking: TRK-88291."
+        },
+        "reasoning": "status=shipped",
+        "confidence": 1.0
+      },
+      {
+        "timestamp": "2026-04-19T12:57:39.580727Z",
+        "step": "get_order",
+        "input": {
+          "order_id": "ORD-1011"
+        },
+        "output": {
+          "order_id": "ORD-1011",
+          "customer_id": "C001",
+          "product_id": "P006",
+          "quantity": 1,
+          "amount": 249.99,
+          "status": "delivered",
+          "order_date": "2024-03-08",
+          "delivery_date": "2024-03-11",
+          "return_deadline": "2024-03-26",
+          "refund_status": null,
+          "notes": "Customer reported receiving wrong colour variant. Correct order was Blue, received Black."
+        },
+        "reasoning": "status=delivered",
+        "confidence": 1.0
+      },
+      {
+        "timestamp": "2026-04-19T12:57:39.580779Z",
+        "step": "get_order",
+        "input": {
+          "order_id": "ORD-1012"
+        },
+        "output": {
+          "order_id": "ORD-1012",
+          "customer_id": "C003",
+          "product_id": "P002",
+          "quantity": 1,
+          "amount": 89.99,
+          "status": "processing",
+          "order_date": "2024-03-14",
+          "delivery_date": null,
+          "return_deadline": null,
+          "refund_status": null,
+          "notes": "Order placed but not yet shipped. Customer can cancel free of charge."
+        },
+        "reasoning": "status=processing",
+        "confidence": 1.0
+      },
+      {
+        "timestamp": "2026-04-19T12:57:39.580857Z",
+        "step": "get_product",
+        "input": {
+          "product_id": "P003"
+        },
+        "output": {
+          "product_id": "P003",
+          "name": "BrewMaster 3000 Coffee Maker",
+          "category": "home_appliances",
+          "price": 199.99,
+          "warranty_months": 24,
+          "return_window_days": 30,
+          "returnable": true,
+          "notes": "Warranty covers manufacturing defects only. Does not cover user damage."
+        },
+        "reasoning": "name=BrewMaster 3000 Coffee Maker",
+        "confidence": 1.0
+      },
+      {
+        "timestamp": "2026-04-19T12:57:39.580985Z",
+        "step": "get_product",
+        "input": {
+          "product_id": "P006"
+        },
+        "output": {
+          "product_id": "P006",
+          "name": "PulseX Smart Watch",
+          "category": "electronics",
+          "price": 249.99,
+          "warranty_months": 12,
+          "return_window_days": 15,
+          "returnable": true,
+          "notes": "Only 15-day return window due to high-value electronics policy. Warranty covers hardware defects."
+        },
+        "reasoning": "name=PulseX Smart Watch",
+        "confidence": 1.0
+      },
+      {
+        "timestamp": "2026-04-19T12:57:39.581096Z",
+        "step": "get_product",
+        "input": {
+          "product_id": "P002"
+        },
+        "output": {
+          "product_id": "P002",
+          "name": "SwiftRun Pro Running Shoes",
+          "category": "footwear",
+          "price": 89.99,
+          "warranty_months": 0,
+          "return_window_days": 30,
+          "returnable": true,
+          "notes": "Must be unworn and in original packaging. No return if used outdoors."
+        },
+        "reasoning": "name=SwiftRun Pro Running Shoes",
+        "confidence": 1.0
+      },
+      {
+        "timestamp": "2026-04-19T12:57:39.581193Z",
+        "step": "lookup",
+        "input": {
+          "email": "james.wu@email.com",
+          "order_id": "ORD-1010"
+        },
+        "output": {
+          "customer_found": true,
+          "order_found": true,
+          "product_found": true,
+          "tool_calls": 3
+        },
+        "reasoning": "Lookup complete: 3 tool calls — customer=✓ order=✓ product=✓",
+        "confidence": 0.9
+      },
+      {
+        "timestamp": "2026-04-19T12:57:39.581263Z",
+        "step": "lookup",
+        "input": {
+          "email": "alice.turner@email.com",
+          "order_id": "ORD-1011"
+        },
+        "output": {
+          "customer_found": true,
+          "order_found": true,
+          "product_found": true,
+          "tool_calls": 3
+        },
+        "reasoning": "Lookup complete: 3 tool calls — customer=✓ order=✓ product=✓",
+        "confidence": 0.9
+      },
+      {
+        "timestamp": "2026-04-19T12:57:39.581353Z",
+        "step": "lookup",
+        "input": {
+          "email": "carol.nguyen@email.com",
+          "order_id": "ORD-1012"
+        },
+        "output": {
+          "customer_found": true,
+          "order_found": true,
+          "product_found": true,
+          "tool_calls": 3
+        },
+        "reasoning": "Lookup complete: 3 tool calls — customer=✓ order=✓ product=✓",
+        "confidence": 0.9
+      },
+      {
+        "timestamp": "2026-04-19T12:57:40.398897Z",
+        "step": "classifier",
+        "input": {
+          "subject": "Wrong colour watch received",
+          "tier": "vip",
+          "order_status": "delivered",
+          "amount": 249.99
+        },
+        "output": {
+          "classification": "refund"
+        },
+        "reasoning": "Context-aware classification → 'refund'",
+        "confidence": 0.9
+      },
+      {
+        "timestamp": "2026-04-19T12:57:40.400094Z",
+        "step": "search_knowledge_base",
+        "input": {
+          "query": "refund Wrong colour watch received I ordered the blue PulseX smart watch (ORD-1011) but got the black one. I specifically wanted blue. "
+        },
+        "output": {
+          "sections": [
+            "1. Return Policy",
+            "3. Warranty Policy"
+          ]
+        },
+        "reasoning": "Matched 2 sections for: 'refund Wrong colour watch received I ordered the blue PulseX'",
+        "confidence": 1.0
+      },
+      {
+        "timestamp": "2026-04-19T12:57:40.400190Z",
+        "step": "kb_search",
+        "input": {
+          "query": "refund Wrong colour watch received I ordered the blue PulseX smart watch (ORD-1011) but got the blac",
+          "classification": "refund"
+        },
+        "output": {
+          "result_chars": 2351
+        },
+        "reasoning": "KB policy fetched for classification 'refund'",
+        "confidence": 1.0
+      },
+      {
+        "timestamp": "2026-04-19T12:57:40.400648Z",
+        "step": "triage",
+        "input": {
+          "classification": "refund",
+          "tier": "vip",
+          "amount": 249.99,
+          "signals": {
+            "customer_found": true,
+            "order_found": true,
+            "product_found": true,
+            "order_id_in_ticket": true,
+            "return_deadline_known": true,
+            "refund_not_already_done": true,
+            "product_returnable": true,
+            "classification_specific": true
+          }
+        },
+        "output": {
+          "confidence": 1.0,
+          "urgency": "urgent",
+          "resolvable": false,
+          "reasons": [
+            "refund amount $249.99 > $200 auto-limit"
+          ]
+        },
+        "reasoning": "Confidence=1.00 from signals: customer_found=✓, order_found=✓, product_found=✓, order_id_in_ticket=✓, return_deadline_known=✓, refund_not_already_done=✓, product_returnable=✓, classification_specific=✓. Urgency=urgent. Resolvable=False — CANNOT resolve because: refund amount $249.99 > $200 auto-limit",
+        "confidence": 1.0
+      },
+      {
+        "timestamp": "2026-04-19T12:57:40.401142Z",
+        "step": "act",
+        "input": {
+          "classification": "refund",
+          "resolvable": false,
+          "order_id": "ORD-1011",
+          "amount": 249.99
+        },
+        "output": {
+          "action_taken": "escalated",
+          "escalated": true,
+          "refund_issued": null,
+          "tool_calls": 5
+        },
+        "reasoning": "Action: escalated — Confidence=1.00 from signals: customer_found=✓, order_found=✓, product_found=✓, order_id_in_ticket=✓, return_deadline_kn",
+        "confidence": 1.0
+      },
+      {
+        "timestamp": "2026-04-19T12:57:40.407115Z",
+        "step": "classifier",
+        "input": {
+          "subject": "Where is my order?",
+          "tier": "standard",
+          "order_status": "shipped",
+          "amount": 199.99
+        },
+        "output": {
+          "classification": "order_status"
+        },
+        "reasoning": "Context-aware classification → 'order_status'",
+        "confidence": 0.9
+      },
+      {
+        "timestamp": "2026-04-19T12:57:40.408316Z",
+        "step": "search_knowledge_base",
+        "input": {
+          "query": "order_status Where is my order? I ordered a coffee maker over 3 days ago and haven't received it. What is going on? Order ORD-1010."
+        },
+        "output": {
+          "sections": [
+            "3. Warranty Policy",
+            "8. Common FAQs"
+          ]
+        },
+        "reasoning": "Matched 2 sections for: 'order_status Where is my order? I ordered a coffee maker ove'",
+        "confidence": 1.0
+      },
+      {
+        "timestamp": "2026-04-19T12:57:40.408401Z",
+        "step": "kb_search",
+        "input": {
+          "query": "order_status Where is my order? I ordered a coffee maker over 3 days ago and haven't received it. Wh",
+          "classification": "order_status"
+        },
+        "output": {
+          "result_chars": 1808
+        },
+        "reasoning": "KB policy fetched for classification 'order_status'",
+        "confidence": 1.0
+      },
+      {
+        "timestamp": "2026-04-19T12:57:40.409120Z",
+        "step": "triage",
+        "input": {
+          "classification": "order_status",
+          "tier": "standard",
+          "amount": 199.99,
+          "signals": {
+            "customer_found": true,
+            "order_found": true,
+            "product_found": true,
+            "order_id_in_ticket": true,
+            "return_deadline_known": false,
+            "refund_not_already_done": true,
+            "product_returnable": true,
+            "classification_specific": true
+          }
+        },
+        "output": {
+          "confidence": 0.875,
+          "urgency": "medium",
+          "resolvable": true,
+          "reasons": []
+        },
+        "reasoning": "Confidence=0.88 from signals: customer_found=✓, order_found=✓, product_found=✓, order_id_in_ticket=✓, return_deadline_known=✗, refund_not_already_done=✓, product_returnable=✓, classification_specific=✓. Urgency=medium. Resolvable=True",
+        "confidence": 0.875
+      },
+      {
+        "timestamp": "2026-04-19T12:57:40.409679Z",
+        "step": "act",
+        "input": {
+          "classification": "order_status",
+          "resolvable": true,
+          "order_id": "ORD-1010",
+          "amount": 199.99
+        },
+        "output": {
+          "action_taken": "order_status_provided",
+          "escalated": false,
+          "refund_issued": null,
+          "tool_calls": 4
+        },
+        "reasoning": "Action: order_status_provided — status=shipped",
+        "confidence": 0.875
+      },
+      {
+        "timestamp": "2026-04-19T12:57:41.082519Z",
+        "step": "classifier",
+        "input": {
+          "subject": "Cancel my new order",
+          "tier": "premium",
+          "order_status": "processing",
+          "amount": 89.99
+        },
+        "output": {
+          "classification": "cancellation"
+        },
+        "reasoning": "Context-aware classification → 'cancellation'",
+        "confidence": 0.9
+      },
+      {
+        "timestamp": "2026-04-19T12:57:41.083634Z",
+        "step": "search_knowledge_base",
+        "input": {
+          "query": "cancellation Cancel my new order I placed an order for running shoes yesterday and I've changed my mind. Please cancel before it ship"
+        },
+        "output": {
+          "sections": [
+            "4. Order Cancellation Policy",
+            "8. Common FAQs"
+          ]
+        },
+        "reasoning": "Matched 2 sections for: 'cancellation Cancel my new order I placed an order for runni'",
+        "confidence": 1.0
+      },
+      {
+        "timestamp": "2026-04-19T12:57:41.083714Z",
+        "step": "kb_search",
+        "input": {
+          "query": "cancellation Cancel my new order I placed an order for running shoes yesterday and I've changed my m",
+          "classification": "cancellation"
+        },
+        "output": {
+          "result_chars": 1278
+        },
+        "reasoning": "KB policy fetched for classification 'cancellation'",
+        "confidence": 1.0
+      },
+      {
+        "timestamp": "2026-04-19T12:57:41.084162Z",
+        "step": "triage",
+        "input": {
+          "classification": "cancellation",
+          "tier": "premium",
+          "amount": 89.99,
+          "signals": {
+            "customer_found": true,
+            "order_found": true,
+            "product_found": true,
+            "order_id_in_ticket": true,
+            "return_deadline_known": false,
+            "refund_not_already_done": true,
+            "product_returnable": true,
+            "classification_specific": true
+          }
+        },
+        "output": {
+          "confidence": 0.875,
+          "urgency": "high",
+          "resolvable": true,
+          "reasons": []
+        },
+        "reasoning": "Confidence=0.88 from signals: customer_found=✓, order_found=✓, product_found=✓, order_id_in_ticket=✓, return_deadline_known=✗, refund_not_already_done=✓, product_returnable=✓, classification_specific=✓. Urgency=high. Resolvable=True",
+        "confidence": 0.875
+      },
+      {
+        "timestamp": "2026-04-19T12:57:41.084660Z",
+        "step": "cancel_order",
+        "input": {
+          "order_id": "ORD-1012"
+        },
+        "output": {
+          "success": true,
+          "message": "Order ORD-1012 cancelled successfully"
+        },
+        "reasoning": "Order ORD-1012 cancelled successfully",
+        "confidence": 1.0
+      },
+      {
+        "timestamp": "2026-04-19T12:57:41.084716Z",
+        "step": "act",
+        "input": {
+          "classification": "cancellation",
+          "resolvable": true,
+          "order_id": "ORD-1012",
+          "amount": 89.99
+        },
+        "output": {
+          "action_taken": "cancel_attempted",
+          "escalated": false,
+          "refund_issued": null,
+          "tool_calls": 5
+        },
+        "reasoning": "Action: cancel_attempted — Order ORD-1012 cancelled successfully",
+        "confidence": 0.875
+      },
+      {
+        "timestamp": "2026-04-19T12:57:56.103021Z",
+        "step": "get_customer",
+        "input": {
+          "email": "henry.marsh@email.com"
+        },
+        "output": {
+          "customer_id": "C008",
+          "name": "Henry Marsh",
+          "email": "henry.marsh@email.com",
+          "phone": "+1-303-555-0188",
+          "tier": "standard",
+          "member_since": "2022-05-19",
+          "total_orders": 14,
+          "total_spent": 1120.6,
+          "address": {
+            "street": "210 Cedar Drive",
+            "city": "Denver",
+            "state": "CO",
+            "zip": "80201"
+          },
+          "notes": "Regular customer. No flags."
+        },
+        "reasoning": "name=Henry Marsh tier=standard",
+        "confidence": 1.0
+      },
+      {
+        "timestamp": "2026-04-19T12:57:56.103594Z",
+        "step": "get_customer",
+        "input": {
+          "email": "emma.collins@email.com"
+        },
+        "output": {
+          "customer_id": "C005",
+          "name": "Emma Collins",
+          "email": "emma.collins@email.com",
+          "phone": "+1-512-555-0165",
+          "tier": "vip",
+          "member_since": "2018-11-02",
+          "total_orders": 91,
+          "total_spent": 14220.0,
+          "address": {
+            "street": "7 Sunset Blvd",
+            "city": "Austin",
+            "state": "TX",
+            "zip": "73301"
+          },
+          "notes": "Highest lifetime value customer. Has a standing exception for extended return windows pre-approved by management."
+        },
+        "reasoning": "name=Emma Collins tier=vip",
+        "confidence": 1.0
+      },
+      {
+        "timestamp": "2026-04-19T12:57:56.103701Z",
+        "step": "get_order",
+        "input": {
+          "order_id": "ORD-1014"
+        },
+        "output": {
+          "order_id": "ORD-1014",
+          "customer_id": "C008",
+          "product_id": "P006",
+          "quantity": 1,
+          "amount": 249.99,
+          "status": "delivered",
+          "order_date": "2024-03-01",
+          "delivery_date": "2024-03-04",
+          "return_deadline": "2024-03-19",
+          "refund_status": null,
+          "notes": "Within return window. No issues logged."
+        },
+        "reasoning": "status=delivered",
+        "confidence": 1.0
+      },
+      {
+        "timestamp": "2026-04-19T12:57:56.103768Z",
+        "step": "get_order",
+        "input": {
+          "order_id": "ORD-1015"
+        },
+        "output": {
+          "order_id": "ORD-1015",
+          "customer_id": "C005",
+          "product_id": "P003",
+          "quantity": 1,
+          "amount": 199.99,
+          "status": "delivered",
+          "order_date": "2024-02-18",
+          "delivery_date": "2024-02-22",
+          "return_deadline": "2024-03-23",
+          "refund_status": null,
+          "notes": "Item arrived with cracked water tank. Customer sent photo evidence."
+        },
+        "reasoning": "status=delivered",
+        "confidence": 1.0
+      },
+      {
+        "timestamp": "2026-04-19T12:57:56.103838Z",
+        "step": "get_product",
+        "input": {
+          "product_id": "P006"
+        },
+        "output": {
+          "product_id": "P006",
+          "name": "PulseX Smart Watch",
+          "category": "electronics",
+          "price": 249.99,
+          "warranty_months": 12,
+          "return_window_days": 15,
+          "returnable": true,
+          "notes": "Only 15-day return window due to high-value electronics policy. Warranty covers hardware defects."
+        },
+        "reasoning": "name=PulseX Smart Watch",
+        "confidence": 1.0
+      },
+      {
+        "timestamp": "2026-04-19T12:57:56.103901Z",
+        "step": "get_product",
+        "input": {
+          "product_id": "P003"
+        },
+        "output": {
+          "product_id": "P003",
+          "name": "BrewMaster 3000 Coffee Maker",
+          "category": "home_appliances",
+          "price": 199.99,
+          "warranty_months": 24,
+          "return_window_days": 30,
+          "returnable": true,
+          "notes": "Warranty covers manufacturing defects only. Does not cover user damage."
+        },
+        "reasoning": "name=BrewMaster 3000 Coffee Maker",
+        "confidence": 1.0
+      },
+      {
+        "timestamp": "2026-04-19T12:57:56.103953Z",
+        "step": "lookup",
+        "input": {
+          "email": "henry.marsh@email.com",
+          "order_id": "ORD-1014"
+        },
+        "output": {
+          "customer_found": true,
+          "order_found": true,
+          "product_found": true,
+          "tool_calls": 3
+        },
+        "reasoning": "Lookup complete: 3 tool calls — customer=✓ order=✓ product=✓",
+        "confidence": 0.9
+      },
+      {
+        "timestamp": "2026-04-19T12:57:56.104017Z",
+        "step": "lookup",
+        "input": {
+          "email": "emma.collins@email.com",
+          "order_id": "ORD-1015"
+        },
+        "output": {
+          "customer_found": true,
+          "order_found": true,
+          "product_found": true,
+          "tool_calls": 3
+        },
+        "reasoning": "Lookup complete: 3 tool calls — customer=✓ order=✓ product=✓",
+        "confidence": 0.9
+      },
+      {
+        "timestamp": "2026-04-19T12:57:56.775614Z",
+        "step": "classifier",
+        "input": {
+          "subject": "Damaged coffee maker",
+          "tier": "vip",
+          "order_status": "delivered",
+          "amount": 199.99
+        },
+        "output": {
+          "classification": "warranty"
+        },
+        "reasoning": "Context-aware classification → 'warranty'",
+        "confidence": 0.9
+      },
+      {
+        "timestamp": "2026-04-19T12:57:56.777397Z",
+        "step": "search_knowledge_base",
+        "input": {
+          "query": "warranty Damaged coffee maker My BrewMaster arrived with a cracked water tank (ORD-1015). I've attached photos. This is a manufact"
+        },
+        "output": {
+          "sections": [
+            "3. Warranty Policy",
+            "8. Common FAQs"
+          ]
+        },
+        "reasoning": "Matched 2 sections for: 'warranty Damaged coffee maker My BrewMaster arrived with a c'",
+        "confidence": 1.0
+      },
+      {
+        "timestamp": "2026-04-19T12:57:56.777596Z",
+        "step": "kb_search",
+        "input": {
+          "query": "warranty Damaged coffee maker My BrewMaster arrived with a cracked water tank (ORD-1015). I've attac",
+          "classification": "warranty"
+        },
+        "output": {
+          "result_chars": 1808
+        },
+        "reasoning": "KB policy fetched for classification 'warranty'",
+        "confidence": 1.0
+      },
+      {
+        "timestamp": "2026-04-19T12:57:56.778473Z",
+        "step": "triage",
+        "input": {
+          "classification": "warranty",
+          "tier": "vip",
+          "amount": 199.99,
+          "signals": {
+            "customer_found": true,
+            "order_found": true,
+            "product_found": true,
+            "order_id_in_ticket": true,
+            "return_deadline_known": true,
+            "refund_not_already_done": true,
+            "product_returnable": true,
+            "classification_specific": true
+          }
+        },
+        "output": {
+          "confidence": 1.0,
+          "urgency": "urgent",
+          "resolvable": false,
+          "reasons": [
+            "warranty claims always escalate to warranty team"
+          ]
+        },
+        "reasoning": "Confidence=1.00 from signals: customer_found=✓, order_found=✓, product_found=✓, order_id_in_ticket=✓, return_deadline_known=✓, refund_not_already_done=✓, product_returnable=✓, classification_specific=✓. Urgency=urgent. Resolvable=False — CANNOT resolve because: warranty claims always escalate to warranty team",
+        "confidence": 1.0
+      },
+      {
+        "timestamp": "2026-04-19T12:57:56.779240Z",
+        "step": "act",
+        "input": {
+          "classification": "warranty",
+          "resolvable": false,
+          "order_id": "ORD-1015",
+          "amount": 199.99
+        },
+        "output": {
+          "action_taken": "escalated",
+          "escalated": true,
+          "refund_issued": null,
+          "tool_calls": 5
+        },
+        "reasoning": "Action: escalated — Confidence=1.00 from signals: customer_found=✓, order_found=✓, product_found=✓, order_id_in_ticket=✓, return_deadline_kn",
+        "confidence": 1.0
+      },
+      {
+        "timestamp": "2026-04-19T12:57:56.797829Z",
+        "step": "classifier",
+        "input": {
+          "subject": "Thinking about returning my watch",
+          "tier": "standard",
+          "order_status": "delivered",
+          "amount": 249.99
+        },
+        "output": {
+          "classification": "refund"
+        },
+        "reasoning": "Context-aware classification → 'refund'",
+        "confidence": 0.9
+      },
+      {
+        "timestamp": "2026-04-19T12:57:56.798846Z",
+        "step": "search_knowledge_base",
+        "input": {
+          "query": "refund Thinking about returning my watch I'm not sure yet but I might want to return my smart watch (ORD-1014). What's the process? And is it"
+        },
+        "output": {
+          "sections": [
+            "1. Return Policy",
+            "3. Warranty Policy"
+          ]
+        },
+        "reasoning": "Matched 2 sections for: 'refund Thinking about returning my watch I'm not sure yet bu'",
+        "confidence": 1.0
+      },
+      {
+        "timestamp": "2026-04-19T12:57:56.798966Z",
+        "step": "kb_search",
+        "input": {
+          "query": "refund Thinking about returning my watch I'm not sure yet but I might want to return my smart watch ",
+          "classification": "refund"
+        },
+        "output": {
+          "result_chars": 2351
+        },
+        "reasoning": "KB policy fetched for classification 'refund'",
+        "confidence": 1.0
+      },
+      {
+        "timestamp": "2026-04-19T12:57:56.799433Z",
+        "step": "triage",
+        "input": {
+          "classification": "refund",
+          "tier": "standard",
+          "amount": 249.99,
+          "signals": {
+            "customer_found": true,
+            "order_found": true,
+            "product_found": true,
+            "order_id_in_ticket": true,
+            "return_deadline_known": true,
+            "refund_not_already_done": true,
+            "product_returnable": true,
+            "classification_specific": true
+          }
+        },
+        "output": {
+          "confidence": 1.0,
+          "urgency": "urgent",
+          "resolvable": false,
+          "reasons": [
+            "refund amount $249.99 > $200 auto-limit"
+          ]
+        },
+        "reasoning": "Confidence=1.00 from signals: customer_found=✓, order_found=✓, product_found=✓, order_id_in_ticket=✓, return_deadline_known=✓, refund_not_already_done=✓, product_returnable=✓, classification_specific=✓. Urgency=urgent. Resolvable=False — CANNOT resolve because: refund amount $249.99 > $200 auto-limit",
+        "confidence": 1.0
+      },
+      {
+        "timestamp": "2026-04-19T12:57:56.800084Z",
+        "step": "act",
+        "input": {
+          "classification": "refund",
+          "resolvable": false,
+          "order_id": "ORD-1014",
+          "amount": 249.99
+        },
+        "output": {
+          "action_taken": "escalated",
+          "escalated": true,
+          "refund_issued": null,
+          "tool_calls": 5
+        },
+        "reasoning": "Action: escalated — Confidence=1.00 from signals: customer_found=✓, order_found=✓, product_found=✓, order_id_in_ticket=✓, return_deadline_kn",
+        "confidence": 1.0
+      },
+      {
+        "timestamp": "2026-04-19T12:57:59.104765Z",
+        "step": "get_customer",
+        "input": {
+          "email": "grace.patel@email.com"
+        },
+        "output": {
+          "customer_id": "C007",
+          "name": "Grace Patel",
+          "email": "grace.patel@email.com",
+          "phone": "+1-617-555-0134",
+          "tier": "premium",
+          "member_since": "2020-08-22",
+          "total_orders": 35,
+          "total_spent": 4890.0,
+          "address": {
+            "street": "56 Willow Way",
+            "city": "Boston",
+            "state": "MA",
+            "zip": "02101"
+          },
+          "notes": "Premium member. Has submitted 4 refund requests — all legitimate, all approved."
+        },
+        "reasoning": "name=Grace Patel tier=premium",
+        "confidence": 1.0
+      },
+      {
+        "timestamp": "2026-04-19T12:57:59.105053Z",
+        "step": "get_order",
+        "input": {
+          "order_id": "ORD-1013"
+        },
+        "output": {
+          "order_id": "ORD-1013",
+          "customer_id": "C007",
+          "product_id": "P008",
+          "quantity": 1,
+          "amount": 79.99,
+          "status": "delivered",
+          "order_date": "2024-01-20",
+          "delivery_date": "2024-01-24",
+          "return_deadline": "2024-02-23",
+          "refund_status": null,
+          "notes": "Return window expired. Device was registered online by customer on 2024-01-25. Non-returnable per policy."
+        },
+        "reasoning": "status=delivered",
+        "confidence": 1.0
+      },
+      {
+        "timestamp": "2026-04-19T12:57:59.105195Z",
+        "step": "get_product",
+        "input": {
+          "product_id": "P008"
+        },
+        "output": {
+          "product_id": "P008",
+          "name": "BoomBox Mini Bluetooth Speaker",
+          "category": "electronics",
+          "price": 79.99,
+          "warranty_months": 12,
+          "return_window_days": 30,
+          "returnable": true,
+          "notes": "Return not accepted if device has been registered online."
+        },
+        "reasoning": "name=BoomBox Mini Bluetooth Speaker",
+        "confidence": 1.0
+      },
+      {
+        "timestamp": "2026-04-19T12:57:59.105294Z",
+        "step": "lookup",
+        "input": {
+          "email": "grace.patel@email.com",
+          "order_id": "ORD-1013"
+        },
+        "output": {
+          "customer_found": true,
+          "order_found": true,
+          "product_found": true,
+          "tool_calls": 3
+        },
+        "reasoning": "Lookup complete: 3 tool calls — customer=✓ order=✓ product=✓",
+        "confidence": 0.9
+      },
+      {
+        "timestamp": "2026-04-19T12:57:59.351330Z",
+        "step": "classifier",
+        "input": {
+          "subject": "Return for bluetooth speaker",
+          "tier": "premium",
+          "order_status": "delivered",
+          "amount": 79.99
+        },
+        "output": {
+          "classification": "refund"
+        },
+        "reasoning": "Context-aware classification → 'refund'",
+        "confidence": 0.9
+      },
+      {
+        "timestamp": "2026-04-19T12:57:59.352393Z",
+        "step": "search_knowledge_base",
+        "input": {
+          "query": "refund Return for bluetooth speaker Hi, I'd like to return my bluetooth speaker from January (ORD-1013). The sound quality is disappoint"
+        },
+        "output": {
+          "sections": [
+            "1. Return Policy",
+            "3. Warranty Policy"
+          ]
+        },
+        "reasoning": "Matched 2 sections for: 'refund Return for bluetooth speaker Hi, I'd like to return m'",
+        "confidence": 1.0
+      },
+      {
+        "timestamp": "2026-04-19T12:57:59.352494Z",
+        "step": "kb_search",
+        "input": {
+          "query": "refund Return for bluetooth speaker Hi, I'd like to return my bluetooth speaker from January (ORD-10",
+          "classification": "refund"
+        },
+        "output": {
+          "result_chars": 2351
+        },
+        "reasoning": "KB policy fetched for classification 'refund'",
+        "confidence": 1.0
+      },
+      {
+        "timestamp": "2026-04-19T12:57:59.352998Z",
+        "step": "triage",
+        "input": {
+          "classification": "refund",
+          "tier": "premium",
+          "amount": 79.99,
+          "signals": {
+            "customer_found": true,
+            "order_found": true,
+            "product_found": true,
+            "order_id_in_ticket": true,
+            "return_deadline_known": true,
+            "refund_not_already_done": true,
+            "product_returnable": true,
+            "classification_specific": true
+          }
+        },
+        "output": {
+          "confidence": 1.0,
+          "urgency": "high",
+          "resolvable": true,
+          "reasons": []
+        },
+        "reasoning": "Confidence=1.00 from signals: customer_found=✓, order_found=✓, product_found=✓, order_id_in_ticket=✓, return_deadline_known=✓, refund_not_already_done=✓, product_returnable=✓, classification_specific=✓. Urgency=high. Resolvable=True",
+        "confidence": 1.0
+      },
+      {
+        "timestamp": "2026-04-19T12:57:59.353498Z",
+        "step": "check_refund_eligibility",
+        "input": {
+          "order_id": "ORD-1013"
+        },
+        "output": {
+          "eligible": false,
+          "reason": "Return window expired on 2024-02-23",
+          "order_id": "ORD-1013",
+          "order_amount": 79.99,
+          "order_status": "delivered",
+          "return_deadline": "2024-02-23"
+        },
+        "reasoning": "eligible=False: Return window expired on 2024-02-23",
+        "confidence": 0.9
+      },
+      {
+        "timestamp": "2026-04-19T12:58:00.051549Z",
+        "step": "act",
+        "input": {
+          "classification": "refund",
+          "resolvable": true,
+          "order_id": "ORD-1013",
+          "amount": 79.99
+        },
+        "output": {
+          "action_taken": "refund_denied",
+          "escalated": false,
+          "refund_issued": null,
+          "tool_calls": 5
+        },
+        "reasoning": "Action: refund_denied — Return window expired on 2024-02-23",
+        "confidence": 1.0
+      },
+      {
+        "timestamp": "2026-04-19T12:58:15.081487Z",
+        "step": "get_customer",
+        "input": {
+          "email": "unknown.user@email.com"
+        },
+        "output": {
+          "error": true,
+          "message": "Customer unknown.user@email.com not found"
+        },
+        "reasoning": "name=not_found tier=n/a",
+        "confidence": 1.0
+      },
+      {
+        "timestamp": "2026-04-19T12:58:15.083894Z",
+        "step": "get_customer",
+        "input": {
+          "email": "david.park@email.com"
+        },
+        "output": {
+          "customer_id": "C004",
+          "name": "David Park",
+          "email": "david.park@email.com",
+          "phone": "+1-206-555-0177",
+          "tier": "standard",
+          "member_since": "2022-01-30",
+          "total_orders": 9,
+          "total_spent": 780.2,
+          "address": {
+            "street": "300 Pine Road",
+            "city": "Seattle",
+            "state": "WA",
+            "zip": "98101"
+          },
+          "notes": "Has raised 1 chargeback dispute in the past — resolved in ShopWave's favour."
+        },
+        "reasoning": "name=David Park tier=standard",
+        "confidence": 1.0
+      },
+      {
+        "timestamp": "2026-04-19T12:58:15.084228Z",
+        "step": "get_customer",
+        "input": {
+          "email": "bob.mendes@email.com"
+        },
+        "output": {
+          "customer_id": "C002",
+          "name": "Bob Mendes",
+          "email": "bob.mendes@email.com",
+          "phone": "+1-212-555-0198",
+          "tier": "standard",
+          "member_since": "2023-10-05",
+          "total_orders": 3,
+          "total_spent": 210.0,
+          "address": {
+            "street": "88 Birch Street",
+            "city": "New York",
+            "state": "NY",
+            "zip": "10001"
+          },
+          "notes": "New customer. No prior refund history."
+        },
+        "reasoning": "name=Bob Mendes tier=standard",
+        "confidence": 1.0
+      },
+      {
+        "timestamp": "2026-04-19T12:58:15.085670Z",
+        "step": "search_knowledge_base",
+        "input": {
+          "query": "Refund request"
+        },
+        "output": {
+          "sections": [
+            "5. Exchange Policy",
+            "7. Escalation Guidelines"
+          ]
+        },
+        "reasoning": "Matched 2 sections for: 'Refund request'",
+        "confidence": 1.0
+      },
+      {
+        "timestamp": "2026-04-19T12:58:15.086009Z",
+        "step": "get_order",
+        "input": {
+          "order_id": "ORD-9999"
+        },
+        "output": {
+          "error": true,
+          "message": "Order ORD-9999 not found"
+        },
+        "reasoning": "status=not_found",
+        "confidence": 1.0
+      },
+      {
+        "timestamp": "2026-04-19T12:58:15.086148Z",
+        "step": "get_order",
+        "input": {
+          "order_id": "ORD-1002"
+        },
+        "output": {
+          "order_id": "ORD-1002",
+          "customer_id": "C002",
+          "product_id": "P006",
+          "quantity": 1,
+          "amount": 249.99,
+          "status": "delivered",
+          "order_date": "2024-03-01",
+          "delivery_date": "2024-03-04",
+          "return_deadline": "2024-03-19",
+          "refund_status": null,
+          "notes": "High-value item. 15-day return window applies."
+        },
+        "reasoning": "status=delivered",
+        "confidence": 1.0
+      },
+      {
+        "timestamp": "2026-04-19T12:58:15.086524Z",
+        "step": "search_knowledge_base",
+        "input": {
+          "query": "return policy warranty"
+        },
+        "output": {
+          "sections": [
+            "3. Warranty Policy",
+            "1. Return Policy"
+          ]
+        },
+        "reasoning": "Matched 2 sections for: 'return policy warranty'",
+        "confidence": 1.0
+      },
+      {
+        "timestamp": "2026-04-19T12:58:15.086785Z",
+        "step": "search_knowledge_base",
+        "input": {
+          "query": "return policy warranty"
+        },
+        "output": {
+          "sections": [
+            "3. Warranty Policy",
+            "1. Return Policy"
+          ]
+        },
+        "reasoning": "Matched 2 sections for: 'return policy warranty'",
+        "confidence": 1.0
+      },
+      {
+        "timestamp": "2026-04-19T12:58:15.086870Z",
+        "step": "get_product",
+        "input": {
+          "product_id": "P006"
+        },
+        "output": {
+          "product_id": "P006",
+          "name": "PulseX Smart Watch",
+          "category": "electronics",
+          "price": 249.99,
+          "warranty_months": 12,
+          "return_window_days": 15,
+          "returnable": true,
+          "notes": "Only 15-day return window due to high-value electronics policy. Warranty covers hardware defects."
+        },
+        "reasoning": "name=PulseX Smart Watch",
+        "confidence": 1.0
+      },
+      {
+        "timestamp": "2026-04-19T12:58:15.086908Z",
+        "step": "lookup",
+        "input": {
+          "email": "bob.mendes@email.com",
+          "order_id": "ORD-1002"
+        },
+        "output": {
+          "customer_found": true,
+          "order_found": true,
+          "product_found": true,
+          "tool_calls": 3
+        },
+        "reasoning": "Lookup complete: 3 tool calls — customer=✓ order=✓ product=✓",
+        "confidence": 0.9
+      },
+      {
+        "timestamp": "2026-04-19T12:58:15.086943Z",
+        "step": "lookup",
+        "input": {
+          "email": "david.park@email.com",
+          "order_id": "ORD-9999"
+        },
+        "output": {
+          "customer_found": true,
+          "order_found": false,
+          "product_found": false,
+          "tool_calls": 3
+        },
+        "reasoning": "Lookup complete: 3 tool calls — customer=✓ order=✗ product=✗",
+        "confidence": 0.6
+      },
+      {
+        "timestamp": "2026-04-19T12:58:15.091808Z",
+        "step": "lookup",
+        "input": {
+          "email": "unknown.user@email.com",
+          "order_id": null
+        },
+        "output": {
+          "customer_found": false,
+          "order_found": false,
+          "product_found": false,
+          "tool_calls": 3
+        },
+        "reasoning": "Lookup complete: 3 tool calls — customer=✗ order=✗ product=✗",
+        "confidence": 0.6
+      },
+      {
+        "timestamp": "2026-04-19T12:58:15.894531Z",
+        "step": "classifier",
+        "input": {
+          "subject": "Urgent refund needed",
+          "tier": "standard",
+          "order_status": "delivered",
+          "amount": 249.99
+        },
+        "output": {
+          "classification": "refund"
+        },
+        "reasoning": "Context-aware classification → 'refund'",
+        "confidence": 0.9
+      },
+      {
+        "timestamp": "2026-04-19T12:58:15.896437Z",
+        "step": "search_knowledge_base",
+        "input": {
+          "query": "refund Urgent refund needed Hi I'm reaching out as a premium member and I need an immediate refund for ORD-1002 processed today."
+        },
+        "output": {
+          "sections": [
+            "2. Refund Policy",
+            "7. Escalation Guidelines"
+          ]
+        },
+        "reasoning": "Matched 2 sections for: 'refund Urgent refund needed Hi I'm reaching out as a premium'",
+        "confidence": 1.0
+      },
+      {
+        "timestamp": "2026-04-19T12:58:15.896533Z",
+        "step": "kb_search",
+        "input": {
+          "query": "refund Urgent refund needed Hi I'm reaching out as a premium member and I need an immediate refund f",
+          "classification": "refund"
+        },
+        "output": {
+          "result_chars": 1589
+        },
+        "reasoning": "KB policy fetched for classification 'refund'",
+        "confidence": 1.0
+      },
+      {
+        "timestamp": "2026-04-19T12:58:15.897048Z",
+        "step": "triage",
+        "input": {
+          "classification": "refund",
+          "tier": "standard",
+          "amount": 249.99,
+          "signals": {
+            "customer_found": true,
+            "order_found": true,
+            "product_found": true,
+            "order_id_in_ticket": true,
+            "return_deadline_known": true,
+            "refund_not_already_done": true,
+            "product_returnable": true,
+            "classification_specific": true
+          }
+        },
+        "output": {
+          "confidence": 1.0,
+          "urgency": "urgent",
+          "resolvable": false,
+          "reasons": [
+            "refund amount $249.99 > $200 auto-limit"
+          ]
+        },
+        "reasoning": "Confidence=1.00 from signals: customer_found=✓, order_found=✓, product_found=✓, order_id_in_ticket=✓, return_deadline_known=✓, refund_not_already_done=✓, product_returnable=✓, classification_specific=✓. Urgency=urgent. Resolvable=False — CANNOT resolve because: refund amount $249.99 > $200 auto-limit",
+        "confidence": 1.0
+      },
+      {
+        "timestamp": "2026-04-19T12:58:15.897601Z",
+        "step": "act",
+        "input": {
+          "classification": "refund",
+          "resolvable": false,
+          "order_id": "ORD-1002",
+          "amount": 249.99
+        },
+        "output": {
+          "action_taken": "escalated",
+          "escalated": true,
+          "refund_issued": null,
+          "tool_calls": 5
+        },
+        "reasoning": "Action: escalated — Confidence=1.00 from signals: customer_found=✓, order_found=✓, product_found=✓, order_id_in_ticket=✓, return_deadline_kn",
+        "confidence": 1.0
+      },
+      {
+        "timestamp": "2026-04-19T12:58:15.940146Z",
+        "step": "classifier",
+        "input": {
+          "subject": "Refund request",
+          "tier": null,
+          "order_status": null,
+          "amount": null
+        },
+        "output": {
+          "classification": "refund"
+        },
+        "reasoning": "Context-aware classification → 'refund'",
+        "confidence": 0.9
+      },
+      {
+        "timestamp": "2026-04-19T12:58:15.941044Z",
+        "step": "search_knowledge_base",
+        "input": {
+          "query": "refund Refund request I want a refund for my order."
+        },
+        "output": {
+          "sections": [
+            "5. Exchange Policy",
+            "7. Escalation Guidelines"
+          ]
+        },
+        "reasoning": "Matched 2 sections for: 'refund Refund request I want a refund for my order.'",
+        "confidence": 1.0
+      },
+      {
+        "timestamp": "2026-04-19T12:58:15.941107Z",
+        "step": "kb_search",
+        "input": {
+          "query": "refund Refund request I want a refund for my order.",
+          "classification": "refund"
+        },
+        "output": {
+          "result_chars": 1026
+        },
+        "reasoning": "KB policy fetched for classification 'refund'",
+        "confidence": 1.0
+      },
+      {
+        "timestamp": "2026-04-19T12:58:15.941472Z",
+        "step": "triage",
+        "input": {
+          "classification": "refund",
+          "tier": "standard",
+          "amount": 0.0,
+          "signals": {
+            "customer_found": false,
+            "order_found": false,
+            "product_found": false,
+            "order_id_in_ticket": false,
+            "return_deadline_known": false,
+            "refund_not_already_done": true,
+            "product_returnable": true,
+            "classification_specific": true
+          }
+        },
+        "output": {
+          "confidence": 0.375,
+          "urgency": "high",
+          "resolvable": false,
+          "reasons": [
+            "confidence 0.38 below 0.40 threshold"
+          ]
+        },
+        "reasoning": "Confidence=0.38 from signals: customer_found=✗, order_found=✗, product_found=✗, order_id_in_ticket=✗, return_deadline_known=✗, refund_not_already_done=✓, product_returnable=✓, classification_specific=✓. Urgency=high. Resolvable=False — CANNOT resolve because: confidence 0.38 below 0.40 threshold",
+        "confidence": 0.375
+      },
+      {
+        "timestamp": "2026-04-19T12:58:15.941858Z",
+        "step": "act",
+        "input": {
+          "classification": "refund",
+          "resolvable": false,
+          "order_id": "",
+          "amount": 0.0
+        },
+        "output": {
+          "action_taken": "escalated",
+          "escalated": true,
+          "refund_issued": null,
+          "tool_calls": 5
+        },
+        "reasoning": "Action: escalated — Confidence=0.38 from signals: customer_found=✗, order_found=✗, product_found=✗, order_id_in_ticket=✗, return_deadline_kn",
+        "confidence": 0.375
+      },
+      {
+        "timestamp": "2026-04-19T12:58:15.943029Z",
+        "step": "classifier",
+        "input": {
+          "subject": "Refund for shoes",
+          "tier": "standard",
+          "order_status": null,
+          "amount": null
+        },
+        "output": {
+          "classification": "refund"
+        },
+        "reasoning": "Context-aware classification → 'refund'",
+        "confidence": 0.9
+      },
+      {
+        "timestamp": "2026-04-19T12:58:15.943889Z",
+        "step": "search_knowledge_base",
+        "input": {
+          "query": "refund Refund for shoes I need a refund for order ORD-9999. My lawyer will be in touch if this isn't resolved today."
+        },
+        "output": {
+          "sections": [
+            "1. Return Policy",
+            "8. Common FAQs"
+          ]
+        },
+        "reasoning": "Matched 2 sections for: 'refund Refund for shoes I need a refund for order ORD-9999. '",
+        "confidence": 1.0
+      },
+      {
+        "timestamp": "2026-04-19T12:58:15.943967Z",
+        "step": "kb_search",
+        "input": {
+          "query": "refund Refund for shoes I need a refund for order ORD-9999. My lawyer will be in touch if this isn't",
+          "classification": "refund"
+        },
+        "output": {
+          "result_chars": 2399
+        },
+        "reasoning": "KB policy fetched for classification 'refund'",
+        "confidence": 1.0
+      },
+      {
+        "timestamp": "2026-04-19T12:58:15.944349Z",
+        "step": "triage",
+        "input": {
+          "classification": "refund",
+          "tier": "standard",
+          "amount": 0.0,
+          "signals": {
+            "customer_found": true,
+            "order_found": false,
+            "product_found": false,
+            "order_id_in_ticket": true,
+            "return_deadline_known": false,
+            "refund_not_already_done": true,
+            "product_returnable": true,
+            "classification_specific": true
+          }
+        },
+        "output": {
+          "confidence": 0.625,
+          "urgency": "high",
+          "resolvable": true,
+          "reasons": []
+        },
+        "reasoning": "Confidence=0.62 from signals: customer_found=✓, order_found=✗, product_found=✗, order_id_in_ticket=✓, return_deadline_known=✗, refund_not_already_done=✓, product_returnable=✓, classification_specific=✓. Urgency=high. Resolvable=True",
+        "confidence": 0.625
+      },
+      {
+        "timestamp": "2026-04-19T12:58:16.722039Z",
+        "step": "act",
+        "input": {
+          "classification": "refund",
+          "resolvable": true,
+          "order_id": "",
+          "amount": 0.0
+        },
+        "output": {
+          "action_taken": "refund_denied",
+          "escalated": false,
+          "refund_issued": null,
+          "tool_calls": 5
+        },
+        "reasoning": "Action: refund_denied — No order ID available",
+        "confidence": 0.625
+      },
+      {
+        "timestamp": "2026-04-19T12:58:31.786743Z",
+        "step": "get_customer",
+        "input": {
+          "email": "james.wu@email.com"
+        },
+        "output": {
+          "customer_id": "C010",
+          "name": "James Wu",
+          "email": "james.wu@email.com",
+          "phone": "+1-858-555-0199",
+          "tier": "standard",
+          "member_since": "2023-03-28",
+          "total_orders": 6,
+          "total_spent": 430.15,
+          "address": {
+            "street": "40 Harbor View",
+            "city": "San Diego",
+            "state": "CA",
+            "zip": "92101"
+          },
+          "notes": "No issues on record."
+        },
+        "reasoning": "name=James Wu tier=standard",
+        "confidence": 1.0
+      },
+      {
+        "timestamp": "2026-04-19T12:58:31.787069Z",
+        "step": "get_customer",
+        "input": {
+          "email": "irene.castillo@email.com"
+        },
+        "output": {
+          "customer_id": "C009",
+          "name": "Irene Castillo",
+          "email": "irene.castillo@email.com",
+          "phone": "+1-713-555-0156",
+          "tier": "premium",
+          "member_since": "2021-02-10",
+          "total_orders": 28,
+          "total_spent": 3670.9,
+          "address": {
+            "street": "88 Rosewood Court",
+            "city": "Houston",
+            "state": "TX",
+            "zip": "77001"
+          },
+          "notes": "Premium member. Has reported 2 damaged item incidents — both verified."
+        },
+        "reasoning": "name=Irene Castillo tier=premium",
+        "confidence": 1.0
+      },
+      {
+        "timestamp": "2026-04-19T12:58:31.787209Z",
+        "step": "get_orders_by_customer",
+        "input": {
+          "customer_id": "C010"
+        },
+        "output": {
+          "count": 1
+        },
+        "reasoning": "Found 1 orders",
+        "confidence": 1.0
+      },
+      {
+        "timestamp": "2026-04-19T12:58:31.787265Z",
+        "step": "get_orders_by_customer",
+        "input": {
+          "customer_id": "C009"
+        },
+        "output": {
+          "count": 1
+        },
+        "reasoning": "Found 1 orders",
+        "confidence": 1.0
+      },
+      {
+        "timestamp": "2026-04-19T12:58:31.787361Z",
+        "step": "get_product",
+        "input": {
+          "product_id": "P003"
+        },
+        "output": {
+          "product_id": "P003",
+          "name": "BrewMaster 3000 Coffee Maker",
+          "category": "home_appliances",
+          "price": 199.99,
+          "warranty_months": 24,
+          "return_window_days": 30,
+          "returnable": true,
+          "notes": "Warranty covers manufacturing defects only. Does not cover user damage."
+        },
+        "reasoning": "name=BrewMaster 3000 Coffee Maker",
+        "confidence": 1.0
+      },
+      {
+        "timestamp": "2026-04-19T12:58:31.787418Z",
+        "step": "get_product",
+        "input": {
+          "product_id": "P001"
+        },
+        "output": {
+          "product_id": "P001",
+          "name": "ProSound Wireless Headphones",
+          "category": "electronics",
+          "price": 129.99,
+          "warranty_months": 12,
+          "return_window_days": 30,
+          "returnable": true,
+          "notes": "Return not accepted if seal is broken unless item is defective."
+        },
+        "reasoning": "name=ProSound Wireless Headphones",
+        "confidence": 1.0
+      },
+      {
+        "timestamp": "2026-04-19T12:58:31.787467Z",
+        "step": "lookup",
+        "input": {
+          "email": "james.wu@email.com",
+          "order_id": null
+        },
+        "output": {
+          "customer_found": true,
+          "order_found": true,
+          "product_found": true,
+          "tool_calls": 3
+        },
+        "reasoning": "Lookup complete: 3 tool calls — customer=✓ order=✓ product=✓",
+        "confidence": 0.9
+      },
+      {
+        "timestamp": "2026-04-19T12:58:31.787501Z",
+        "step": "lookup",
+        "input": {
+          "email": "irene.castillo@email.com",
+          "order_id": null
+        },
+        "output": {
+          "customer_found": true,
+          "order_found": true,
+          "product_found": true,
+          "tool_calls": 3
+        },
+        "reasoning": "Lookup complete: 3 tool calls — customer=✓ order=✓ product=✓",
+        "confidence": 0.9
+      },
+      {
+        "timestamp": "2026-04-19T12:58:32.636668Z",
+        "step": "classifier",
+        "input": {
+          "subject": "General question about returns",
+          "tier": "premium",
+          "order_status": "delivered",
+          "amount": 129.99
+        },
+        "output": {
+          "classification": "general"
+        },
+        "reasoning": "Context-aware classification → 'general'",
+        "confidence": 0.9
+      },
+      {
+        "timestamp": "2026-04-19T12:58:32.638523Z",
+        "step": "search_knowledge_base",
+        "input": {
+          "query": "general General question about returns Hello, what is your return policy for electronics? And do you offer exchanges?"
+        },
+        "output": {
+          "sections": [
+            "8. Common FAQs",
+            "1. Return Policy"
+          ]
+        },
+        "reasoning": "Matched 2 sections for: 'general General question about returns Hello, what is your r'",
+        "confidence": 1.0
+      },
+      {
+        "timestamp": "2026-04-19T12:58:32.639095Z",
+        "step": "classifier",
+        "input": {
+          "subject": "my thing is broken pls help",
+          "tier": "standard",
+          "order_status": "shipped",
+          "amount": 199.99
+        },
+        "output": {
+          "classification": "refund"
+        },
+        "reasoning": "Context-aware classification → 'refund'",
+        "confidence": 0.9
+      },
+      {
+        "timestamp": "2026-04-19T12:58:32.639170Z",
+        "step": "kb_search",
+        "input": {
+          "query": "general General question about returns Hello, what is your return policy for electronics? And do you",
+          "classification": "general"
+        },
+        "output": {
+          "result_chars": 2399
+        },
+        "reasoning": "KB policy fetched for classification 'general'",
+        "confidence": 1.0
+      },
+      {
+        "timestamp": "2026-04-19T12:58:32.640012Z",
+        "step": "search_knowledge_base",
+        "input": {
+          "query": "refund my thing is broken pls help hey so the thing i bought isnt working right can you help me out"
+        },
+        "output": {
+          "sections": [
+            "8. Common FAQs",
+            "2. Refund Policy"
+          ]
+        },
+        "reasoning": "Matched 2 sections for: 'refund my thing is broken pls help hey so the thing i bought'",
+        "confidence": 1.0
+      },
+      {
+        "timestamp": "2026-04-19T12:58:32.640431Z",
+        "step": "triage",
+        "input": {
+          "classification": "general",
+          "tier": "premium",
+          "amount": 129.99,
+          "signals": {
+            "customer_found": true,
+            "order_found": true,
+            "product_found": true,
+            "order_id_in_ticket": false,
+            "return_deadline_known": true,
+            "refund_not_already_done": false,
+            "product_returnable": true,
+            "classification_specific": false
+          }
+        },
+        "output": {
+          "confidence": 0.625,
+          "urgency": "high",
+          "resolvable": true,
+          "reasons": []
+        },
+        "reasoning": "Confidence=0.62 from signals: customer_found=✓, order_found=✓, product_found=✓, order_id_in_ticket=✗, return_deadline_known=✓, refund_not_already_done=✗, product_returnable=✓, classification_specific=✗. Urgency=high. Resolvable=True",
+        "confidence": 0.625
+      },
+      {
+        "timestamp": "2026-04-19T12:58:32.640572Z",
+        "step": "kb_search",
+        "input": {
+          "query": "refund my thing is broken pls help hey so the thing i bought isnt working right can you help me out",
+          "classification": "refund"
+        },
+        "output": {
+          "result_chars": 1791
+        },
+        "reasoning": "KB policy fetched for classification 'refund'",
+        "confidence": 1.0
+      },
+      {
+        "timestamp": "2026-04-19T12:58:32.643743Z",
+        "step": "triage",
+        "input": {
+          "classification": "refund",
+          "tier": "standard",
+          "amount": 199.99,
+          "signals": {
+            "customer_found": true,
+            "order_found": true,
+            "product_found": true,
+            "order_id_in_ticket": false,
+            "return_deadline_known": false,
+            "refund_not_already_done": true,
+            "product_returnable": true,
+            "classification_specific": true
+          }
+        },
+        "output": {
+          "confidence": 0.75,
+          "urgency": "high",
+          "resolvable": true,
+          "reasons": []
+        },
+        "reasoning": "Confidence=0.75 from signals: customer_found=✓, order_found=✓, product_found=✓, order_id_in_ticket=✗, return_deadline_known=✗, refund_not_already_done=✓, product_returnable=✓, classification_specific=✓. Urgency=high. Resolvable=True",
+        "confidence": 0.75
+      },
+      {
+        "timestamp": "2026-04-19T12:58:32.644629Z",
+        "step": "check_refund_eligibility",
+        "input": {
+          "order_id": "ORD-1010"
+        },
+        "output": {
+          "eligible": true,
+          "reason": "Within return window, no restrictions",
+          "order_id": "ORD-1010",
+          "order_amount": 199.99,
+          "order_status": "shipped",
+          "return_deadline": null
+        },
+        "reasoning": "eligible=True: Within return window, no restrictions",
+        "confidence": 0.9
+      },
+      {
+        "timestamp": "2026-04-19T12:58:33.328972Z",
+        "step": "act",
+        "input": {
+          "classification": "general",
+          "resolvable": true,
+          "order_id": "ORD-1009",
+          "amount": 129.99
+        },
+        "output": {
+          "action_taken": "general_inquiry_answered",
+          "escalated": false,
+          "refund_issued": null,
+          "tool_calls": 4
+        },
+        "reasoning": "Action: general_inquiry_answered — Answered via knowledge base",
+        "confidence": 0.625
+      },
+      {
+        "timestamp": "2026-04-19T12:58:33.368185Z",
+        "step": "issue_refund",
+        "input": {
+          "order_id": "ORD-1010",
+          "amount": 199.99
+        },
+        "output": {
+          "success": true,
+          "refund_id": "REF-ORD-1010-1776583713",
+          "message": "Refund of $199.99 initiated for ORD-1010",
+          "processing_time": "5-7 business days"
+        },
+        "reasoning": "Refund of $199.99 initiated for ORD-1010",
+        "confidence": 1.0
+      },
+      {
+        "timestamp": "2026-04-19T12:58:33.368220Z",
+        "step": "act",
+        "input": {
+          "classification": "refund",
+          "resolvable": true,
+          "order_id": "ORD-1010",
+          "amount": 199.99
+        },
+        "output": {
+          "action_taken": "refund_issued",
+          "escalated": false,
+          "refund_issued": true,
+          "tool_calls": 6
+        },
+        "reasoning": "Action: refund_issued — Within return window, no restrictions",
+        "confidence": 0.75
+      },
+      {
+        "timestamp": "2026-04-19T12:58:33.375980Z",
+        "step": "system_complete",
+        "input": {},
+        "output": {
+          "resolved": 12,
+          "escalated": 8,
+          "refunded": 2,
+          "errors": 0,
+          "total_audit_entries": 302
+        },
+        "reasoning": "All tickets processed",
+        "confidence": 1.0
+      }
+    ]
+  }
+]
